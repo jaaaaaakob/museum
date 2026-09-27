@@ -113,6 +113,11 @@ header.top {
 }
 header.top p { color: var(--muted); max-width: 62ch; }
 
+nav.apps { display: flex; gap: 4px 18px; flex-wrap: wrap; font: 600 .9rem var(--display); font-stretch: 90%; }
+nav.apps a { color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
+nav.apps a:hover { color: var(--ink); }
+nav.apps a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
 /* Object sensitivity bar */
 .object {
   margin-top: 20px;
@@ -364,6 +369,10 @@ td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space
 <div class="wrap">
 
 <header class="top">
+  <nav class="apps" aria-label="Værktøjer">
+    <a href="index.html" aria-current="page">Udstillingslys</a>
+    <a href="indretning.html">Indretning af rum</a>
+  </nav>
   <span class="label">Værktøj til udstillingsdesign og bevaring</span>
   <h1>Udstillingslys</h1>
   <p>Beregn belysningsstyrke fra spots, årlig lysdosis og antal armaturer til rumbelysning. Tallene sammenholdes med anbefalingerne i CIE 157:2004 for genstandens lysfølsomhed.</p>

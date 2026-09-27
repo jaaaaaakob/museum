@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indretning af rum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #eef0ee;
+  --surface: #ffffff;
+  --sunk: #e3e7e5;
+  --ink: #1b2024;
+  --muted: #5a646b;
+  --line: #cfd5d3;
+  --accent: #a8641a;
+  --accent-soft: #f5e3c8;
+  --beam: rgba(232, 168, 64, .28);
+  --good: #2e7a4d;
+  --good-soft: #dcefe3;
+  --warn: #9a6512;
+  --warn-soft: #f7e9cc;
+  --bad: #b0322a;
+  --bad-soft: #f6dcd9;
+  --glass: #dcebf0;
+  --glass-line: #3f7890;
+  --wood: #ece2d2;
+  --wood-line: #8a6a44;
+  --grid: #e8ecea;
+  --grid-major: #d5dbd8;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111416;
+    --surface: #1a1f22;
+    --sunk: #23292d;
+    --ink: #e6e9e7;
+    --muted: #9aa4aa;
+    --line: #333b40;
+    --accent: #e3a24c;
+    --accent-soft: #3a2c19;
+    --beam: rgba(240, 180, 80, .22);
+    --good: #6cc592;
+    --good-soft: #1c3326;
+    --warn: #e5b45c;
+    --warn-soft: #3a2f18;
+    --bad: #f08a80;
+    --bad-soft: #3d1f1c;
+    --glass: #1c2f38;
+    --glass-line: #7fb8cf;
+    --wood: #2e271e;
+    --wood-line: #c29a68;
+    --grid: #21272b;
+    --grid-major: #2d353a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111416;
+  --surface: #1a1f22;
+  --sunk: #23292d;
+  --ink: #e6e9e7;
+  --muted: #9aa4aa;
+  --line: #333b40;
+  --accent: #e3a24c;
+  --accent-soft: #3a2c19;
+  --beam: rgba(240, 180, 80, .22);
+  --good: #6cc592;
+  --good-soft: #1c3326;
+  --warn: #e5b45c;
+  --warn-soft: #3a2f18;
+  --bad: #f08a80;
+  --bad-soft: #3d1f1c;
+  --glass: #1c2f38;
+  --glass-line: #7fb8cf;
+  --wood: #2e271e;
+  --wood-line: #c29a68;
+  --grid: #21272b;
+  --grid-major: #2d353a;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 var(--body);
+}
+.wrap {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 24px 56px;
+}
+h1, h2, h3 {
+  font-family: var(--display);
+  font-stretch: 85%;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: 1.35rem; font-weight: 700; }
+h3 { font-size: 1rem; font-weight: 700; }
+p { margin: 0; }
+.label {
+  font-family: var(--display);
+  font-stretch: 90%;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Header */
+header.top {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+header.top p { color: var(--muted); max-width: 70ch; }
+nav.apps { display: flex; gap: 4px 18px; flex-wrap: wrap; font: 600 .9rem var(--display); font-stretch: 90%; }
+nav.apps a { color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
+nav.apps a:hover { color: var(--ink); }
+nav.apps a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Buttons and fields */
+.btn {
+  appearance: none;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font: 600 .95rem var(--body);
+  padding: 7px 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--accent-soft); }
+.btn.primary { background: var(--accent); color: var(--surface); }
+.btn.primary:hover { filter: brightness(1.08); background: var(--accent); }
+.btn.quiet { border-color: var(--line); color: var(--ink); }
+.btn.quiet:hover { background: var(--sunk); }
+.btn.danger { border-color: var(--bad); color: var(--bad); }
+.btn.danger:hover { background: var(--bad-soft); }
+.btn:disabled { opacity: .45; cursor: default; background: transparent; }
+.btn.sm { padding: 4px 9px; font-size: .88rem; }
+.btn .n { font: 500 .8rem var(--mono); opacity: .8; }
+
+.field { display: grid; gap: 4px; }
+.field label, .field .lab { font-weight: 600; font-size: .92rem; }
+.field .hint { font-size: .82rem; color: var(--muted); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.row3 .unit input { padding-inline: 6px; }
+.row3 .unit span { padding: 0 5px; }
+.unit {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  overflow: hidden;
+}
+.unit:focus-within { border-color: var(--accent); }
+.unit input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 500 .95rem var(--mono);
+  padding: 7px 8px;
+  font-variant-numeric: tabular-nums;
+}
+.unit input:focus-visible { outline: none; }
+.unit span {
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+  font: .8rem var(--mono);
+  color: var(--muted);
+  background: var(--sunk);
+  border-left: 1px solid var(--line);
+}
+input.text, textarea.text, select.plain {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1rem var(--body);
+  padding: 7px 10px;
+}
+textarea.text { resize: vertical; min-height: 64px; }
+input.text:focus-visible, textarea.text:focus-visible, select.plain:focus-visible { outline: none; border-color: var(--accent); }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: .92rem; cursor: pointer; white-space: nowrap; }
+.check input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+
+/* Room bar */
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px 20px;
+  padding: 18px 0;
+}
+.bar .name { flex: 1 1 280px; max-width: 460px; }
+.bar .name input { font: 700 1.15rem var(--display); font-stretch: 90%; }
+.bar .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.savestate {
+  font: 600 .78rem var(--display);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--sunk);
+  color: var(--muted);
+  align-self: center;
+  margin-bottom: 2px;
+}
+.savestate.ok { background: var(--good-soft); color: var(--good); }
+.savestate.dirty { background: var(--warn-soft); color: var(--warn); }
+
+/* Studio layout */
+.studio {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+}
+.box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Palette */
+.palette { padding: 12px; display: grid; gap: 14px; }
+.palette .grp { display: grid; gap: 4px; }
+.palette .grp > .label { margin-bottom: 2px; }
+.palette .items { display: grid; gap: 2px; }
+.palette button {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--ink);
+  font: .93rem var(--body);
+  text-align: left;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.palette button:hover { background: var(--sunk); }
+.palette button:active { border-color: var(--accent); }
+.palette svg { width: 34px; height: 24px; flex: none; overflow: visible; }
+
+/* Stage */
+.stage { display: grid; gap: 8px; min-width: 0; }
+.stagebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.stagebar .grp { display: flex; align-items: center; gap: 4px; }
+.stagebar .sep { width: 1px; align-self: stretch; background: var(--line); }
+.iconbtn {
+  appearance: none;
+  min-width: 34px;
+  height: 32px;
+  padding: 0 8px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 .9rem var(--body);
+  cursor: pointer;
+}
+.iconbtn:hover { background: var(--sunk); }
+.iconbtn:disabled { opacity: .4; cursor: default; background: var(--surface); }
+.iconbtn svg { width: 16px; height: 16px; }
+.stagebar select.plain { width: auto; padding: 5px 8px; font-size: .9rem; background: var(--surface); }
+
+.canvas {
+  position: relative;
+  height: clamp(420px, 68vh, 820px);
+  overflow: hidden;
+}
+#plan { display: block; width: 100%; height: 100%; touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
+#plan.panning { cursor: grabbing; }
+.canvas .zoomlvl {
+  position: absolute; right: 10px; bottom: 8px;
+  font: .75rem var(--mono); color: var(--muted);
+  background: var(--surface); padding: 1px 6px; border-radius: 3px;
+  pointer-events: none;
+}
+.keys { font-size: .82rem; color: var(--muted); }
+.keys kbd {
+  font: .75rem var(--mono);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 0 4px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* Plan drawing */
+#plan *, .thumb *, .palette svg * { vector-effect: non-scaling-stroke; }
+.p-floor { fill: var(--surface); }
+.p-rwall { fill: var(--ink); }
+.p-gl { stroke: var(--grid); stroke-width: 1px; }
+.p-gm { stroke: var(--grid-major); stroke-width: 1px; }
+.p-ruler { font-family: var(--mono); fill: var(--muted); }
+.p-bg { fill: var(--bg); }
+.case { fill: var(--glass); stroke: var(--glass-line); stroke-width: 1.5px; }
+.case-in { fill: none; stroke: var(--glass-line); stroke-width: .75px; opacity: .7; }
+.case-back { stroke: var(--glass-line); stroke-width: 4px; }
+.wall { fill: var(--ink); stroke: var(--ink); stroke-width: 1px; }
+.opening { fill: var(--surface); stroke: none; }
+.jamb { stroke: var(--ink); stroke-width: 1.5px; }
+.leaf { stroke: var(--ink); stroke-width: 1.5px; }
+.swing { fill: none; stroke: var(--muted); stroke-width: 1px; stroke-dasharray: 4 3; }
+.win { fill: none; stroke: var(--ink); stroke-width: 1px; }
+.rope { stroke: var(--wood-line); stroke-width: 2px; stroke-dasharray: 6 3; }
+.post { fill: var(--wood-line); }
+.lamp { fill: var(--accent); stroke: var(--surface); stroke-width: 1px; }
+.lamp-dir { stroke: var(--accent); stroke-width: 2px; }
+.beam { fill: var(--beam); stroke: var(--accent); stroke-width: .75px; stroke-opacity: .6; pointer-events: none; }
+.pool { stroke-dasharray: 4 3; }
+.aim { fill: var(--accent); pointer-events: none; }
+.track { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5px; }
+.plinth { fill: var(--wood); stroke: var(--wood-line); stroke-width: 1.5px; }
+.plinth-x { stroke: var(--wood-line); stroke-width: .75px; opacity: .7; }
+.bench { fill: var(--wood); stroke: var(--wood-line); stroke-width: 1.5px; }
+.bench-s { stroke: var(--wood-line); stroke-width: .75px; }
+.sign { fill: var(--sunk); stroke: var(--muted); stroke-width: 1.5px; }
+.sign-f { stroke: var(--ink); stroke-width: 3px; }
+.screen { fill: var(--ink); stroke: var(--ink); stroke-width: 1px; }
+.screen-f { stroke: var(--glass-line); stroke-width: 3px; }
+.art { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5px; }
+.hit { fill: transparent; stroke: none; pointer-events: all; cursor: move; }
+.it.clash .case, .it.clash .wall, .it.clash .plinth, .it.clash .bench, .it.clash .sign, .it.clash .screen { stroke: var(--bad); stroke-width: 2.5px; }
+.it.clash .rope { stroke: var(--bad); }
+.lbl { font-family: var(--mono); font-weight: 500; fill: var(--ink); stroke: var(--surface); stroke-width: 3px; paint-order: stroke; stroke-linejoin: round; pointer-events: none; }
+.lbl.l { fill: var(--accent); }
+.selbox { fill: none; stroke: var(--accent); stroke-width: 1.5px; stroke-dasharray: 5 3; pointer-events: none; }
+.handle { fill: var(--surface); stroke: var(--accent); stroke-width: 2px; cursor: pointer; }
+.handle.rs { cursor: ew-resize; }
+.handle-l { stroke: var(--accent); stroke-width: 1.5px; pointer-events: none; }
+.dim { stroke: var(--accent); stroke-width: 1px; pointer-events: none; }
+.dimt { font-family: var(--mono); fill: var(--accent); stroke: var(--surface); stroke-width: 3px; paint-order: stroke; pointer-events: none; }
+.pass { stroke: var(--bad); stroke-width: 1.5px; stroke-dasharray: 3 3; pointer-events: none; }
+.passt { font-family: var(--mono); fill: var(--bad); stroke: var(--surface); stroke-width: 3px; paint-order: stroke; pointer-events: none; }
+#plan.nobeams .beam, #plan.nobeams .aim { display: none; }
+
+/* Properties */
+.props { padding: 16px; display: grid; gap: 14px; }
+.props .head { display: grid; gap: 2px; }
+.props .head .type { color: var(--muted); font-size: .9rem; }
+.props fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.props fieldset + fieldset { border-top: 1px solid var(--line); padding-top: 12px; }
+.props legend { padding: 0; margin-bottom: 4px; }
+.props .actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.props .calc { font-size: .88rem; color: var(--muted); }
+.props .calc b { color: var(--ink); font: 500 .9rem var(--mono); }
+dl.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+dl.facts > div { background: var(--surface); padding: 8px 10px; display: grid; gap: 0; }
+dl.facts dt { font-size: .78rem; color: var(--muted); }
+dl.facts dd { margin: 0; font: 500 1rem var(--mono); font-variant-numeric: tabular-nums; }
+ul.warn { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+ul.warn li {
+  font-size: .88rem;
+  padding: 6px 10px;
+  border-left: 4px solid var(--bad);
+  background: var(--bad-soft);
+  border-radius: 3px;
+}
+ul.warn li.w { border-left-color: var(--warn); background: var(--warn-soft); }
+ul.warn button { all: unset; cursor: pointer; font-family: var(--mono); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+.okmsg { font-size: .88rem; color: var(--good); }
+
+/* Inventory */
+section.list { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: .85rem; padding: 3px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.chip b { font-family: var(--mono); font-weight: 500; }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font: 600 .72rem var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--sunk); }
+tbody tr.on { background: var(--accent-soft); }
+td .code { all: unset; font-family: var(--mono); font-weight: 500; cursor: pointer; }
+td .code:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+td.note { color: var(--muted); max-width: 36ch; }
+.muted { color: var(--muted); }
+
+/* Saved rooms dialog */
+dialog {
+  width: min(760px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  padding: 0;
+}
+dialog::backdrop { background: rgba(10, 14, 16, .45); }
+.dlg { display: grid; grid-template-rows: auto auto 1fr auto; max-height: calc(100dvh - 50px); }
+.dlg header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px 10px; }
+.dlg .search { padding: 0 18px 12px; border-bottom: 1px solid var(--line); }
+.dlg .rooms { overflow-y: auto; padding: 6px 0; }
+.dlg footer { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 18px; border-top: 1px solid var(--line); align-items: center; }
+.dlg footer .note { font-size: .82rem; color: var(--muted); flex: 1 1 200px; }
+.room {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 18px;
+}
+.room + .room { border-top: 1px solid var(--line); }
+.room.cur { background: var(--accent-soft); }
+.room .thumb { width: 120px; height: 80px; background: var(--bg); border-radius: 4px; display: block; }
+.room h3 { font-size: 1.05rem; overflow-wrap: anywhere; }
+.room .meta { font-size: .85rem; color: var(--muted); }
+.room .acts { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.dlg .empty { padding: 28px 18px; color: var(--muted); text-align: center; }
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-size: .95rem;
+  max-width: calc(100% - 32px);
+  opacity: 0;
+  pointer-events: none;
+}
+#toast.show { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) { #toast { transition: opacity .2s; } }
+
+.printhead { display: none; }
+
+@media (max-width: 1180px) {
+  .studio { grid-template-columns: minmax(0, 1fr) 290px; }
+  .palette { grid-column: 1 / -1; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+}
+@media (max-width: 760px) {
+  .wrap { padding-inline: 16px; }
+  .studio { grid-template-columns: minmax(0, 1fr); }
+  .palette { display: flex; overflow-x: auto; gap: 16px; padding: 8px 10px; }
+  .palette .grp { flex: none; }
+  .palette .items { display: flex; gap: 2px; }
+  .palette button { flex-direction: column; gap: 2px; width: 76px; font-size: .78rem; text-align: center; line-height: 1.15; padding: 4px 2px; }
+  .canvas { height: 62vh; min-height: 360px; }
+  .room { grid-template-columns: 80px minmax(0, 1fr); }
+  .room .thumb { width: 80px; height: 56px; }
+  .room .acts { grid-column: 1 / -1; justify-content: flex-start; }
+  .bar .name { max-width: none; }
+}
+
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    color-scheme: light;
+    --bg: #ffffff; --surface: #ffffff; --sunk: #eef0ee; --ink: #1b2024; --muted: #5a646b; --line: #cfd5d3;
+    --accent: #a8641a; --accent-soft: #f5e3c8; --beam: rgba(232, 168, 64, .25);
+    --bad: #b0322a; --bad-soft: #f6dcd9; --glass: #dcebf0; --glass-line: #3f7890;
+    --wood: #ece2d2; --wood-line: #8a6a44; --grid: #eef1ef; --grid-major: #dde2df;
+  }
+  header.top, .bar, .palette, .props, .stagebar, .keys, .zoomlvl, #toast { display: none !important; }
+  .wrap { padding: 0; max-width: none; }
+  .printhead { display: grid; gap: 4px; margin-bottom: 10px; }
+  .studio { display: block; }
+  .box { border: 0; }
+  .canvas { height: 15cm; }
+  section.list { break-before: auto; }
+  tbody tr { cursor: default; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <nav class="apps" aria-label="Værktøjer">
+    <a href="index.html">Udstillingslys</a>
+    <a href="indretning.html" aria-current="page">Indretning af rum</a>
+  </nav>
+  <h1>Indretning af rum</h1>
+  <p>Tegn rummet op i plan, og placér montrer, skillevægge, lyskilder og andre museumsmøbler. Gem rummet under et navn, og hent det frem igen, når du skal arbejde videre.</p>
+</header>
+
+<div class="printhead">
+  <h2 id="phName"></h2>
+  <p class="muted" id="phMeta"></p>
+</div>
+
+<div class="bar">
+  <div class="field name">
+    <label for="roomName">Rummets navn</label>
+    <input id="roomName" class="text" autocomplete="off" placeholder="Fx Sal 3 – Vikingetid">
+  </div>
+  <span class="savestate" id="saveState">Ikke gemt</span>
+  <div class="actions">
+    <button class="btn primary" id="bSave" title="Gem (Ctrl+S)">Gem</button>
+    <button class="btn" id="bSaveCopy">Gem som kopi</button>
+    <button class="btn" id="bOpen">Gemte rum <span class="n" id="nSaved"></span></button>
+    <button class="btn" id="bNew">Nyt rum</button>
+    <button class="btn quiet" id="bPrint">Udskriv</button>
+  </div>
+</div>
+
+<div class="studio">
+  <aside class="palette box" id="palette" aria-label="Tilføj element"></aside>
+
+  <section class="stage" aria-label="Plantegning">
+    <div class="stagebar">
+      <div class="grp">
+        <button class="iconbtn" id="bUndo" title="Fortryd (Ctrl+Z)" aria-label="Fortryd">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3 2 6l3 3"/><path d="M2 6h7.5a4 4 0 0 1 0 8H7"/></svg>
+        </button>
+        <button class="iconbtn" id="bRedo" title="Gentag (Ctrl+Y)" aria-label="Gentag">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m11 3 3 3-3 3"/><path d="M14 6H6.5a4 4 0 0 0 0 8H9"/></svg>
+        </button>
+      </div>
+      <span class="sep"></span>
+      <div class="grp">
+        <button class="iconbtn" id="bZoomOut" aria-label="Zoom ud">−</button>
+        <button class="iconbtn" id="bZoomIn" aria-label="Zoom ind">+</button>
+        <button class="iconbtn" id="bFit">Vis hele rummet</button>
+      </div>
+      <span class="sep"></span>
+      <label class="check">Fastgør til
+        <select id="optGrid" class="plain">
+          <option value="0">frit</option>
+          <option value="0.01">1 cm</option>
+          <option value="0.05" selected>5 cm</option>
+          <option value="0.1">10 cm</option>
+          <option value="0.25">25 cm</option>
+          <option value="0.5">50 cm</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="optBeams" checked> Lyskegler</label>
+      <label class="check"><input type="checkbox" id="optLabels" checked> Koder</label>
+      <label class="check"><input type="checkbox" id="optPass" checked> Smalle passager</label>
+    </div>
+    <div class="canvas box">
+      <svg id="plan" role="img" aria-label="Plantegning af rummet" tabindex="0"></svg>
+      <span class="zoomlvl" id="zoomLvl"></span>
+    </div>
+    <p class="keys">Klik på et element i listen for at tilføje det. Træk for at flytte, brug de runde håndtag til at dreje og de firkantede til at ændre størrelse. Vægmontrer, værker, døre og vinduer lægger sig op ad nærmeste væg (hold <kbd>Alt</kbd> for at slå fra). <kbd>←↑→↓</kbd> flytter, <kbd>R</kbd> drejer 90°, <kbd>Ctrl</kbd>+<kbd>D</kbd> duplikerer, <kbd>Delete</kbd> sletter.</p>
+  </section>
+
+  <aside class="props box" id="props" aria-live="polite"></aside>
+</div>
+
+<section class="list">
+  <div>
+    <h2>Elementer i rummet</h2>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Kode</th><th>Type</th><th>B × D × H</th><th>Placering (x ; y)</th><th>Drejning</th><th>Indhold / note</th></tr></thead>
+      <tbody id="inv"></tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+
+<dialog id="dlgRooms" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <header>
+      <h2 id="dlgTitle">Gemte rum</h2>
+      <button class="btn quiet sm" id="dlgClose">Luk</button>
+    </header>
+    <div class="search">
+      <input id="dlgSearch" class="text" type="search" placeholder="Søg efter navn" aria-label="Søg i gemte rum" autocomplete="off">
+    </div>
+    <div class="rooms" id="dlgList"></div>
+    <footer>
+      <p class="note">Rummene gemmes i denne browser. Eksportér en fil for at tage backup eller dele med kolleger.</p>
+      <button class="btn sm" id="bExportAll">Eksportér alle</button>
+      <button class="btn sm" id="bImport">Importér fil …</button>
+      <input type="file" id="fileImport" accept=".json,application/json" hidden>
+    </footer>
+  </div>
+</dialog>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var STORE_ROOMS = "museum-indretning:rum";
+  var STORE_DRAFT = "museum-indretning:kladde";
+  var STORE_OPTS = "museum-indretning:visning";
+  var WT = 0.2; // tegnet tykkelse af rummets ydervægge (m)
+
+  var GROUPS = ["Montrer", "Vægge og åbninger", "Lys", "Møbler og værker"];
+  // kind styrer tegning; wall: true = lægger sig mod væg, "in" = sidder i væggen
+  var TYPES = {
+    wallcase:   { name: "Vægmontre", group: 0, kind: "case", w: 1.2, d: 0.5, h: 2.2, pre: "M", wall: true, resize: "wd" },
+    freecase:   { name: "Fritstående montre", group: 0, kind: "case", w: 1.0, d: 1.0, h: 1.9, pre: "M", resize: "wd" },
+    tablecase:  { name: "Bordmontre", group: 0, kind: "case", w: 1.4, d: 0.8, h: 0.95, pre: "M", resize: "wd" },
+    pillarcase: { name: "Søjlemontre", group: 0, kind: "case", w: 0.5, d: 0.5, h: 1.8, pre: "M", resize: "wd" },
+    wall:       { name: "Skillevæg", group: 1, kind: "wall", w: 3, d: 0.12, h: 3, pre: "V", resize: "wd", labels: { w: "Længde", d: "Tykkelse" } },
+    door:       { name: "Dør / åbning", group: 1, kind: "door", w: 1.0, d: WT, h: 2.1, pre: "D", wall: "in", resize: "w", labels: { d: "Vægtykkelse" } },
+    window:     { name: "Vindue", group: 1, kind: "window", w: 1.5, d: WT, h: 1.4, pre: "F", wall: "in", resize: "w", labels: { d: "Vægtykkelse" } },
+    guard:      { name: "Afspærring", group: 1, kind: "guard", w: 2, d: 0.05, h: 0.9, pre: "A", resize: "w", labels: { w: "Længde" } },
+    spot:       { name: "Spot", group: 2, kind: "spot", w: 0.14, d: 0.14, pre: "L", light: true, beam: 24, tilt: 30, aim: 1.6, resize: "" },
+    downlight:  { name: "Downlight", group: 2, kind: "down", w: 0.2, d: 0.2, pre: "L", light: true, beam: 40, resize: "" },
+    track:      { name: "Lysskinne", group: 2, kind: "track", w: 3, d: 0.05, pre: "S", light: true, resize: "w", labels: { w: "Længde" } },
+    plinth:     { name: "Podie / sokkel", group: 3, kind: "plinth", w: 0.6, d: 0.6, h: 0.9, pre: "P", resize: "wd" },
+    bench:      { name: "Bænk", group: 3, kind: "bench", w: 1.6, d: 0.45, h: 0.45, pre: "B", resize: "wd" },
+    sign:       { name: "Tekststander", group: 3, kind: "sign", w: 0.5, d: 0.35, h: 1.3, pre: "T", resize: "wd" },
+    screen:     { name: "Skærm / AV", group: 3, kind: "screen", w: 1.2, d: 0.12, h: 0.7, pre: "AV", wall: true, resize: "w" },
+    art:        { name: "Værk på væg", group: 3, kind: "art", w: 1.0, d: 0.06, h: 0.8, pre: "K", wall: true, resize: "w" }
+  };
+  // Elementer der står på gulvet og tæller med i kollisioner og passager
+  var FLOOR = { "case": 1, wall: 1, guard: 1, plinth: 1, bench: 1, sign: 1, screen: 1 };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var svg = $("plan");
+  var rad = function (deg) { return deg * Math.PI / 180; };
+  var f = function (v) { return String(Math.round(v * 10000) / 10000); };
+  var nf = function (v, d) {
+    if (d == null) d = 2;
+    return v.toLocaleString("da-DK", { minimumFractionDigits: d, maximumFractionDigits: d });
+  };
+  var m = function (v) { return nf(v, 2) + " m"; };
+  var esc = function (s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  };
+  var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
+  var uid = function () { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); };
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+
+  // ---------- State ----------
+  var room;
+  var selId = null;
+  var savedSig = null; // signatur af senest gemte version af det aktuelle rum
+  var view = { x: 0, y: 0, w: 10, h: 10 };
+  var opts = { grid: 0.05, beams: true, labels: true, pass: true };
+  var hist = [], hi = -1;
+  var analysis = { clash: {}, warnings: [], passages: [] };
+
+  function newRoom() {
+    return { id: uid(), name: "", w: 12, d: 8, h: 4, passMin: 0.9, note: "", items: [] };
+  }
+  function sig(r) {
+    var o = clone(r);
+    delete o.updated;
+    return JSON.stringify(o);
+  }
+  function num(v, fb) { v = parseFloat(v); return isFinite(v) ? v : fb; }
+  function normalize(r) {
+    var o = newRoom();
+    if (!r || typeof r !== "object") return o;
+    o.id = typeof r.id === "string" && r.id ? r.id : o.id;
+    o.name = typeof r.name === "string" ? r.name : "";
+    o.w = clamp(num(r.w, o.w), 1, 200);
+    o.d = clamp(num(r.d, o.d), 1, 200);
+    o.h = clamp(num(r.h, o.h), 1.5, 30);
+    o.passMin = clamp(num(r.passMin, 0.9), 0.3, 5);
+    o.note = typeof r.note === "string" ? r.note : "";
+    if (r.updated) o.updated = r.updated;
+    o.items = (Array.isArray(r.items) ? r.items : []).filter(function (it) {
+      return it && TYPES[it.type];
+    }).map(function (it) {
+      var t = TYPES[it.type];
+      var n = {
+        id: typeof it.id === "string" && it.id ? it.id : uid(),
+        type: it.type,
+        label: typeof it.label === "string" ? it.label : "",
+        note: typeof it.note === "string" ? it.note : "",
+        x: num(it.x, o.w / 2), y: num(it.y, o.d / 2),
+        w: Math.max(0.02, num(it.w, t.w)), d: Math.max(0.02, num(it.d, t.d)),
+        h: Math.max(0, num(it.h, t.h != null ? t.h : o.h)),
+        rot: ((num(it.rot, 0) % 360) + 360) % 360
+      };
+      if (t.beam != null) n.beam = clamp(num(it.beam, t.beam), 1, 170);
+      if (t.tilt != null) n.tilt = clamp(num(it.tilt, t.tilt), 0, 85);
+      if (t.aim != null) n.aim = Math.max(0, num(it.aim, t.aim));
+      return n;
+    });
+    return o;
+  }
+
+  // ---------- Storage ----------
+  function readRooms() {
+    try {
+      var a = JSON.parse(localStorage.getItem(STORE_ROOMS) || "[]");
+      return Array.isArray(a) ? a.map(normalize) : [];
+    } catch (e) { return []; }
+  }
+  function writeRooms(list) {
+    try {
+      localStorage.setItem(STORE_ROOMS, JSON.stringify(list));
+      return true;
+    } catch (e) {
+      toast("Kunne ikke gemme i browseren. Eksportér rummet som fil i stedet.");
+      return false;
+    }
+  }
+  function saveDraft() {
+    try { localStorage.setItem(STORE_DRAFT, JSON.stringify({ room: room, savedSig: savedSig })); } catch (e) {}
+  }
+  function saveOpts() {
+    try { localStorage.setItem(STORE_OPTS, JSON.stringify(opts)); } catch (e) {}
+  }
+
+  // ---------- Geometry ----------
+  function corners(it) {
+    var c = Math.cos(rad(it.rot)), s = Math.sin(rad(it.rot)), hw = it.w / 2, hd = it.d / 2;
+    return [[-hw, -hd], [hw, -hd], [hw, hd], [-hw, hd]].map(function (p) {
+      return { x: it.x + p[0] * c - p[1] * s, y: it.y + p[0] * s + p[1] * c };
+    });
+  }
+  function bbox(it) {
+    var c = corners(it), b = { x0: Infinity, y0: Infinity, x1: -Infinity, y1: -Infinity };
+    c.forEach(function (p) {
+      b.x0 = Math.min(b.x0, p.x); b.y0 = Math.min(b.y0, p.y);
+      b.x1 = Math.max(b.x1, p.x); b.y1 = Math.max(b.y1, p.y);
+    });
+    return b;
+  }
+  function overlaps(A, B) {
+    var polys = [A, B];
+    for (var i = 0; i < 2; i++) {
+      var P = polys[i];
+      for (var j = 0; j < P.length; j++) {
+        var p1 = P[j], p2 = P[(j + 1) % P.length];
+        var nx = p2.y - p1.y, ny = p1.x - p2.x, len = Math.hypot(nx, ny) || 1;
+        nx /= len; ny /= len;
+        var a0 = Infinity, a1 = -Infinity, b0 = Infinity, b1 = -Infinity;
+        A.forEach(function (p) { var v = p.x * nx + p.y * ny; a0 = Math.min(a0, v); a1 = Math.max(a1, v); });
+        B.forEach(function (p) { var v = p.x * nx + p.y * ny; b0 = Math.min(b0, v); b1 = Math.max(b1, v); });
+        if (a1 <= b0 + 0.005 || b1 <= a0 + 0.005) return false;
+      }
+    }
+    return true;
+  }
+  function segPoint(p, a, b) {
+    var dx = b.x - a.x, dy = b.y - a.y, l2 = dx * dx + dy * dy;
+    var t = l2 ? clamp(((p.x - a.x) * dx + (p.y - a.y) * dy) / l2, 0, 1) : 0;
+    return { x: a.x + t * dx, y: a.y + t * dy };
+  }
+  function polyDist(A, B) {
+    var best = { d: Infinity };
+    function run(P, Q, flip) {
+      P.forEach(function (p) {
+        for (var j = 0; j < Q.length; j++) {
+          var q = segPoint(p, Q[j], Q[(j + 1) % Q.length]);
+          var d = Math.hypot(p.x - q.x, p.y - q.y);
+          if (d < best.d) best = flip ? { d: d, p: q, q: p } : { d: d, p: p, q: q };
+        }
+      });
+    }
+    run(A, B, false);
+    run(B, A, true);
+    return best;
+  }
+  function spotGeom(it) {
+    var dz = Math.max(0, it.h - it.aim), t = rad(it.tilt);
+    var reach = dz * Math.tan(t), slant = dz / Math.cos(t);
+    return { reach: reach, slant: slant, r: slant * Math.tan(rad(it.beam / 2)) };
+  }
+  function poolR(it) { return Math.max(0, it.h) * Math.tan(rad(it.beam / 2)); }
+
+  // Afspærringer står bevidst tæt på det, de beskytter, og tæller ikke som passage
+  function passable(it) { return TYPES[it.type].kind !== "guard"; }
+
+  function analyse() {
+    var clash = {}, warnings = [], passages = [];
+    var floor = room.items.filter(function (it) { return FLOOR[TYPES[it.type].kind]; });
+    var polys = floor.map(corners);
+    var W = room.w, D = room.d, pm = room.passMin;
+    floor.forEach(function (it, i) {
+      var b = bbox(it);
+      if (b.x0 < -0.01 || b.y0 < -0.01 || b.x1 > W + 0.01 || b.y1 > D + 0.01) {
+        clash[it.id] = 1;
+        warnings.push({ lvl: "bad", ids: [it.id], text: "står uden for rummet" });
+      }
+      for (var j = i + 1; j < floor.length; j++) {
+        var o = floor[j];
+        if (overlaps(polys[i], polys[j])) {
+          clash[it.id] = clash[o.id] = 1;
+          warnings.push({ lvl: "bad", ids: [it.id, o.id], text: "overlapper" });
+        } else if (opts.pass && passable(it) && passable(o) && !(TYPES[it.type].wall && TYPES[o.type].wall)) {
+          var pd = polyDist(polys[i], polys[j]);
+          if (pd.d > 0.01 && pd.d < pm) {
+            passages.push(pd);
+            warnings.push({ lvl: "w", ids: [it.id, o.id], text: "passage på " + m(pd.d) });
+          }
+        }
+      }
+      if (opts.pass && passable(it) && !TYPES[it.type].wall) {
+        var walls = [
+          { d: b.x0, p: { x: b.x0, y: (b.y0 + b.y1) / 2 }, q: null, n: "venstre væg" },
+          { d: W - b.x1, p: { x: b.x1, y: (b.y0 + b.y1) / 2 }, n: "højre væg" },
+          { d: b.y0, p: { x: (b.x0 + b.x1) / 2, y: b.y0 }, n: "øverste væg" },
+          { d: D - b.y1, p: { x: (b.x0 + b.x1) / 2, y: b.y1 }, n: "nederste væg" }
+        ];
+        // brug nærmeste hjørne mod væggen i stedet for midten af bounding box
+        var cs = polys[i];
+        walls[0].p = cs.reduce(function (a, c) { return c.x < a.x ? c : a; });
+        walls[1].p = cs.reduce(function (a, c) { return c.x > a.x ? c : a; });
+        walls[2].p = cs.reduce(function (a, c) { return c.y < a.y ? c : a; });
+        walls[3].p = cs.reduce(function (a, c) { return c.y > a.y ? c : a; });
+        walls[0].q = { x: 0, y: walls[0].p.y };
+        walls[1].q = { x: W, y: walls[1].p.y };
+        walls[2].q = { x: walls[2].p.x, y: 0 };
+        walls[3].q = { x: walls[3].p.x, y: D };
+        walls.forEach(function (wl) {
+          if (wl.d > 0.01 && wl.d < pm) {
+            passages.push({ d: wl.d, p: wl.p, q: wl.q });
+            warnings.push({ lvl: "w", ids: [it.id], text: "passage på " + m(wl.d) + " mod " + wl.n });
+          }
+        });
+      }
+    });
+    analysis = { clash: clash, warnings: warnings, passages: passages };
+  }
+
+  // ---------- View ----------
+  function box() {
+    var r = svg.getBoundingClientRect();
+    return { w: Math.max(1, r.width), h: Math.max(1, r.height) };
+  }
+  function mpp() { var b = box(); return Math.max(view.w / b.w, view.h / b.h); }
+  function fit() {
+    var b = box(), pad = WT + 0.9;
+    var w = room.w + 2 * pad, h = room.d + 2 * pad;
+    var ar = b.w / b.h;
+    if (w / h > ar) h = w / ar; else w = h * ar;
+    view = { x: room.w / 2 - w / 2, y: room.d / 2 - h / 2, w: w, h: h };
+  }
+  function zoomAt(z, cx, cy) {
+    var nw = clamp(view.w * z, 0.8, 400);
+    z = nw / view.w;
+    view.x = cx - (cx - view.x) * z;
+    view.y = cy - (cy - view.y) * z;
+    view.w *= z; view.h *= z;
+    render();
+  }
+  function toModel(e) {
+    var p = svg.createSVGPoint();
+    p.x = e.clientX; p.y = e.clientY;
+    p = p.matrixTransform(svg.getScreenCTM().inverse());
+    return { x: p.x, y: p.y };
+  }
+
+  // ---------- Drawing ----------
+  function R(cls, x, y, w, h) {
+    return '<rect class="' + cls + '" x="' + f(x) + '" y="' + f(y) + '" width="' + f(Math.max(0, w)) + '" height="' + f(Math.max(0, h)) + '"/>';
+  }
+  function L(cls, x1, y1, x2, y2) {
+    return '<line class="' + cls + '" x1="' + f(x1) + '" y1="' + f(y1) + '" x2="' + f(x2) + '" y2="' + f(y2) + '"/>';
+  }
+  function C(cls, x, y, r) {
+    return '<circle class="' + cls + '" cx="' + f(x) + '" cy="' + f(y) + '" r="' + f(Math.max(0, r)) + '"/>';
+  }
+
+  // Tegner et element i lokale koordinater (centreret i 0,0; bagside mod -y)
+  function shape(it, k, o) {
+    o = o || {};
+    var t = TYPES[it.type], w = it.w, d = it.d, x0 = -w / 2, y0 = -d / 2, s = "";
+    switch (t.kind) {
+      case "case":
+        s += R("case", x0, y0, w, d);
+        var ins = Math.min(0.05, w / 5, d / 5);
+        s += R("case-in", x0 + ins, y0 + ins, w - 2 * ins, d - 2 * ins);
+        if (it.type === "wallcase") s += L("case-back", x0, y0, -x0, y0);
+        if (it.type === "tablecase") s += L("case-in", x0 + ins, y0 + ins, -x0 - ins, -y0 - ins) + L("case-in", x0 + ins, -y0 - ins, -x0 - ins, y0 + ins);
+        break;
+      case "wall":
+        s += R("wall", x0, y0, w, d);
+        break;
+      case "door":
+        s += R("opening", x0, y0, w, d) + L("jamb", x0, y0, x0, -y0) + L("jamb", -x0, y0, -x0, -y0);
+        s += L("leaf", x0, -y0, x0, -y0 + w);
+        s += '<path class="swing" d="M' + f(x0) + " " + f(-y0 + w) + "A" + f(w) + " " + f(w) + " 0 0 0 " + f(-x0) + " " + f(-y0) + '"/>';
+        break;
+      case "window":
+        s += R("opening", x0, y0, w, d) + R("win", x0, y0, w, d) + L("win", x0, 0, -x0, 0);
+        break;
+      case "guard":
+        s += L("rope", x0, 0, -x0, 0) + C("post", x0, 0, Math.max(0.03, 3 * k)) + C("post", -x0, 0, Math.max(0.03, 3 * k));
+        break;
+      case "spot":
+        if (!o.icon) {
+          var g = spotGeom(it);
+          if (g.reach > 0.02) {
+            var r = Math.min(g.r, g.reach * 3);
+            s += '<path class="beam" d="M0 0L' + f(-r) + " " + f(-g.reach) + "A" + f(r) + " " + f(r) + " 0 0 1 " + f(r) + " " + f(-g.reach) + 'Z"/>';
+            s += C("aim", 0, -g.reach, 2.5 * k);
+          } else {
+            s += C("beam", 0, 0, g.r);
+          }
+        } else {
+          s += '<path class="beam" d="M0 0L' + f(-w * 0.9) + " " + f(-w * 2.2) + "L" + f(w * 0.9) + " " + f(-w * 2.2) + 'Z"/>';
+        }
+        s += L("lamp-dir", 0, 0, 0, -w * 0.9) + C("lamp", 0, 0, w / 2);
+        break;
+      case "down":
+        if (!o.icon) s += C("beam pool", 0, 0, poolR(it));
+        else s += C("beam pool", 0, 0, w * 1.4);
+        s += C("lamp", 0, 0, w / 2);
+        break;
+      case "track":
+        s += R("track", x0, y0, w, d);
+        break;
+      case "plinth":
+        s += R("plinth", x0, y0, w, d) + L("plinth-x", x0, y0, -x0, -y0);
+        break;
+      case "bench":
+        s += R("bench", x0, y0, w, d) + L("bench-s", x0, -d / 6, -x0, -d / 6) + L("bench-s", x0, d / 6, -x0, d / 6);
+        break;
+      case "sign":
+        s += R("sign", x0, y0, w, d) + L("sign-f", x0 + w * 0.1, -y0, -x0 - w * 0.1, -y0);
+        break;
+      case "screen":
+        s += R("screen", x0, y0, w, d) + L("screen-f", x0, -y0, -x0, -y0);
+        break;
+      case "art":
+        s += R("art", x0, y0, w, d);
+        break;
+    }
+    if (!o.icon && !o.thumb) {
+      var hw = Math.max(w, 14 * k), hd = Math.max(d, 14 * k);
+      s += R("hit", -hw / 2, -hd / 2, hw, hd);
+    }
+    return s;
+  }
+  var ORDER = { door: 0, window: 0, "case": 1, wall: 1, guard: 1, plinth: 1, bench: 1, sign: 1, screen: 1, art: 1, track: 2, down: 3, spot: 3 };
+  function sorted(items) {
+    return items.slice().sort(function (a, b) { return ORDER[TYPES[a.type].kind] - ORDER[TYPES[b.type].kind]; });
+  }
+  function tf(it) { return 'transform="translate(' + f(it.x) + " " + f(it.y) + ") rotate(" + f(it.rot) + ')"'; }
+
+  function roomShell(r) {
+    var W = r.w, D = r.d;
+    return R("p-floor", 0, 0, W, D) +
+      '<path class="p-rwall" fill-rule="evenodd" d="M' + f(-WT) + " " + f(-WT) + "H" + f(W + WT) + "V" + f(D + WT) + "H" + f(-WT) + "Z M0 0V" + f(D) + "H" + f(W) + 'V0Z"/>';
+  }
+
+  function niceStep(min) {
+    var steps = [0.5, 1, 2, 5, 10, 20, 50];
+    for (var i = 0; i < steps.length; i++) if (steps[i] >= min) return steps[i];
+    return 100;
+  }
+
+  function render() {
+    var W = room.w, D = room.d, k = mpp();
+    svg.setAttribute("viewBox", [view.x, view.y, view.w, view.h].map(f).join(" "));
+    svg.classList.toggle("nobeams", !opts.beams);
+    analyse();
+    var s = R("p-bg", view.x, view.y, view.w, view.h);
+    s += R("p-floor", 0, 0, W, D);
+    // gitter
+    var gx, gs = "";
+    if (0.5 / k >= 8) {
+      for (gx = 0.5; gx < W; gx += 1) gs += L("p-gl", gx, 0, gx, D);
+      for (gx = 0.5; gx < D; gx += 1) gs += L("p-gl", 0, gx, W, gx);
+    }
+    for (gx = 1; gx < W - 1e-6; gx += 1) gs += L("p-gm", gx, 0, gx, D);
+    for (gx = 1; gx < D - 1e-6; gx += 1) gs += L("p-gm", 0, gx, W, gx);
+    s += gs;
+    // linealer
+    var fs = 10 * k, step = niceStep(46 * k);
+    for (gx = 0; gx <= W + 1e-6; gx += step) {
+      s += '<text class="p-ruler" x="' + f(gx) + '" y="' + f(-WT - 6 * k) + '" font-size="' + f(fs) + '" text-anchor="middle">' + nf(gx, 0) + "</text>";
+    }
+    for (gx = 0; gx <= D + 1e-6; gx += step) {
+      s += '<text class="p-ruler" x="' + f(-WT - 6 * k) + '" y="' + f(gx + fs * 0.35) + '" font-size="' + f(fs) + '" text-anchor="end">' + nf(gx, 0) + "</text>";
+    }
+    s += '<text class="p-ruler" x="' + f(W + WT + 6 * k) + '" y="' + f(-WT - 6 * k) + '" font-size="' + f(fs) + '">m</text>';
+
+    var items = sorted(room.items);
+    // døre og vinduer tegnes oven på ydervæggen
+    s += '<path class="p-rwall" fill-rule="evenodd" d="M' + f(-WT) + " " + f(-WT) + "H" + f(W + WT) + "V" + f(D + WT) + "H" + f(-WT) + "Z M0 0V" + f(D) + "H" + f(W) + 'V0Z"/>';
+    items.forEach(function (it) {
+      s += '<g class="it' + (analysis.clash[it.id] ? " clash" : "") + '" data-id="' + esc(it.id) + '" ' + tf(it) + ">" + shape(it, k) + "</g>";
+    });
+    // passager
+    if (opts.pass) {
+      analysis.passages.forEach(function (p) {
+        s += L("pass", p.p.x, p.p.y, p.q.x, p.q.y);
+        s += '<text class="passt" x="' + f((p.p.x + p.q.x) / 2 + 4 * k) + '" y="' + f((p.p.y + p.q.y) / 2 - 4 * k) + '" font-size="' + f(10 * k) + '">' + nf(p.d, 2) + "</text>";
+      });
+    }
+    // koder
+    if (opts.labels) {
+      var ls = 11 * k;
+      items.forEach(function (it) {
+        if (!it.label) return;
+        var t = TYPES[it.type], lx = it.x, ly = it.y + ls * 0.35, cls = "lbl";
+        if (t.light && t.kind !== "track") { lx = it.x + it.w / 2 + 4 * k; ly = it.y - it.w / 2 - 2 * k; cls = "lbl l"; }
+        else if (t.kind === "track") cls = "lbl l";
+        s += '<text class="' + cls + '" x="' + f(lx) + '" y="' + f(ly) + '" font-size="' + f(ls) + '"' + (cls === "lbl" || t.kind === "track" ? ' text-anchor="middle"' : "") + ">" + esc(it.label) + "</text>";
+      });
+    }
+    // markering
+    var it = selected();
+    if (it) s += selection(it, k);
+    svg.innerHTML = s;
+    $("zoomLvl").textContent = "1 m ≈ " + Math.round(1 / k) + " px";
+  }
+
+  function selection(it, k) {
+    var t = TYPES[it.type], pad = 4 * k, x0 = -it.w / 2, y0 = -it.d / 2, hr = 6 * k, s = "";
+    s += "<g " + tf(it) + ">";
+    s += R("selbox", x0 - pad, y0 - pad, it.w + 2 * pad, it.d + 2 * pad);
+    if (t.kind !== "down") {
+      var hy = y0 - pad - 22 * k;
+      s += L("handle-l", 0, y0 - pad, 0, hy);
+      s += '<circle class="handle" data-h="rot" cx="0" cy="' + f(hy) + '" r="' + f(hr) + '"/>';
+    }
+    if (t.resize.indexOf("w") >= 0) s += R("handle rs", -x0 + pad - hr * 0.8, -hr * 0.8, hr * 1.6, hr * 1.6).replace("<rect", '<rect data-h="w"');
+    if (t.resize.indexOf("d") >= 0) s += R("handle rs", -hr * 0.8, -y0 + pad - hr * 0.8, hr * 1.6, hr * 1.6).replace("<rect", '<rect data-h="d" style="cursor:ns-resize"');
+    s += "</g>";
+    // afstande til væggene for elementer på gulvet
+    if (FLOOR[t.kind]) {
+      var b = bbox(it), cx = (b.x0 + b.x1) / 2, cy = (b.y0 + b.y1) / 2, fs = 10 * k;
+      var dims = [
+        [b.x0, cy, 0, cy, b.x0], [b.x1, cy, room.w, cy, room.w - b.x1],
+        [cx, b.y0, cx, 0, b.y0], [cx, b.y1, cx, room.d, room.d - b.y1]
+      ];
+      dims.forEach(function (dm) {
+        if (dm[4] <= 0.005) return;
+        s += L("dim", dm[0], dm[1], dm[2], dm[3]);
+        var tx = (dm[0] + dm[2]) / 2, ty = (dm[1] + dm[3]) / 2;
+        var horiz = dm[1] === dm[3];
+        s += '<text class="dimt" font-size="' + f(fs) + '" text-anchor="middle" x="' + f(tx) + '" y="' + f(horiz ? ty - 4 * k : ty + fs * 0.35) + '"' +
+          (horiz ? "" : ' dx="' + f(0) + '"') + ">" + nf(dm[4], 2) + "</text>";
+      });
+    }
+    return s;
+  }
+
+  function thumbSVG(r, cls) {
+    var pad = WT + 0.3, s = roomShell(r), k = (r.w + 2 * pad) / 120;
+    sorted(r.items).forEach(function (it) {
+      s += "<g " + tf(it) + ">" + shape(it, k, { thumb: true }) + "</g>";
+    });
+    return '<svg class="' + cls + '" viewBox="' + [-pad, -pad, r.w + 2 * pad, r.d + 2 * pad].map(f).join(" ") + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' + s + "</svg>";
+  }
+
+  // ---------- Palette ----------
+  function buildPalette() {
+    var html = "";
+    GROUPS.forEach(function (g, gi) {
+      html += '<div class="grp"><span class="label">' + g + '</span><div class="items">';
+      Object.keys(TYPES).forEach(function (key) {
+        var t = TYPES[key];
+        if (t.group !== gi) return;
+        var it = { type: key, w: t.w, d: t.d, h: 3, rot: 0, x: 0, y: 0, beam: t.beam, tilt: t.tilt, aim: t.aim };
+        var span = Math.max(t.w, t.d, t.light && t.kind !== "track" ? 0.6 : 0) * 1.15;
+        var vb = [-span / 2, -span / 2 * 24 / 34, span, span * 24 / 34];
+        if (t.kind === "spot") vb = [-0.25, -0.38, 0.5, 0.5 * 24 / 34];
+        if (t.kind === "door") vb = [-0.7, -0.25, 1.4, 1.4 * 24 / 34];
+        html += '<button type="button" data-add="' + key + '"><svg viewBox="' + vb.map(f).join(" ") + '" aria-hidden="true">' +
+          shape(it, span / 34, { icon: true }) + "</svg>" + t.name + "</button>";
+      });
+      html += "</div></div>";
+    });
+    $("palette").innerHTML = html;
+  }
+
+  // ---------- Items ----------
+  function selected() {
+    if (!selId) return null;
+    for (var i = 0; i < room.items.length; i++) if (room.items[i].id === selId) return room.items[i];
+    return null;
+  }
+  function nextLabel(pre) {
+    var n = 0, re = new RegExp("^" + pre + "(\\d+)$");
+    room.items.forEach(function (it) {
+      var mm = re.exec(it.label || "");
+      if (mm) n = Math.max(n, parseInt(mm[1], 10));
+    });
+    return pre + (n + 1);
+  }
+  function addItem(type, props) {
+    var t = TYPES[type];
+    var cx = clamp(view.x + view.w / 2, 0, room.w), cy = clamp(view.y + view.h / 2, 0, room.d);
+    var it = {
+      id: uid(), type: type, label: nextLabel(t.pre), note: "",
+      x: cx, y: cy, w: t.w, d: t.d, h: t.h != null ? t.h : room.h, rot: 0
+    };
+    if (t.beam != null) it.beam = t.beam;
+    if (t.tilt != null) it.tilt = t.tilt;
+    if (t.aim != null) it.aim = t.aim;
+    if (props) for (var p in props) it[p] = props[p];
+    if (!props && t.wall) wallSnap(it, true);
+    room.items.push(it);
+    return it;
+  }
+
+  // Lægger vægbundne elementer mod nærmeste væg
+  function wallSnap(it, force) {
+    var t = TYPES[it.type];
+    if (!t.wall) return;
+    var W = room.w, D = room.d;
+    var dist = [it.y, W - it.x, D - it.y, it.x]; // top, højre, bund, venstre
+    var best = 0;
+    for (var i = 1; i < 4; i++) if (dist[i] < dist[best]) best = i;
+    var zone = it.d / 2 + Math.max(0.35, 18 * mpp());
+    if (!force && dist[best] > zone) return;
+    var off = t.wall === "in" ? -WT + it.d / 2 : it.d / 2;
+    var hw = it.w / 2;
+    if (best === 0) { it.rot = 0; it.y = off; it.x = clamp(it.x, hw, W - hw); }
+    if (best === 1) { it.rot = 90; it.x = W - off; it.y = clamp(it.y, hw, D - hw); }
+    if (best === 2) { it.rot = 180; it.y = D - off; it.x = clamp(it.x, hw, W - hw); }
+    if (best === 3) { it.rot = 270; it.x = off; it.y = clamp(it.y, hw, D - hw); }
+  }
+  function snapV(v) { return opts.grid > 0 ? Math.round(v / opts.grid) * opts.grid : Math.round(v * 1000) / 1000; }
+
+  function removeSelected() {
+    var it = selected();
+    if (!it) return;
+    room.items = room.items.filter(function (x) { return x.id !== it.id; });
+    selId = null;
+    commit(); buildProps();
+  }
+  function duplicateSelected() {
+    var it = selected();
+    if (!it) return;
+    var c = clone(it);
+    c.id = uid();
+    c.label = nextLabel(TYPES[it.type].pre);
+    c.x += 0.3; c.y += 0.3;
+    room.items.push(c);
+    selId = c.id;
+    commit(); buildProps();
+  }
+  function rotateSelected(deg) {
+    var it = selected();
+    if (!it) return;
+    it.rot = (((it.rot + deg) % 360) + 360) % 360;
+    commit(); syncProps();
+  }
+  function select(id) {
+    selId = id;
+    buildProps();
+    render();
+    renderList();
+  }
+
+  // ---------- History ----------
+  function commit(skipHist) {
+    if (!skipHist) {
+      var cur = JSON.stringify(room);
+      if (hist[hi] !== cur) {
+        hist = hist.slice(0, hi + 1);
+        hist.push(cur);
+        if (hist.length > 150) hist.shift();
+        hi = hist.length - 1;
+      }
+    }
+    saveDraft();
+    render();
+    renderList();
+    updateState();
+  }
+  function resetHistory() { hist = [JSON.stringify(room)]; hi = 0; }
+  function undo() { if (hi > 0) { hi--; restore(); } }
+  function redo() { if (hi < hist.length - 1) { hi++; restore(); } }
+  function restore() {
+    room = JSON.parse(hist[hi]);
+    if (!selected()) selId = null;
+    $("roomName").value = room.name;
+    commit(true);
+    buildProps();
+  }
+
+  // ---------- Save state ----------
+  function updateState() {
+    var el = $("saveState"), n = readRooms().length;
+    $("nSaved").textContent = n ? "(" + n + ")" : "";
+    if (savedSig == null) { el.textContent = "Ikke gemt endnu"; el.className = "savestate dirty"; }
+    else if (sig(room) === savedSig) { el.textContent = "Gemt"; el.className = "savestate ok"; }
+    else { el.textContent = "Ændringer ikke gemt"; el.className = "savestate dirty"; }
+    $("bUndo").disabled = hi <= 0;
+    $("bRedo").disabled = hi >= hist.length - 1;
+    $("phName").textContent = room.name || "Rum uden navn";
+    $("phMeta").textContent = m(room.w) + " × " + m(room.d) + ", loftshøjde " + m(room.h) + " · udskrevet " + new Date().toLocaleDateString("da-DK");
+    document.title = (room.name ? room.name + " – " : "") + "Indretning af rum";
+  }
+  function isDirty() { return savedSig == null ? room.items.length > 0 || !!room.name : sig(room) !== savedSig; }
+
+  function save(asCopy) {
+    var name = $("roomName").value.trim();
+    if (!name) {
+      $("roomName").focus();
+      toast("Giv rummet et navn, før du gemmer.");
+      return;
+    }
+    if (asCopy) {
+      room = clone(room);
+      room.id = uid();
+      if (name === room.name || !room.name) name = name + " (kopi)";
+    }
+    room.name = name;
+    $("roomName").value = name;
+    room.updated = new Date().toISOString();
+    var list = readRooms().filter(function (r) { return r.id !== room.id; });
+    list.unshift(clone(room));
+    if (!writeRooms(list)) return;
+    savedSig = sig(room);
+    if (asCopy) resetHistory();
+    commit();
+    toast(asCopy ? "Gemt som kopi: " + name : "Gemt: " + name);
+  }
+  function openRoom(r, fresh) {
+    room = normalize(r);
+    savedSig = fresh ? null : sig(room);
+    selId = null;
+    $("roomName").value = room.name;
+    resetHistory();
+    fit();
+    commit(true);
+    buildProps();
+  }
+  function confirmLeave() {
+    return !isDirty() || confirm("Det aktuelle rum har ændringer, der ikke er gemt. Vil du fortsætte uden at gemme?");
+  }
+
+  // ---------- Properties panel ----------
+  function numField(key, label, unit, val, step, scope) {
+    return '<div class="field"><label for="p_' + key + '">' + label + '</label><div class="unit"><input id="p_' + key + '" data-k="' + key + '" data-s="' + scope +
+      '" type="number" step="' + step + '" value="' + f(val) + '" inputmode="decimal"><span>' + unit + "</span></div></div>";
+  }
+  function buildProps() {
+    var it = selected(), h = "";
+    if (!it) {
+      h += '<div class="head"><span class="label">Rummet</span><h2>' + esc(room.name || "Rum uden navn") + "</h2></div>";
+      h += '<fieldset><legend class="label">Mål</legend><div class="row3">' +
+        numField("w", "Bredde", "m", room.w, 0.1, "room") + numField("d", "Dybde", "m", room.d, 0.1, "room") + numField("h", "Loft", "m", room.h, 0.1, "room") +
+        "</div>" + numField("passMin", "Mindste passage", "m", room.passMin, 0.05, "room") +
+        '<span class="hint muted" style="font-size:.82rem">Smallere gange end dette markeres. 0,9 m er minimum for kørestol; 1,2–1,5 m anbefales i udstillinger.</span></fieldset>';
+      h += '<fieldset><legend class="label">Overblik</legend><dl class="facts" id="facts"></dl></fieldset>';
+      h += '<fieldset><legend class="label">Kontrol</legend><div id="warns"></div></fieldset>';
+      h += '<fieldset><div class="field"><label for="p_note">Noter om rummet</label><textarea id="p_note" data-k="note" data-s="room" class="text" rows="3" placeholder="Klima, gulvbelastning, tema …">' + esc(room.note) + "</textarea></div></fieldset>";
+      $("props").innerHTML = h;
+      renderRoomInfo();
+      return;
+    }
+    var t = TYPES[it.type], lb = t.labels || {};
+    h += '<div class="head"><span class="label">' + GROUPS[t.group] + "</span><h2>" + esc(it.label || t.name) + '</h2><span class="type">' + t.name + "</span></div>";
+    h += '<fieldset><div class="field"><label for="p_label">Kode / navn</label><input id="p_label" class="text" data-k="label" data-s="item" value="' + esc(it.label) + '" autocomplete="off"></div>' +
+      '<div class="field"><label for="p_note">' + (t.light ? "Bemærkning" : "Indhold / genstande") + '</label><textarea id="p_note" class="text" data-k="note" data-s="item" rows="2" placeholder="' +
+      (t.light ? "Fx armatur, lampe, filter" : "Fx genstandsnumre, tema") + '">' + esc(it.note) + "</textarea></div></fieldset>";
+    h += '<fieldset><legend class="label">Placering</legend><div class="row3">' +
+      numField("x", "x", "m", it.x, 0.05, "item") + numField("y", "y", "m", it.y, 0.05, "item") + numField("rot", "Drejning", "°", it.rot, 1, "item") + "</div></fieldset>";
+    h += '<fieldset><legend class="label">' + (t.light ? "Lyskilde" : "Mål") + "</legend>";
+    if (t.kind === "spot" || t.kind === "down") {
+      h += '<div class="row2">' + numField("h", "Monteringshøjde", "m", it.h, 0.05, "item") + numField("beam", "Strålevinkel", "°", it.beam, 1, "item") + "</div>";
+      if (t.kind === "spot") h += '<div class="row2">' + numField("tilt", "Vinkel fra lodret", "°", it.tilt, 1, "item") + numField("aim", "Sigtehøjde", "m", it.aim, 0.05, "item") + "</div>";
+      h += '<p class="calc" id="lightCalc"></p>';
+    } else {
+      var dims = [["w", lb.w || "Bredde"]];
+      if (t.kind !== "track") dims.push(["d", lb.d || "Dybde"]);
+      dims.push(["h", t.light ? "Monteringshøjde" : (lb.h || "Højde")]);
+      h += '<div class="row' + dims.length + '">' + dims.map(function (dm) { return numField(dm[0], dm[1], "m", it[dm[0]], 0.01, "item"); }).join("") + "</div>";
+    }
+    h += "</fieldset>";
+    h += '<div class="actions"><button type="button" class="btn sm" data-act="rot">Drej 90°</button><button type="button" class="btn sm" data-act="dup">Duplikér</button>' +
+      '<button type="button" class="btn sm danger" data-act="del">Slet</button><button type="button" class="btn sm quiet" data-act="none">Færdig</button></div>';
+    h += '<div id="warns"></div>';
+    $("props").innerHTML = h;
+    syncProps();
+  }
+  function syncProps() {
+    var it = selected();
+    if (!it) { renderRoomInfo(); return; }
+    ["x", "y", "rot", "w", "d", "h", "beam", "tilt", "aim"].forEach(function (k) {
+      var el = $("p_" + k);
+      if (el && document.activeElement !== el && it[k] != null) el.value = f(Math.round(it[k] * 1000) / 1000);
+    });
+    var lc = $("lightCalc");
+    if (lc) {
+      if (it.type === "spot") {
+        var g = spotGeom(it);
+        lc.innerHTML = "Lyset rammer sigtehøjden <b>" + m(g.reach) + "</b> fra spotten (afstand <b>" + m(g.slant) + "</b>). Lyskeglens diameter dér: <b>" + m(2 * g.r) + "</b>.";
+      } else {
+        lc.innerHTML = "Lyspølen på gulvet har en diameter på <b>" + m(2 * poolR(it)) + "</b>.";
+      }
+    }
+    renderWarnings(it.id);
+  }
+
+  function renderRoomInfo() {
+    var fe = $("facts");
+    if (!fe) return;
+    var cnt = function (fn) { return room.items.filter(fn).length; };
+    var kind = function (it) { return TYPES[it.type].kind; };
+    var cases = cnt(function (it) { return kind(it) === "case"; });
+    var lights = cnt(function (it) { return kind(it) === "spot" || kind(it) === "down"; });
+    var wallLen = room.items.reduce(function (a, it) { return a + (kind(it) === "wall" ? it.w : 0); }, 0);
+    var used = room.items.reduce(function (a, it) { return a + (FLOOR[kind(it)] && kind(it) !== "guard" ? it.w * it.d : 0); }, 0);
+    var area = room.w * room.d;
+    fe.innerHTML = [
+      ["Gulvareal", nf(area, 1) + " m²"],
+      ["Optaget gulv", nf(used / area * 100, 0) + " %"],
+      ["Montrer", String(cases)],
+      ["Lyskilder", String(lights)],
+      ["Skillevægge", nf(wallLen, 1) + " m"],
+      ["Rumfang", nf(area * room.h, 0) + " m³"]
+    ].map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+    renderWarnings(null);
+  }
+  function labelOf(id) {
+    for (var i = 0; i < room.items.length; i++) if (room.items[i].id === id) {
+      var it = room.items[i];
+      return it.label || TYPES[it.type].name;
+    }
+    return "?";
+  }
+  function renderWarnings(onlyId) {
+    var el = $("warns");
+    if (!el) return;
+    var ws = analysis.warnings.filter(function (w) { return !onlyId || w.ids.indexOf(onlyId) >= 0; });
+    if (!ws.length) {
+      el.innerHTML = onlyId ? "" : '<p class="okmsg">Ingen overlap, og alle passager er mindst ' + m(room.passMin) + ".</p>";
+      return;
+    }
+    var more = ws.length > 12 ? ws.length - 12 : 0;
+    el.innerHTML = '<ul class="warn">' + ws.slice(0, 12).map(function (w) {
+      var names = w.ids.map(function (id) { return '<button type="button" data-sel="' + esc(id) + '">' + esc(labelOf(id)) + "</button>"; });
+      var txt = w.ids.length === 2 && w.text === "overlapper" ? names[0] + " overlapper " + names[1]
+        : w.ids.length === 2 ? names[0] + " og " + names[1] + ": " + w.text
+        : names[0] + " " + w.text;
+      return '<li class="' + (w.lvl === "w" ? "w" : "") + '">' + txt + "</li>";
+    }).join("") + (more ? '<li class="w">… og ' + more + " til</li>" : "") + "</ul>";
+  }
+
+  // ---------- Inventory ----------
+  function natural(a, b) { return String(a).localeCompare(String(b), "da", { numeric: true }); }
+  function renderList() {
+    var items = room.items.slice().sort(function (a, b) {
+      return TYPES[a.type].group - TYPES[b.type].group || natural(a.label, b.label);
+    });
+    var counts = {};
+    room.items.forEach(function (it) { counts[it.type] = (counts[it.type] || 0) + 1; });
+    $("chips").innerHTML = Object.keys(TYPES).filter(function (k) { return counts[k]; }).map(function (k) {
+      return '<span class="chip"><b>' + counts[k] + "</b> " + TYPES[k].name.toLowerCase() + "</span>";
+    }).join("") || '<span class="muted">Rummet er tomt. Vælg et element i listen til venstre for at placere det.</span>';
+    $("inv").innerHTML = items.map(function (it) {
+      var t = TYPES[it.type], dimsTxt;
+      if (t.kind === "spot") dimsTxt = "h " + nf(it.h, 2) + " · " + nf(it.beam, 0) + "° · " + nf(it.tilt, 0) + "° fra lodret";
+      else if (t.kind === "down") dimsTxt = "h " + nf(it.h, 2) + " · " + nf(it.beam, 0) + "°";
+      else dimsTxt = nf(it.w, 2) + " × " + nf(it.d, 2) + " × " + nf(it.h, 2);
+      return '<tr data-sel="' + esc(it.id) + '"' + (it.id === selId ? ' class="on"' : "") + '><td><button type="button" class="code" data-sel="' + esc(it.id) + '">' +
+        esc(it.label || "–") + "</button>" + (analysis.clash[it.id] ? ' <span style="color:var(--bad)" title="Overlap eller uden for rummet">●</span>' : "") +
+        "</td><td>" + t.name + '</td><td class="n">' + dimsTxt + '</td><td class="n">' + nf(it.x, 2) + " ; " + nf(it.y, 2) +
+        '</td><td class="n">' + nf(it.rot, 0) + '°</td><td class="note">' + esc(it.note) + "</td></tr>";
+    }).join("") || '<tr><td colspan="6" class="muted">Ingen elementer endnu.</td></tr>';
+  }
+
+  // ---------- Saved rooms dialog ----------
+  function fmtDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    return d.toLocaleDateString("da-DK", { day: "numeric", month: "short", year: "numeric" }) + " kl. " +
+      d.toLocaleTimeString("da-DK", { hour: "2-digit", minute: "2-digit" });
+  }
+  function renderRooms() {
+    var q = $("dlgSearch").value.trim().toLowerCase();
+    var list = readRooms().sort(function (a, b) { return String(b.updated || "").localeCompare(String(a.updated || "")); });
+    var shown = list.filter(function (r) { return !q || (r.name || "").toLowerCase().indexOf(q) >= 0 || (r.note || "").toLowerCase().indexOf(q) >= 0; });
+    if (!list.length) {
+      $("dlgList").innerHTML = '<p class="empty">Du har ikke gemt nogen rum endnu. Giv rummet et navn, og tryk på <b>Gem</b>.</p>';
+      return;
+    }
+    if (!shown.length) {
+      $("dlgList").innerHTML = '<p class="empty">Ingen rum matcher søgningen.</p>';
+      return;
+    }
+    $("dlgList").innerHTML = shown.map(function (r) {
+      return '<div class="room' + (r.id === room.id ? " cur" : "") + '">' + thumbSVG(r, "thumb") +
+        "<div><h3>" + esc(r.name || "Uden navn") + '</h3><p class="meta">' + nf(r.w, 1) + " × " + nf(r.d, 1) + " m · " + r.items.length +
+        " elementer · gemt " + fmtDate(r.updated) + (r.id === room.id ? " · <b>åben nu</b>" : "") + "</p></div>" +
+        '<div class="acts"><button type="button" class="btn sm primary" data-open="' + esc(r.id) + '">Åbn</button>' +
+        '<button type="button" class="btn sm" data-export="' + esc(r.id) + '">Eksportér</button>' +
+        '<button type="button" class="btn sm danger" data-del="' + esc(r.id) + '">Slet</button></div></div>';
+    }).join("");
+  }
+  function download(name, data) {
+    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  function slug(s) {
+    return (s || "rum").toLowerCase().replace(/æ/g, "ae").replace(/ø/g, "oe").replace(/å/g, "aa")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "rum";
+  }
+  function pack(rooms) { return { format: "museum-indretning", version: 1, exported: new Date().toISOString(), rooms: rooms }; }
+  function importFile(file) {
+    var rd = new FileReader();
+    rd.onload = function () {
+      var data;
+      try { data = JSON.parse(rd.result); } catch (e) { toast("Filen kunne ikke læses som JSON."); return; }
+      var rooms = Array.isArray(data) ? data : data && Array.isArray(data.rooms) ? data.rooms : data && Array.isArray(data.items) ? [data] : null;
+      if (!rooms || !rooms.length) { toast("Filen indeholder ingen rum."); return; }
+      rooms = rooms.map(normalize);
+      var list = readRooms();
+      rooms.forEach(function (r) {
+        if (!r.updated) r.updated = new Date().toISOString();
+        if (!r.name) r.name = "Importeret rum";
+        list = list.filter(function (x) { return x.id !== r.id; });
+        list.unshift(r);
+      });
+      if (!writeRooms(list)) return;
+      renderRooms();
+      updateState();
+      if (rooms.length === 1 && confirmLeave()) {
+        openRoom(rooms[0]);
+        $("dlgRooms").close();
+        toast("Importeret og åbnet: " + rooms[0].name);
+      } else {
+        toast(rooms.length + (rooms.length === 1 ? " rum" : " rum") + " importeret.");
+      }
+    };
+    rd.readAsText(file);
+  }
+
+  // ---------- Toast ----------
+  var toastT;
+  function toast(msg) {
+    var el = $("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  }
+
+  // ---------- Pointer interaction ----------
+  var drag = null;
+  svg.addEventListener("pointerdown", function (e) {
+    if (e.button !== 0) return;
+    svg.focus({ preventScroll: true });
+    var p = toModel(e), hEl = e.target.closest("[data-h]"), iEl = e.target.closest("[data-id]");
+    var it = selected();
+    if (hEl && it) {
+      drag = { mode: hEl.getAttribute("data-h"), it: it, moved: false };
+    } else if (iEl) {
+      var id = iEl.getAttribute("data-id");
+      if (id !== selId) select(id);
+      it = selected();
+      drag = { mode: "move", it: it, dx: p.x - it.x, dy: p.y - it.y, moved: false };
+    } else {
+      drag = { mode: "pan", sx: e.clientX, sy: e.clientY, vx: view.x, vy: view.y, moved: false };
+      svg.classList.add("panning");
+    }
+    svg.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  svg.addEventListener("pointermove", function (e) {
+    if (!drag) return;
+    var p = toModel(e), it = drag.it;
+    if (drag.mode === "pan") {
+      var k = mpp();
+      if (Math.abs(e.clientX - drag.sx) + Math.abs(e.clientY - drag.sy) > 3) drag.moved = true;
+      view.x = drag.vx - (e.clientX - drag.sx) * k;
+      view.y = drag.vy - (e.clientY - drag.sy) * k;
+      render();
+      return;
+    }
+    drag.moved = true;
+    if (drag.mode === "move") {
+      it.x = clamp(snapV(p.x - drag.dx), -WT, room.w + WT);
+      it.y = clamp(snapV(p.y - drag.dy), -WT, room.d + WT);
+      if (!e.altKey) wallSnap(it, false);
+    } else if (drag.mode === "rot") {
+      var a = Math.atan2(p.y - it.y, p.x - it.x) * 180 / Math.PI + 90;
+      if (!e.shiftKey) a = Math.round(a / 15) * 15;
+      it.rot = ((Math.round(a) % 360) + 360) % 360;
+    } else {
+      var c = Math.cos(rad(it.rot)), s = Math.sin(rad(it.rot));
+      var lx = (p.x - it.x) * c + (p.y - it.y) * s, ly = -(p.x - it.x) * s + (p.y - it.y) * c;
+      if (drag.mode === "w") {
+        var nw = Math.max(0.05, snapV(lx + it.w / 2)), dw = (nw - it.w) / 2;
+        it.x += dw * c; it.y += dw * s; it.w = nw;
+      } else {
+        var nd = Math.max(0.03, snapV(ly + it.d / 2)), dd = (nd - it.d) / 2;
+        it.x -= dd * s; it.y += dd * c; it.d = nd;
+      }
+    }
+    render();
+    syncProps();
+  });
+  function endDrag() {
+    if (!drag) return;
+    svg.classList.remove("panning");
+    if (drag.mode === "pan") {
+      if (!drag.moved && selId) select(null);
+    } else if (drag.moved) {
+      commit(); syncProps();
+    }
+    drag = null;
+  }
+  svg.addEventListener("pointerup", endDrag);
+  svg.addEventListener("pointercancel", endDrag);
+  svg.addEventListener("wheel", function (e) {
+    e.preventDefault();
+    var p = toModel(e);
+    zoomAt(Math.pow(1.0015, e.deltaY * (e.deltaMode === 1 ? 30 : 1)), p.x, p.y);
+  }, { passive: false });
+
+  function centerZoom(z) { zoomAt(z, view.x + view.w / 2, view.y + view.h / 2); }
+
+  // ---------- Keyboard ----------
+  document.addEventListener("keydown", function (e) {
+    var tag = (e.target.tagName || "").toLowerCase();
+    var typing = tag === "input" || tag === "textarea" || tag === "select";
+    var mod = e.ctrlKey || e.metaKey;
+    if (mod && e.key.toLowerCase() === "s") { e.preventDefault(); save(false); return; }
+    if ($("dlgRooms").open) return;
+    if (typing) return;
+    if (mod && e.key.toLowerCase() === "z") { e.preventDefault(); if (e.shiftKey) redo(); else undo(); return; }
+    if (mod && e.key.toLowerCase() === "y") { e.preventDefault(); redo(); return; }
+    var it = selected();
+    if (!it) return;
+    if (mod && e.key.toLowerCase() === "d") { e.preventDefault(); duplicateSelected(); return; }
+    if (e.key === "Delete" || e.key === "Backspace") { e.preventDefault(); removeSelected(); return; }
+    if (e.key === "Escape") { select(null); return; }
+    if (e.key === "r" || e.key === "R") { e.preventDefault(); rotateSelected(e.shiftKey ? -90 : 90); return; }
+    var step = (opts.grid || 0.01) * (e.shiftKey ? 10 : 1);
+    var mv = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    if (mv) {
+      e.preventDefault();
+      it.x = clamp(it.x + mv[0] * step, -WT, room.w + WT);
+      it.y = clamp(it.y + mv[1] * step, -WT, room.d + WT);
+      commit(); syncProps();
+    }
+  });
+
+  // ---------- UI wiring ----------
+  $("palette").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-add]");
+    if (!b) return;
+    var it = addItem(b.getAttribute("data-add"));
+    selId = it.id;
+    commit();
+    buildProps();
+  });
+
+  $("props").addEventListener("input", function (e) {
+    var el = e.target, k = el.getAttribute("data-k");
+    if (!k) return;
+    var target = el.getAttribute("data-s") === "room" ? room : selected();
+    if (!target) return;
+    if (k === "label" || k === "note") {
+      target[k] = el.value;
+      if (k === "label") { render(); var hh = document.querySelector(".props .head h2"); if (hh) hh.textContent = el.value || TYPES[target.type].name; }
+      saveDraft(); updateState();
+      return;
+    }
+    var v = parseFloat(el.value);
+    if (!isFinite(v)) return;
+    if (target === room) {
+      if (k === "w" || k === "d") v = clamp(v, 1, 200);
+      if (k === "h") v = clamp(v, 1.5, 30);
+      if (k === "passMin") v = clamp(v, 0.3, 5);
+    } else {
+      if (k === "rot") v = ((v % 360) + 360) % 360;
+      if (k === "w" || k === "d") v = Math.max(0.02, v);
+      if (k === "h" || k === "aim") v = Math.max(0, v);
+      if (k === "beam") v = clamp(v, 1, 170);
+      if (k === "tilt") v = clamp(v, 0, 85);
+    }
+    target[k] = v;
+    render();
+    if (target === room) renderRoomInfo(); else syncProps();
+    saveDraft(); updateState();
+  });
+  $("props").addEventListener("change", function (e) {
+    if (e.target.getAttribute("data-k")) { commit(); if (!selected()) buildProps(); else syncProps(); }
+  });
+  $("props").addEventListener("click", function (e) {
+    var a = e.target.closest("[data-act]"), s = e.target.closest("[data-sel]");
+    if (s) { select(s.getAttribute("data-sel")); return; }
+    if (!a) return;
+    var act = a.getAttribute("data-act");
+    if (act === "rot") rotateSelected(90);
+    if (act === "dup") duplicateSelected();
+    if (act === "del") removeSelected();
+    if (act === "none") select(null);
+  });
+  $("inv").addEventListener("click", function (e) {
+    var s = e.target.closest("[data-sel]");
+    if (!s) return;
+    select(s.getAttribute("data-sel"));
+    var it = selected();
+    if (it && (it.x < view.x || it.x > view.x + view.w || it.y < view.y || it.y > view.y + view.h)) { fit(); render(); }
+    var cr = svg.getBoundingClientRect();
+    if (cr.top < 0 || cr.bottom > window.innerHeight) document.querySelector(".stage").scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+
+  $("roomName").addEventListener("input", function () {
+    room.name = this.value;
+    saveDraft(); updateState();
+    var hh = document.querySelector(".props .head h2");
+    if (hh && !selected()) hh.textContent = room.name || "Rum uden navn";
+  });
+  $("roomName").addEventListener("change", function () { commit(); });
+  $("roomName").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); save(false); } });
+
+  $("bSave").addEventListener("click", function () { save(false); });
+  $("bSaveCopy").addEventListener("click", function () { save(true); });
+  $("bNew").addEventListener("click", function () {
+    if (!confirmLeave()) return;
+    openRoom(newRoom(), true);
+    $("roomName").focus();
+    toast("Nyt rum. Angiv mål i panelet til højre.");
+  });
+  $("bPrint").addEventListener("click", function () { window.print(); });
+  $("bUndo").addEventListener("click", undo);
+  $("bRedo").addEventListener("click", redo);
+  $("bZoomIn").addEventListener("click", function () { centerZoom(1 / 1.25); });
+  $("bZoomOut").addEventListener("click", function () { centerZoom(1.25); });
+  $("bFit").addEventListener("click", function () { fit(); render(); });
+
+  function bindOpt(id, key, parse) {
+    var el = $(id);
+    if (el.type === "checkbox") el.checked = !!opts[key]; else el.value = String(opts[key]);
+    el.addEventListener("change", function () {
+      opts[key] = el.type === "checkbox" ? el.checked : parse(el.value);
+      saveOpts();
+      render();
+      renderList();
+      if (selected()) syncProps(); else renderRoomInfo();
+    });
+  }
+
+  $("bOpen").addEventListener("click", function () {
+    $("dlgSearch").value = "";
+    renderRooms();
+    $("dlgRooms").showModal();
+  });
+  $("dlgClose").addEventListener("click", function () { $("dlgRooms").close(); });
+  $("dlgRooms").addEventListener("click", function (e) { if (e.target === this) this.close(); });
+  $("dlgSearch").addEventListener("input", renderRooms);
+  $("dlgList").addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    var list = readRooms(), id, r;
+    if ((id = b.getAttribute("data-open"))) {
+      r = list.filter(function (x) { return x.id === id; })[0];
+      if (!r) return;
+      if (id !== room.id && !confirmLeave()) return;
+      if (id === room.id && isDirty() && !confirm("Vil du kassere de ændringer, der ikke er gemt, og åbne den gemte version?")) return;
+      openRoom(r);
+      $("dlgRooms").close();
+      toast("Åbnet: " + (r.name || "Uden navn"));
+    } else if ((id = b.getAttribute("data-export"))) {
+      r = list.filter(function (x) { return x.id === id; })[0];
+      if (r) download(slug(r.name) + ".json", pack([r]));
+    } else if ((id = b.getAttribute("data-del"))) {
+      r = list.filter(function (x) { return x.id === id; })[0];
+      if (!r || !confirm("Slet “" + (r.name || "Uden navn") + "” permanent fra de gemte rum?")) return;
+      writeRooms(list.filter(function (x) { return x.id !== id; }));
+      if (id === room.id) { savedSig = null; saveDraft(); }
+      renderRooms();
+      updateState();
+      toast("Slettet: " + (r.name || "Uden navn"));
+    }
+  });
+  $("bExportAll").addEventListener("click", function () {
+    var list = readRooms();
+    if (!list.length) { toast("Der er ingen gemte rum at eksportere."); return; }
+    download("museum-rum-" + new Date().toISOString().slice(0, 10) + ".json", pack(list));
+  });
+  $("bImport").addEventListener("click", function () { $("fileImport").click(); });
+  $("fileImport").addEventListener("change", function () {
+    if (this.files && this.files[0]) importFile(this.files[0]);
+    this.value = "";
+  });
+
+  window.addEventListener("beforeprint", function () {
+    selId = null;
+    buildProps();
+    fit();
+    render();
+  });
+
+  // Hold visningens forhold i takt med lærredets størrelse
+  var lastBox = null;
+  new ResizeObserver(function () {
+    var b = box();
+    if (lastBox && lastBox.w > 1) {
+      var cx = view.x + view.w / 2, cy = view.y + view.h / 2;
+      view.w = view.w * b.w / lastBox.w;
+      view.h = view.w * b.h / b.w;
+      view.x = cx - view.w / 2; view.y = cy - view.h / 2;
+    } else {
+      fit();
+    }
+    lastBox = b;
+    render();
+  }).observe(svg);
+
+  // ---------- Eksempel ----------
+  function demo() {
+    room = newRoom();
+    room.name = "Eksempel – Sal 1";
+    room.w = 14; room.d = 9; room.h = 4.2;
+    room.note = "Eksempel. Omdøb og gem, eller start et nyt rum.";
+    var A = function (type, p) { return addItem(type, p); };
+    A("door", { x: -0.1, y: 4.5, w: 1.6, rot: 270 });
+    A("door", { x: 14.1, y: 6.8, w: 1.2, rot: 90 });
+    A("window", { x: 4, y: 9.1, w: 1.8, rot: 180 });
+    A("window", { x: 9, y: 9.1, w: 1.8, rot: 180 });
+    [2.5, 5, 7.5].forEach(function (x) { A("wallcase", { x: x, y: 0.25, w: 2, rot: 0, note: "" }); });
+    A("freecase", { x: 4.5, y: 4.6, note: "Hovedgenstand" });
+    A("tablecase", { x: 7.5, y: 4.9 });
+    A("pillarcase", { x: 12.3, y: 6.2 });
+    A("wall", { x: 10.5, y: 2, w: 4, rot: 90 });
+    A("art", { x: 10.41, y: 2, rot: 90 });
+    A("art", { x: 10.59, y: 2, rot: 270 });
+    A("art", { x: 13.97, y: 2, rot: 90 });
+    A("screen", { x: 13.94, y: 4.6, rot: 90 });
+    A("bench", { x: 6, y: 7.2 });
+    A("sign", { x: 1.6, y: 2.6 });
+    A("plinth", { x: 2.3, y: 6.6 });
+    A("guard", { x: 2.3, y: 7.4, w: 1.4 });
+    A("track", { x: 5, y: 2.1, w: 7, h: 4.2 });
+    [2.5, 5, 7.5].forEach(function (x) { A("spot", { x: x, y: 2.1, h: 4.2, rot: 0, aim: 1.4 }); });
+    A("spot", { x: 8.8, y: 2, h: 4.2, rot: 90, aim: 1.6 });
+    A("spot", { x: 12.2, y: 2, h: 4.2, rot: 270, aim: 1.6 });
+    A("downlight", { x: 4.5, y: 4.6, h: 4.2, beam: 24 });
+    A("downlight", { x: 7.5, y: 4.9, h: 4.2, beam: 24 });
+  }
+
+  // ---------- Start ----------
+  try {
+    var so = JSON.parse(localStorage.getItem(STORE_OPTS) || "null");
+    if (so) for (var k in opts) if (so[k] != null) opts[k] = so[k];
+  } catch (e) {}
+  bindOpt("optGrid", "grid", parseFloat);
+  bindOpt("optBeams", "beams");
+  bindOpt("optLabels", "labels");
+  bindOpt("optPass", "pass");
+
+  buildPalette();
+  var draft = null;
+  try { draft = JSON.parse(localStorage.getItem(STORE_DRAFT) || "null"); } catch (e) {}
+  if (draft && draft.room) {
+    room = normalize(draft.room);
+    savedSig = typeof draft.savedSig === "string" ? draft.savedSig : null;
+  } else if (!readRooms().length) {
+    demo();
+  } else {
+    room = newRoom();
+  }
+  $("roomName").value = room.name;
+  resetHistory();
+  fit();
+  commit(true);
+  buildProps();
+})();
+</script>
+</body>
+</html>
