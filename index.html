@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Udstillingslys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #eef0ee;
+  --surface: #ffffff;
+  --sunk: #e3e7e5;
+  --ink: #1b2024;
+  --muted: #5a646b;
+  --line: #cfd5d3;
+  --accent: #a8641a;
+  --accent-soft: #f5e3c8;
+  --beam: rgba(232, 168, 64, .35);
+  --good: #2e7a4d;
+  --good-soft: #dcefe3;
+  --warn: #9a6512;
+  --warn-soft: #f7e9cc;
+  --bad: #b0322a;
+  --bad-soft: #f6dcd9;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111416;
+    --surface: #1a1f22;
+    --sunk: #23292d;
+    --ink: #e6e9e7;
+    --muted: #9aa4aa;
+    --line: #333b40;
+    --accent: #e3a24c;
+    --accent-soft: #3a2c19;
+    --beam: rgba(240, 180, 80, .28);
+    --good: #6cc592;
+    --good-soft: #1c3326;
+    --warn: #e5b45c;
+    --warn-soft: #3a2f18;
+    --bad: #f08a80;
+    --bad-soft: #3d1f1c;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111416;
+  --surface: #1a1f22;
+  --sunk: #23292d;
+  --ink: #e6e9e7;
+  --muted: #9aa4aa;
+  --line: #333b40;
+  --accent: #e3a24c;
+  --accent-soft: #3a2c19;
+  --beam: rgba(240, 180, 80, .28);
+  --good: #6cc592;
+  --good-soft: #1c3326;
+  --warn: #e5b45c;
+  --warn-soft: #3a2f18;
+  --bad: #f08a80;
+  --bad-soft: #3d1f1c;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 var(--body);
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 28px 56px;
+}
+h1, h2, h3 {
+  font-family: var(--display);
+  font-stretch: 85%;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: 1.35rem; font-weight: 700; }
+h3 { font-size: 1rem; font-weight: 700; }
+p { margin: 0; }
+
+.label {
+  font-family: var(--display);
+  font-stretch: 90%;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Header */
+header.top {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+header.top p { color: var(--muted); max-width: 62ch; }
+
+/* Object sensitivity bar */
+.object {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  gap: 16px 28px;
+  align-items: start;
+}
+.object .limits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-family: var(--mono);
+  font-size: .9rem;
+}
+.object .limits b { font-weight: 500; color: var(--accent); }
+.object .examples { color: var(--muted); font-size: .92rem; margin-top: 4px; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 28px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+.tabs button {
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: 600 1rem var(--display);
+  font-stretch: 88%;
+  padding: 10px 14px;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs button:hover { color: var(--ink); }
+button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.panel { padding-top: 24px; }
+.panel > .intro { color: var(--muted); max-width: 70ch; margin-bottom: 20px; }
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* Form */
+form.inputs {
+  display: grid;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+fieldset + fieldset { border-top: 1px solid var(--line); padding-top: 14px; }
+legend { padding: 0; margin-bottom: 4px; }
+.field { display: grid; gap: 4px; }
+.field label { font-weight: 600; font-size: .95rem; }
+.field .hint { font-size: .82rem; color: var(--muted); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.unit {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  overflow: hidden;
+}
+.unit:focus-within { border-color: var(--accent); }
+.unit input, .unit select {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 500 1rem var(--mono);
+  padding: 8px 10px;
+  font-variant-numeric: tabular-nums;
+}
+.unit input:focus-visible { outline: none; }
+.unit span {
+  display: grid;
+  place-items: center;
+  padding: 0 10px;
+  font: .85rem var(--mono);
+  color: var(--muted);
+  background: var(--sunk);
+  border-left: 1px solid var(--line);
+}
+select.plain {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 1rem var(--body);
+  padding: 9px 10px;
+}
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+/* Results */
+.results { display: grid; gap: 20px; }
+.status {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  background: var(--sunk);
+  border-left: 6px solid var(--muted);
+}
+.status.good { background: var(--good-soft); border-left-color: var(--good); }
+.status.warn { background: var(--warn-soft); border-left-color: var(--warn); }
+.status.bad  { background: var(--bad-soft);  border-left-color: var(--bad); }
+.status .big {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+.status .num {
+  font: 500 clamp(2.2rem, 6vw, 3.2rem)/1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em;
+}
+.status .num small { font-size: .45em; color: var(--muted); letter-spacing: 0; }
+.pill {
+  display: inline-block;
+  font: 600 .8rem var(--display);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+}
+.good .pill { color: var(--good); }
+.warn .pill { color: var(--warn); }
+.bad .pill  { color: var(--bad); }
+
+dl.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+dl.facts > div { background: var(--surface); padding: 12px 14px; display: grid; gap: 2px; }
+dl.facts dt { font-size: .82rem; color: var(--muted); }
+dl.facts dd { margin: 0; font: 500 1.15rem var(--mono); font-variant-numeric: tabular-nums; }
+
+.diagram {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 100%; max-height: 380px; }
+.diagram figcaption { font-size: .82rem; color: var(--muted); padding: 6px 4px 0; }
+svg text { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+svg .ink { stroke: var(--ink); }
+svg .muted { stroke: var(--muted); }
+svg .fill-ink { fill: var(--ink); }
+svg .accent { stroke: var(--accent); }
+svg .fill-accent { fill: var(--accent); }
+svg .beam { fill: var(--beam); }
+svg .art { fill: var(--accent-soft); stroke: var(--accent); }
+
+.meter { display: grid; gap: 6px; }
+.meter .track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--sunk);
+  overflow: hidden;
+}
+.meter .bar { position: absolute; inset: 0 auto 0 0; border-radius: 999px; background: var(--good); }
+.meter .bar.warn { background: var(--warn); }
+.meter .bar.bad { background: var(--bad); }
+.meter .scale { display: flex; justify-content: space-between; font: .78rem var(--mono); color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  appearance: none;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font: 600 .95rem var(--body);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent-soft); }
+.note { font-size: .88rem; color: var(--muted); max-width: 70ch; }
+
+/* Reference section */
+section.ref {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 20px;
+}
+.ref-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px 32px;
+}
+.ref-cols > div { display: grid; gap: 8px; align-content: start; }
+.ref p, .ref li { color: var(--muted); font-size: .95rem; max-width: 65ch; }
+.ref ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+code.f {
+  display: block;
+  font: .9rem var(--mono);
+  background: var(--sunk);
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: var(--ink);
+  overflow-x: auto;
+}
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 .75rem var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+@media (max-width: 820px) {
+  .grid, .object { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .meter .bar { transition: width .25s ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <span class="label">Værktøj til udstillingsdesign og bevaring</span>
+  <h1>Udstillingslys</h1>
+  <p>Beregn belysningsstyrke fra spots, årlig lysdosis og antal armaturer til rumbelysning. Tallene sammenholdes med anbefalingerne i CIE 157:2004 for genstandens lysfølsomhed.</p>
+</header>
+
+<div class="object">
+  <div class="field">
+    <label for="cat">Genstandens lysfølsomhed</label>
+    <select id="cat" class="plain">
+      <option value="none">Ufølsom</option>
+      <option value="low" selected>Lav følsomhed</option>
+      <option value="medium">Middel følsomhed</option>
+      <option value="high">Høj følsomhed</option>
+    </select>
+  </div>
+  <div>
+    <div class="limits" id="catLimits"></div>
+    <p class="examples" id="catExamples"></p>
+  </div>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="Beregninger">
+  <button role="tab" id="tab-spot" aria-controls="spot" aria-selected="true">Spot på værk</button>
+  <button role="tab" id="tab-dosis" aria-controls="dosis" aria-selected="false">Lysdosis pr. år</button>
+  <button role="tab" id="tab-rum" aria-controls="rum" aria-selected="false">Rumbelysning</button>
+</nav>
+
+<!-- SPOT -->
+<section class="panel" id="spot" role="tabpanel" aria-labelledby="tab-spot">
+  <p class="intro">Placér en spot på en skinne i loftet og se, hvor meget lys der rammer midten af værket på væggen. Udgangspunktet er 30°-reglen: en vinkel på ca. 30° fra lodret giver få genskin i glas og fernis og ingen skygge fra rammen.</p>
+  <div class="grid">
+    <form class="inputs" id="spotForm" autocomplete="off">
+      <fieldset>
+        <legend class="label">Rummet</legend>
+        <div class="row2">
+          <div class="field">
+            <label for="s_ceiling">Skinnehøjde</label>
+            <div class="unit"><input id="s_ceiling" type="number" min="0.5" step="0.05" value="3.6"><span>m</span></div>
+          </div>
+          <div class="field">
+            <label for="s_target">Værkets midte</label>
+            <div class="unit"><input id="s_target" type="number" min="0" step="0.05" value="1.6"><span>m</span></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="s_angle">Vinkel fra lodret: <span id="s_angleOut">30°</span></label>
+          <input id="s_angle" type="range" min="10" max="60" step="1" value="30">
+          <span class="hint">Afstand fra væg udregnes af vinklen.</span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="label">Spotten</legend>
+        <div class="field">
+          <label for="s_mode">Lysstyrke fra databladet</label>
+          <select id="s_mode" class="plain">
+            <option value="cd">Candela i centrum (cd)</option>
+            <option value="lm">Lumen (lm), anslået</option>
+          </select>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="s_value" id="s_valueLabel">Lysstyrke</label>
+            <div class="unit"><input id="s_value" type="number" min="0" step="10" value="2400"><span id="s_valueUnit">cd</span></div>
+          </div>
+          <div class="field">
+            <label for="s_beam">Spredning</label>
+            <div class="unit"><input id="s_beam" type="number" min="2" max="120" step="1" value="24"><span>°</span></div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="s_dim">Dæmpning</label>
+            <div class="unit"><input id="s_dim" type="number" min="1" max="100" step="1" value="100"><span>%</span></div>
+          </div>
+          <div class="field">
+            <label for="s_count">Antal spots</label>
+            <div class="unit"><input id="s_count" type="number" min="1" max="20" step="1" value="1"><span>stk</span></div>
+          </div>
+        </div>
+        <span class="hint" id="s_modeHint"></span>
+      </fieldset>
+    </form>
+
+    <div class="results">
+      <div class="status" id="s_status">
+        <span class="label">Belysningsstyrke på værkets midte</span>
+        <div class="big"><span class="num" id="s_lux">–</span><span class="pill" id="s_pill">–</span></div>
+        <p id="s_msg"></p>
+      </div>
+      <dl class="facts">
+        <div><dt>Afstand fra væg</dt><dd id="s_D">–</dd></div>
+        <div><dt>Lysets vej til værk</dt><dd id="s_d">–</dd></div>
+        <div><dt>Lyskegle, højde på væg</dt><dd id="s_fh">–</dd></div>
+        <div><dt>Lyskegle, bredde ca.</dt><dd id="s_fw">–</dd></div>
+      </dl>
+      <figure class="diagram" style="margin:0">
+        <svg id="s_svg" viewBox="0 0 360 270" role="img" aria-label="Snit gennem rummet med spot, lyskegle og værk"></svg>
+        <figcaption>Snit gennem rummet. Lyskeglen er tegnet med spotens spredningsvinkel.</figcaption>
+      </figure>
+      <div class="actions">
+        <button type="button" class="btn" id="s_toDose">Brug luxtallet i lysdosis</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOSIS -->
+<section class="panel" id="dosis" role="tabpanel" aria-labelledby="tab-dosis" hidden>
+  <p class="intro">Lysskader er kumulative: 50 lux i 10 timer giver samme skade som 500 lux i 1 time. Den årlige dosis i luxtimer er derfor det tal, der skal holdes nede for følsomme genstande.</p>
+  <div class="grid">
+    <form class="inputs" id="doseForm" autocomplete="off">
+      <fieldset>
+        <legend class="label">Eksponering</legend>
+        <div class="field">
+          <label for="d_lux">Belysningsstyrke</label>
+          <div class="unit"><input id="d_lux" type="number" min="0" step="1" value="50"><span>lux</span></div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="d_hours">Timer med lys</label>
+            <div class="unit"><input id="d_hours" type="number" min="0" max="24" step="0.5" value="8"><span>t/dag</span></div>
+          </div>
+          <div class="field">
+            <label for="d_days">Åbne dage</label>
+            <div class="unit"><input id="d_days" type="number" min="0" max="366" step="1" value="310"><span>dage/år</span></div>
+          </div>
+        </div>
+        <span class="hint">Medregn rengøring, opsætning og tid hvor lyset står tændt uden publikum. Bevægelsessensorer kan sænke timetallet markant.</span>
+      </fieldset>
+    </form>
+
+    <div class="results">
+      <div class="status" id="d_status">
+        <span class="label">Årlig lysdosis</span>
+        <div class="big"><span class="num" id="d_total">–</span><span class="pill" id="d_pill">–</span></div>
+        <p id="d_msg"></p>
+      </div>
+      <div class="meter" id="d_meter">
+        <span class="label">Andel af årlig anbefaling</span>
+        <div class="track"><div class="bar" id="d_bar" style="width:0"></div></div>
+        <div class="scale"><span>0</span><span id="d_scaleMid"></span><span id="d_scaleMax"></span></div>
+      </div>
+      <dl class="facts">
+        <div><dt>Maks. lux ved dette timetal</dt><dd id="d_maxLux">–</dd></div>
+        <div><dt>Maks. timer/dag ved dette lux</dt><dd id="d_maxHours">–</dd></div>
+        <div><dt>Maks. udstillingsdage/år</dt><dd id="d_maxDays">–</dd></div>
+        <div><dt>Dosis over 10 år</dt><dd id="d_10y">–</dd></div>
+      </dl>
+      <p class="note" id="d_note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- RUM -->
+<section class="panel" id="rum" role="tabpanel" aria-labelledby="tab-rum" hidden>
+  <p class="intro">Lumenmetoden giver et overslag over, hvor mange armaturer et rum skal have for at nå en gennemsnitlig belysningsstyrke på gulv eller montrehøjde. Brug den til grundbelysning og montresale, ikke til accentlys på enkelte værker.</p>
+  <div class="grid">
+    <form class="inputs" id="roomForm" autocomplete="off">
+      <fieldset>
+        <legend class="label">Rummet</legend>
+        <div class="row2">
+          <div class="field">
+            <label for="r_len">Længde</label>
+            <div class="unit"><input id="r_len" type="number" min="1" step="0.1" value="12"><span>m</span></div>
+          </div>
+          <div class="field">
+            <label for="r_wid">Bredde</label>
+            <div class="unit"><input id="r_wid" type="number" min="1" step="0.1" value="8"><span>m</span></div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="r_hm">Højde over arbejdsplan</label>
+            <div class="unit"><input id="r_hm" type="number" min="0.5" step="0.1" value="2.8"><span>m</span></div>
+          </div>
+          <div class="field">
+            <label for="r_target">Ønsket middel</label>
+            <div class="unit"><input id="r_target" type="number" min="1" step="5" value="150"><span>lux</span></div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="label">Armaturet</legend>
+        <div class="row2">
+          <div class="field">
+            <label for="r_lm">Lysudbytte</label>
+            <div class="unit"><input id="r_lm" type="number" min="1" step="50" value="1800"><span>lm</span></div>
+          </div>
+          <div class="field">
+            <label for="r_w">Effekt</label>
+            <div class="unit"><input id="r_w" type="number" min="0" step="1" value="18"><span>W</span></div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="r_uf">Udnyttelsesfaktor</label>
+            <div class="unit"><input id="r_uf" type="number" min="0.1" max="1" step="0.05" value="0.5"><span>UF</span></div>
+          </div>
+          <div class="field">
+            <label for="r_mf">Vedligeholdelse</label>
+            <div class="unit"><input id="r_mf" type="number" min="0.1" max="1" step="0.05" value="0.8"><span>MF</span></div>
+          </div>
+        </div>
+        <span class="hint">UF afhænger af rumindeks og refleksioner (mørke vægge ca. 0,3–0,45, lyse vægge 0,5–0,7). MF 0,8 er typisk for LED i rene rum.</span>
+      </fieldset>
+    </form>
+
+    <div class="results">
+      <div class="status" id="r_status">
+        <span class="label">Armaturer der skal til</span>
+        <div class="big"><span class="num" id="r_n">–</span><span class="pill" id="r_pill">–</span></div>
+        <p id="r_msg"></p>
+      </div>
+      <dl class="facts">
+        <div><dt>Opnået middel</dt><dd id="r_lux">–</dd></div>
+        <div><dt>Rumindeks K</dt><dd id="r_k">–</dd></div>
+        <div><dt>Afstand mellem armaturer</dt><dd id="r_sp">–</dd></div>
+        <div><dt>Samlet effekt</dt><dd id="r_tw">–</dd></div>
+      </dl>
+      <figure class="diagram" style="margin:0">
+        <svg id="r_svg" viewBox="0 0 360 240" role="img" aria-label="Plantegning med foreslået placering af armaturer"></svg>
+        <figcaption id="r_cap">Plan med jævnt fordelte armaturer.</figcaption>
+      </figure>
+      <div class="actions">
+        <button type="button" class="btn" id="r_toDose">Brug luxtallet i lysdosis</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ref" id="om">
+  <h2>Om beregningerne</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Følsomhed (CIE 157)</th><th>Eksempler</th><th>Maks. lux</th><th>Maks. luxtimer/år</th></tr></thead>
+      <tbody id="refTable"></tbody>
+    </table>
+  </div>
+  <div class="ref-cols">
+    <div>
+      <h3>Spot på værk</h3>
+      <p>Spotten regnes som en punktlyskilde. Belysningsstyrken falder med kvadratet på afstanden og med vinklen, lyset rammer væggen i:</p>
+      <code class="f">E = I · cos(θ) / d²  = I · D / d³</code>
+      <p>I er lysstyrken i candela, d er afstanden fra spot til værk, D er afstanden fra væg og θ er indfaldsvinklen mod væggens normal. Med flere spots på samme punkt lægges bidragene sammen.</p>
+      <p>Kendes kun lumen, anslås lysstyrken som en jævn kegle: I ≈ Φ / (2π(1 − cos(β/2))). Det er en grov vurdering. Brug centerværdien i candela (eller cd/klm × lumen/1000) fra databladet, når den findes.</p>
+    </div>
+    <div>
+      <h3>Lysdosis</h3>
+      <code class="f">Dosis = lux × timer/dag × dage/år</code>
+      <p>Grænserne i CIE 157:2004 er sat, så en genstand ikke får synlig falmning inden for ca. 50 år (høj følsomhed) til flere hundrede år (lav følsomhed). Genstande i høj følsomhed bør roteres, så de kun udstilles en del af året.</p>
+      <p>UV-stråling skader uden at bidrage til synet. Moderne LED udsender næsten intet UV; ældre halogen og dagslys bør filtreres til under 75 µW/lm, gerne under 10 µW/lm.</p>
+    </div>
+    <div>
+      <h3>Rumbelysning</h3>
+      <code class="f">N = E · A / (Φ · UF · MF)</code>
+      <p>E er ønsket middelbelysning, A er gulvarealet, Φ er lumen pr. armatur, UF er udnyttelsesfaktoren og MF vedligeholdelsesfaktoren. Rumindekset K = L·B / (Hm·(L+B)) bruges til at slå UF op i producentens tabeller.</p>
+      <p>Afstand mellem armaturer bør normalt ikke overstige ca. 1,5 × højden over arbejdsplanet, ellers bliver lyset ujævnt.</p>
+    </div>
+  </div>
+  <p class="note">Alle tal er overslag. Kontrollér altid med en kalibreret luxmeter på stedet, og rådfør dig med en konservator ved følsomme genstande.</p>
+</section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CATS = {
+    none:   { name: "Ufølsom",          lux: null, dose: null,
+              ex: "Metal, sten, glas, keramik, de fleste mineraler." },
+    low:    { name: "Lav følsomhed",    lux: 200,  dose: 600000,
+              ex: "Olie- og temperamaleri, fresko, ufarvet læder og træ, horn, ben, elfenben, lak, nogle plastmaterialer." },
+    medium: { name: "Middel følsomhed", lux: 50,   dose: 150000,
+              ex: "Tekstiler og dragter, akvarel, pastel, tegninger og grafik, manuskripter, tapeter, gouache, farvet læder, de fleste naturhistoriske præparater, pels og fjer." },
+    high:   { name: "Høj følsomhed",    lux: 50,   dose: 15000,
+              ex: "Silke, meget lysfølsomme farvestoffer, avispapir, mange farvefotografier." }
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var nf = function (v, d) {
+    return Number(v).toLocaleString("da-DK", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+  };
+  var num = function (id, fallback) {
+    var v = parseFloat(String($(id).value).replace(",", "."));
+    return isFinite(v) ? v : fallback;
+  };
+  var rad = function (deg) { return deg * Math.PI / 180; };
+  var fmtLxh = function (v) {
+    if (v >= 1e6) return nf(v / 1e6, 2) + " mio. lxh";
+    return nf(v) + " lxh";
+  };
+
+  var STORE = "udstillingslys.v1";
+  var FIELDS = ["cat", "s_ceiling", "s_target", "s_angle", "s_mode", "s_value", "s_beam", "s_dim", "s_count",
+                "d_lux", "d_hours", "d_days", "r_len", "r_wid", "r_hm", "r_target", "r_lm", "r_w", "r_uf", "r_mf"];
+
+  function load() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORE) || "{}");
+      FIELDS.forEach(function (f) { if (saved[f] != null && $(f)) $(f).value = saved[f]; });
+    } catch (e) { /* storage unavailable */ }
+  }
+  function save() {
+    try {
+      var o = {};
+      FIELDS.forEach(function (f) { o[f] = $(f).value; });
+      localStorage.setItem(STORE, JSON.stringify(o));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function cat() { return CATS[$("cat").value] || CATS.low; }
+
+  function setStatus(el, level, pill) {
+    el.className = "status" + (level ? " " + level : "");
+    el.querySelector(".pill").textContent = pill;
+  }
+
+  // ---------- Object category ----------
+  function renderCat() {
+    var c = cat();
+    $("catLimits").innerHTML = c.lux == null
+      ? "<span>Ingen bevaringsgrænse for lux</span><span>Ingen grænse for årsdosis</span>"
+      : "<span>Maks. <b>" + nf(c.lux) + " lux</b></span><span>Maks. <b>" + nf(c.dose) + " lxh/år</b></span>";
+    $("catExamples").textContent = c.ex;
+  }
+
+  function renderRefTable() {
+    $("refTable").innerHTML = ["none", "low", "medium", "high"].map(function (k) {
+      var c = CATS[k];
+      return "<tr><td><strong>" + c.name + "</strong></td><td>" + c.ex + "</td><td class=\"n\">" +
+        (c.lux == null ? "ingen grænse" : nf(c.lux)) + "</td><td class=\"n\">" +
+        (c.dose == null ? "ingen grænse" : nf(c.dose)) + "</td></tr>";
+    }).join("");
+  }
+
+  // ---------- Spot ----------
+  var lastSpotLux = 0;
+
+  function spot() {
+    var H = num("s_ceiling", 3.6), h = num("s_target", 1.6);
+    var alpha = num("s_angle", 30), beam = Math.max(1, num("s_beam", 24));
+    var mode = $("s_mode").value, val = Math.max(0, num("s_value", 0));
+    var dim = Math.min(100, Math.max(0, num("s_dim", 100))) / 100;
+    var n = Math.max(1, Math.round(num("s_count", 1)));
+
+    $("s_angleOut").textContent = alpha + "°";
+    $("s_valueUnit").textContent = mode === "cd" ? "cd" : "lm";
+    $("s_valueLabel").textContent = mode === "cd" ? "Lysstyrke" : "Lysudbytte";
+
+    var I = mode === "cd" ? val : val / (2 * Math.PI * (1 - Math.cos(rad(beam / 2))));
+    $("s_modeHint").textContent = mode === "cd"
+      ? "Står der cd/klm i databladet, så gang med lumen og del med 1000."
+      : "Anslået centerlysstyrke: ca. " + nf(I) + " cd. Kun et groft overslag.";
+
+    var drop = H - h;
+    var status = $("s_status");
+    if (drop <= 0.05) {
+      $("s_lux").innerHTML = "–";
+      setStatus(status, "warn", "Tjek mål");
+      $("s_msg").textContent = "Skinnen skal sidde højere end værkets midte.";
+      ["s_D", "s_d", "s_fh", "s_fw"].forEach(function (id) { $(id).textContent = "–"; });
+      $("s_svg").innerHTML = "";
+      lastSpotLux = 0;
+      return;
+    }
+
+    var D = drop * Math.tan(rad(alpha));
+    var d = Math.sqrt(D * D + drop * drop);
+    var E = I * dim * n * D / (d * d * d);
+    lastSpotLux = E;
+
+    var up = alpha + beam / 2, lo = alpha - beam / 2;
+    var fh = (lo > 0 && up < 90) ? D * (1 / Math.tan(rad(lo)) - 1 / Math.tan(rad(up))) : null;
+    var fw = 2 * d * Math.tan(rad(beam / 2));
+
+    $("s_lux").innerHTML = nf(E) + " <small>lux</small>";
+    $("s_D").textContent = nf(D, 2) + " m";
+    $("s_d").textContent = nf(d, 2) + " m";
+    $("s_fh").textContent = fh == null ? "rammer gulv/loft" : nf(fh, 2) + " m";
+    $("s_fw").textContent = nf(fw, 2) + " m";
+
+    var c = cat();
+    if (c.lux == null) {
+      setStatus(status, "", "Ingen grænse");
+      $("s_msg").textContent = "Genstanden tåler lys. Vælg niveau efter kontrast til omgivelserne; 2–3 gange rummets grundlys får værket til at træde frem.";
+    } else if (E <= c.lux) {
+      setStatus(status, "good", "Inden for " + nf(c.lux) + " lux");
+      $("s_msg").textContent = "Svarer til " + nf(E / c.lux * 100) + " % af den anbefalede maksimale belysningsstyrke.";
+    } else {
+      var need = Math.floor(dim * c.lux / E * 100);
+      setStatus(status, "bad", "Over " + nf(c.lux) + " lux");
+      $("s_msg").textContent = nf(E / c.lux, 1) + " gange for meget. Dæmp til ca. " + nf(need) +
+        " %, vælg en svagere spot, eller øg afstanden.";
+    }
+
+    drawSpot(H, h, D, alpha, beam);
+  }
+
+  function drawSpot(H, h, D, alpha, beam) {
+    var W = 360, top = 22, left = 28, wallX = 300;
+    var s = Math.min(220 / H, (wallX - left - 20) / D);
+    var floorY = top + H * s;
+    var sx = wallX - D * s, sy = top;
+    var ty = top + (H - h) * s;
+
+    function hit(theta) {
+      var t = rad(theta), sn = Math.sin(t), cs = Math.cos(t);
+      if (sn <= 0.0001) return [sx, floorY];
+      var y = sy + (wallX - sx) / sn * cs;
+      if (y > floorY) return [sx + (floorY - sy) * sn / cs, floorY];
+      return [wallX, y];
+    }
+    var p1 = hit(alpha - beam / 2), p2 = hit(Math.min(89.5, alpha + beam / 2));
+    var poly = [[sx, sy], p1];
+    if (p1[1] === floorY && p2[0] === wallX) poly.push([wallX, floorY]);
+    poly.push(p2);
+
+    var artH = Math.min(0.9, (H - h) * 0.8, h * 0.8) * s, artTop = ty - artH / 2;
+    var arcR = 34;
+    var a0 = [sx, sy + arcR], a1 = [sx + arcR * Math.sin(rad(alpha)), sy + arcR * Math.cos(rad(alpha))];
+
+    var svg = "";
+    svg += '<rect x="' + wallX + '" y="' + (top - 8) + '" width="14" height="' + (floorY - top + 8) + '" class="fill-ink" opacity=".12"/>';
+    svg += '<line x1="' + wallX + '" y1="' + (top - 8) + '" x2="' + wallX + '" y2="' + floorY + '" class="ink" stroke-width="1.5"/>';
+    svg += '<line x1="' + left + '" y1="' + floorY + '" x2="' + (wallX + 14) + '" y2="' + floorY + '" class="ink" stroke-width="1.5"/>';
+    svg += '<line x1="' + left + '" y1="' + top + '" x2="' + wallX + '" y2="' + top + '" class="muted" stroke-dasharray="4 3"/>';
+    svg += '<polygon points="' + poly.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ") + '" class="beam"/>';
+    svg += '<rect x="' + (wallX - 5) + '" y="' + artTop.toFixed(1) + '" width="5" height="' + artH.toFixed(1) + '" class="art" stroke-width="1"/>';
+    svg += '<line x1="' + sx + '" y1="' + sy + '" x2="' + wallX + '" y2="' + ty.toFixed(1) + '" class="accent" stroke-width="1.5" stroke-dasharray="5 3"/>';
+    svg += '<line x1="' + sx + '" y1="' + sy + '" x2="' + sx + '" y2="' + (sy + arcR + 10) + '" class="muted" stroke-dasharray="2 2"/>';
+    svg += '<path d="M' + a0[0] + ',' + a0[1] + ' A' + arcR + ',' + arcR + ' 0 0 0 ' + a1[0].toFixed(1) + ',' + a1[1].toFixed(1) + '" fill="none" class="accent"/>';
+    svg += '<text x="' + (sx + 4) + '" y="' + (sy + arcR + 16) + '">' + alpha + '°</text>';
+    svg += '<rect x="' + (sx - 7) + '" y="' + (sy - 4) + '" width="14" height="10" rx="2" class="fill-accent"/>';
+    svg += '<text x="' + ((sx + wallX) / 2) + '" y="' + (top - 8) + '" text-anchor="middle">' + nf(D, 2) + ' m</text>';
+    svg += '<line x1="' + (left - 10) + '" y1="' + top + '" x2="' + (left - 10) + '" y2="' + floorY + '" class="muted"/>';
+    svg += '<text x="' + (left - 4) + '" y="' + ((top + floorY) / 2) + '" transform="rotate(-90 ' + (left - 4) + ' ' + ((top + floorY) / 2) + ')" text-anchor="middle" dy="-2">' + nf(H, 2) + ' m</text>';
+    svg += '<line x1="' + (wallX + 22) + '" y1="' + ty + '" x2="' + (wallX + 22) + '" y2="' + floorY + '" class="muted"/>';
+    svg += '<line x1="' + (wallX + 18) + '" y1="' + ty + '" x2="' + (wallX + 26) + '" y2="' + ty + '" class="muted"/>';
+    svg += '<text x="' + (wallX + 30) + '" y="' + ((ty + floorY) / 2) + '" transform="rotate(-90 ' + (wallX + 30) + ' ' + ((ty + floorY) / 2) + ')" text-anchor="middle" dy="8">' + nf(h, 2) + ' m</text>';
+
+    var svgEl = $("s_svg");
+    svgEl.setAttribute("viewBox", "0 0 " + W + " " + Math.ceil(floorY + 14));
+    svgEl.innerHTML = svg;
+  }
+
+  // ---------- Dose ----------
+  function dose() {
+    var lux = Math.max(0, num("d_lux", 0)), hrs = Math.max(0, num("d_hours", 0)), days = Math.max(0, num("d_days", 0));
+    var total = lux * hrs * days;
+    var c = cat();
+    var status = $("d_status");
+    $("d_total").innerHTML = (total >= 1e6 ? nf(total / 1e6, 2) + " <small>mio. lxh</small>" : nf(total) + " <small>lxh</small>");
+    $("d_10y").textContent = fmtLxh(total * 10);
+
+    var bar = $("d_bar");
+    if (c.dose == null) {
+      setStatus(status, "", "Ingen grænse");
+      $("d_msg").textContent = "Genstanden er ikke lysfølsom. Varme fra lyskilder og UV kan stadig påvirke fx lim og overfladebehandlinger.";
+      $("d_meter").hidden = true;
+      ["d_maxLux", "d_maxHours", "d_maxDays"].forEach(function (id) { $(id).textContent = "–"; });
+      $("d_note").textContent = "";
+      return;
+    }
+    $("d_meter").hidden = false;
+    var pct = total / c.dose * 100;
+    var level = pct > 100 ? "bad" : pct > 80 ? "warn" : "good";
+    setStatus(status, level, nf(pct) + " % af " + nf(c.dose) + " lxh");
+    bar.className = "bar" + (level === "good" ? "" : " " + level);
+    bar.style.width = Math.min(100, pct / 2) + "%";
+    $("d_scaleMid").textContent = nf(c.dose) + " (100 %)";
+    $("d_scaleMax").textContent = nf(c.dose * 2);
+
+    if (pct > 100) {
+      $("d_msg").textContent = "Dosis overstiger anbefalingen. Sænk lysniveauet, forkort åbningstiden med lys tændt, eller udstil genstanden kun en del af året.";
+    } else if (pct > 80) {
+      $("d_msg").textContent = "Tæt på grænsen. Der er lidt plads til ekstra timer ved arrangementer og opsætning.";
+    } else {
+      $("d_msg").textContent = "Inden for anbefalingen for " + c.name.toLowerCase() + ".";
+    }
+
+    var maxLux = hrs * days > 0 ? c.dose / (hrs * days) : Infinity;
+    var maxH = lux * days > 0 ? c.dose / (lux * days) : Infinity;
+    var maxD = lux * hrs > 0 ? c.dose / (lux * hrs) : Infinity;
+    $("d_maxLux").textContent = isFinite(maxLux) ? nf(Math.min(maxLux, c.lux)) + " lux" : "–";
+    $("d_maxHours").textContent = isFinite(maxH) ? nf(Math.min(24, maxH), 1) + " t" : "–";
+    $("d_maxDays").textContent = isFinite(maxD) ? nf(Math.min(366, Math.floor(maxD))) + " dage" : "–";
+
+    var notes = [];
+    if (lux > c.lux) notes.push("Belysningsstyrken på " + nf(lux) + " lux er over de anbefalede " + nf(c.lux) + " lux for denne kategori, uanset dosis.");
+    if (maxLux < c.lux && isFinite(maxLux)) notes.push("Ved " + nf(hrs, 1) + " timer × " + nf(days) + " dage er det årsdosis og ikke luxgrænsen, der begrænser: maks. " + nf(maxLux) + " lux.");
+    if (pct > 100 && isFinite(maxD)) notes.push("Rotation: med disse tal kan genstanden udstilles ca. " + nf(maxD / 30.4, 1) + " måneder om året.");
+    $("d_note").textContent = notes.join(" ");
+  }
+
+  // ---------- Room ----------
+  var lastRoomLux = 0;
+
+  function room() {
+    var L = Math.max(0.5, num("r_len", 12)), B = Math.max(0.5, num("r_wid", 8));
+    var Hm = Math.max(0.3, num("r_hm", 2.8)), E = Math.max(1, num("r_target", 150));
+    var phi = Math.max(1, num("r_lm", 1800)), w = Math.max(0, num("r_w", 0));
+    var uf = Math.min(1, Math.max(0.05, num("r_uf", 0.5))), mf = Math.min(1, Math.max(0.05, num("r_mf", 0.8)));
+
+    var A = L * B;
+    var N = Math.max(1, Math.ceil(E * A / (phi * uf * mf)));
+    var nx = Math.max(1, Math.round(Math.sqrt(N * L / B)));
+    var ny = Math.max(1, Math.ceil(N / nx));
+    while ((nx - 1) * ny >= N && nx > 1) nx--;
+    var total = nx * ny;
+    var got = total * phi * uf * mf / A;
+    lastRoomLux = got;
+    var sx = L / nx, sy = B / ny;
+    var K = A / (Hm * (L + B));
+
+    $("r_n").innerHTML = nf(total) + " <small>stk</small>";
+    $("r_lux").textContent = nf(got) + " lux";
+    $("r_k").textContent = nf(K, 2);
+    $("r_sp").textContent = nf(sx, 2) + " × " + nf(sy, 2) + " m";
+    $("r_tw").textContent = w > 0 ? nf(total * w) + " W · " + nf(total * w / A, 1) + " W/m²" : "–";
+
+    var status = $("r_status");
+    var maxSp = Math.max(sx, sy), shr = maxSp / Hm;
+    var c = cat();
+    var msgs = ["Beregnet minimum: " + nf(N) + " stk. Foreslået net: " + nx + " × " + ny + "."];
+    if (shr > 1.5) {
+      setStatus(status, "warn", "Ujævnt lys");
+      msgs.push("Afstanden mellem armaturer er " + nf(shr, 1) + " × højden. Overvej flere, svagere armaturer eller bredere lysfordeling.");
+    } else {
+      setStatus(status, "good", nf(nx) + " × " + nf(ny) + " net");
+    }
+    if (c.lux != null && got > c.lux) {
+      setStatus(status, "bad", "Over " + nf(c.lux) + " lux");
+      msgs.push("Grundlyset alene overstiger anbefalingen for " + c.name.toLowerCase() + ". Sænk niveauet eller placér genstandene i montrer med eget, dæmpet lys.");
+    }
+    $("r_msg").textContent = msgs.join(" ");
+
+    drawRoom(L, B, nx, ny);
+  }
+
+  function drawRoom(L, B, nx, ny) {
+    var maxW = 320, maxH = 200, pad = 20;
+    var s = Math.min(maxW / L, maxH / B);
+    var w = L * s, h = B * s;
+    var svg = '<rect x="' + pad + '" y="' + pad + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '" fill="none" class="ink" stroke-width="1.5"/>';
+    var r = Math.max(2.5, Math.min(7, Math.min(w / nx, h / ny) / 5));
+    for (var i = 0; i < nx; i++) {
+      for (var j = 0; j < ny; j++) {
+        var cx = pad + (i + 0.5) * w / nx, cy = pad + (j + 0.5) * h / ny;
+        svg += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + (r * 2.4).toFixed(1) + '" class="beam"/>';
+        svg += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r.toFixed(1) + '" class="fill-accent"/>';
+      }
+    }
+    svg += '<text x="' + (pad + w / 2) + '" y="' + (pad - 6) + '" text-anchor="middle">' + nf(L, 1) + ' m</text>';
+    svg += '<text x="' + (pad + w + 6) + '" y="' + (pad + h / 2) + '" dominant-baseline="middle">' + nf(B, 1) + ' m</text>';
+    var el = $("r_svg");
+    el.setAttribute("viewBox", "0 0 " + Math.ceil(pad + w + 52) + " " + Math.ceil(pad + h + 12));
+    el.innerHTML = svg;
+    $("r_cap").textContent = "Plan, " + nx + " × " + ny + " armaturer. Halvdelen af afstanden mellem armaturer ligger ind mod væggene.";
+  }
+
+  // ---------- Tabs ----------
+  var TABS = ["spot", "dosis", "rum"];
+  function showTab(id, focus) {
+    if (TABS.indexOf(id) < 0) id = "spot";
+    TABS.forEach(function (t) {
+      var on = t === id;
+      $(t).hidden = !on;
+      var b = $("tab-" + t);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      if (on && focus) b.focus();
+    });
+    try { history.replaceState(null, "", "#" + id); } catch (e) { /* ignore */ }
+  }
+  TABS.forEach(function (t, i) {
+    var b = $("tab-" + t);
+    b.addEventListener("click", function () { showTab(t); });
+    b.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") showTab(TABS[(i + 1) % TABS.length], true);
+      if (e.key === "ArrowLeft") showTab(TABS[(i + TABS.length - 1) % TABS.length], true);
+    });
+  });
+
+  function toDose(v) {
+    $("d_lux").value = Math.round(v);
+    update();
+    showTab("dosis", true);
+  }
+  $("s_toDose").addEventListener("click", function () { toDose(lastSpotLux); });
+  $("r_toDose").addEventListener("click", function () { toDose(lastRoomLux); });
+
+  function update() {
+    renderCat();
+    spot();
+    dose();
+    room();
+    save();
+  }
+
+  document.querySelectorAll("form").forEach(function (f) {
+    f.addEventListener("submit", function (e) { e.preventDefault(); });
+  });
+  document.addEventListener("input", update);
+  document.addEventListener("change", update);
+
+  load();
+  renderRefTable();
+  update();
+  showTab((location.hash || "").slice(1));
+})();
+</script>
+</body>
+</html>
