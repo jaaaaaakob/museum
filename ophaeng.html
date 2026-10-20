@@ -1,0 +1,1567 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ophængning af værker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #eef0ee;
+  --surface: #ffffff;
+  --sunk: #e3e7e5;
+  --ink: #1b2024;
+  --muted: #5a646b;
+  --line: #cfd5d3;
+  --accent: #a8641a;
+  --accent-soft: #f5e3c8;
+  --dim: #1f5f9e;
+  --good: #2e7a4d;
+  --good-soft: #dcefe3;
+  --warn: #9a6512;
+  --warn-soft: #f7e9cc;
+  --bad: #b0322a;
+  --bad-soft: #f6dcd9;
+  --frame: #2b2f33;
+  --floor: #c9cfcc;
+  --arttext: #1b2024;
+  --t0: #f1d9b5; --t1: #cfe3d6; --t2: #d3d9ee; --t3: #ecd0d6; --t4: #e4e2b9; --t5: #cde4e8;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111416;
+    --surface: #1a1f22;
+    --sunk: #23292d;
+    --ink: #e6e9e7;
+    --muted: #9aa4aa;
+    --line: #333b40;
+    --accent: #e3a24c;
+    --accent-soft: #3a2c19;
+    --dim: #7db7ee;
+    --good: #6cc592;
+    --good-soft: #1c3326;
+    --warn: #e5b45c;
+    --warn-soft: #3a2f18;
+    --bad: #f08a80;
+    --bad-soft: #3d1f1c;
+    --frame: #0d0f10;
+    --floor: #2b3236;
+    --arttext: #e6e9e7;
+    --t0: #5a4527; --t1: #2f4a3b; --t2: #35405f; --t3: #5a3540; --t4: #53512a; --t5: #2d4f56;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111416;
+  --surface: #1a1f22;
+  --sunk: #23292d;
+  --ink: #e6e9e7;
+  --muted: #9aa4aa;
+  --line: #333b40;
+  --accent: #e3a24c;
+  --accent-soft: #3a2c19;
+  --dim: #7db7ee;
+  --good: #6cc592;
+  --good-soft: #1c3326;
+  --warn: #e5b45c;
+  --warn-soft: #3a2f18;
+  --bad: #f08a80;
+  --bad-soft: #3d1f1c;
+  --frame: #0d0f10;
+  --floor: #2b3236;
+  --arttext: #e6e9e7;
+  --t0: #5a4527; --t1: #2f4a3b; --t2: #35405f; --t3: #5a3540; --t4: #53512a; --t5: #2d4f56;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 var(--body);
+}
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 28px 56px;
+}
+h1, h2, h3 {
+  font-family: var(--display);
+  font-stretch: 85%;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.label {
+  font-family: var(--display);
+  font-stretch: 90%;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Header */
+header.top { display: grid; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+header.top p { color: var(--muted); max-width: 70ch; }
+nav.apps { display: flex; gap: 4px 18px; flex-wrap: wrap; font: 600 .9rem var(--display); font-stretch: 90%; }
+nav.apps a { color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
+nav.apps a:hover { color: var(--ink); }
+nav.apps a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible, svg:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Cards and fields */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.setup { margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.field { display: grid; gap: 4px; min-width: 0; }
+.field label, .field .lbl { font-weight: 600; font-size: .9rem; }
+.field .hint { font-size: .8rem; color: var(--muted); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+input[type="text"], input[type="number"], select, textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 6px 8px;
+  min-height: 36px;
+}
+input[type="number"] { font-family: var(--mono); font-size: .92rem; }
+textarea { resize: vertical; }
+input:disabled { opacity: .55; }
+.unit { display: flex; align-items: stretch; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); overflow: hidden; }
+.unit:focus-within { border-color: var(--accent); }
+.unit input { border: 0; background: transparent; min-width: 0; border-radius: 0; }
+.unit input:focus-visible { outline: none; }
+.unit span { padding: 0 8px; display: grid; place-items: center; color: var(--muted); font: .8rem var(--mono); background: var(--sunk); }
+input[type="color"] { width: 100%; height: 36px; padding: 2px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+.check { display: flex; gap: 8px; align-items: center; font-weight: 600; font-size: .92rem; }
+.check input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+/* Buttons */
+.btn {
+  appearance: none;
+  font: 600 .9rem var(--display);
+  font-stretch: 90%;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 6px 12px;
+  min-height: 36px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #1a1206; } }
+.btn.danger { color: var(--bad); }
+.btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Workspace */
+.workspace { margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  padding: 8px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0;
+}
+.toolbar + .toolbar { border-top: 0; border-radius: 0; }
+.toolbar .grp { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.toolbar .btn { padding: 4px 10px; min-height: 32px; font-size: .85rem; }
+.toolbar .label { margin-right: 4px; }
+.stage { background: var(--sunk); border: 1px solid var(--line); border-top: 0; position: relative; }
+svg#stage {
+  display: block; width: 100%; height: clamp(380px, 66vh, 780px);
+  touch-action: none; user-select: none; -webkit-user-select: none; cursor: default;
+}
+svg#stage .item { cursor: grab; }
+svg#stage.dragging .item { cursor: grabbing; }
+.status {
+  font: .85rem var(--mono); color: var(--ink); padding: 8px 10px; min-height: 38px;
+  background: var(--surface); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius) var(--radius);
+}
+.hint { color: var(--muted); font-size: .88rem; margin-top: 10px; max-width: 90ch; }
+
+/* SVG parts */
+.wallrect { stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.floorband { fill: var(--floor); }
+.ruler { stroke: var(--ink); stroke-opacity: .14; stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
+.rl { fill: var(--muted); font-family: var(--mono); }
+.eyeline { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 8 5; vector-effect: non-scaling-stroke; }
+.eyelbl { fill: var(--accent); font-family: var(--mono); font-weight: 500; }
+.frame { fill: var(--frame); }
+.art { stroke: none; }
+.t0 { fill: var(--t0); } .t1 { fill: var(--t1); } .t2 { fill: var(--t2); } .t3 { fill: var(--t3); } .t4 { fill: var(--t4); } .t5 { fill: var(--t5); }
+.itxt { fill: var(--arttext); font-family: var(--display); }
+.itxt .code { font-weight: 800; }
+.itxt.halo { paint-order: stroke; stroke: var(--surface); stroke-width: .25em; stroke-linejoin: round; }
+.obsrect { fill: url(#hatch); stroke: var(--bad); stroke-width: 1.2; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; }
+.obstxt { fill: var(--bad); font-family: var(--display); font-weight: 700; paint-order: stroke; stroke: var(--surface); stroke-width: .25em; stroke-linejoin: round; }
+.selbox { fill: none; stroke: var(--accent); stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.hook { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.guide { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.dimline { stroke: var(--dim); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.dimtxt { fill: var(--dim); font-family: var(--mono); font-weight: 500; paint-order: stroke; stroke: var(--surface); stroke-width: .3em; stroke-linejoin: round; }
+
+/* Lists */
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 250px; overflow: auto; }
+.list button {
+  width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 4px; padding: 5px 8px; cursor: pointer;
+  display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline;
+}
+.list button:hover { border-color: var(--accent); }
+.list button.on { background: var(--accent-soft); border-color: var(--accent); }
+.list .code { font: 500 .85rem var(--mono); color: var(--accent); }
+.list .t { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list .meta { grid-column: 2; font-size: .8rem; color: var(--muted); }
+.list .meta b { font-weight: 600; }
+.list .meta .on { color: var(--good); }
+.empty { color: var(--muted); font-size: .9rem; }
+.thumb { width: 100%; max-height: 120px; object-fit: contain; background: var(--sunk); border-radius: 4px; }
+.kv { font: .82rem var(--mono); color: var(--muted); }
+
+/* Checks */
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.checks li button {
+  width: 100%; text-align: left; font: inherit; border: 1px solid transparent; border-radius: 4px; padding: 6px 10px; cursor: pointer;
+}
+.checks .bad button { background: var(--bad-soft); color: var(--bad); }
+.checks .warn button { background: var(--warn-soft); color: var(--warn); }
+.checks .info button { background: var(--sunk); color: var(--muted); }
+.checks .ok { background: var(--good-soft); color: var(--good); padding: 6px 10px; border-radius: 4px; }
+
+/* Table */
+.tablewrap { overflow-x: auto; }
+table.mont { border-collapse: collapse; width: 100%; font-size: .9rem; }
+table.mont th, table.mont td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+table.mont td.n, table.mont th.n { text-align: right; font-family: var(--mono); font-size: .86rem; }
+table.mont th { font: 600 .72rem var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+table.mont th.ref, table.mont td.ref { background: var(--accent-soft); }
+table.mont td.code { font: 500 .86rem var(--mono); color: var(--accent); }
+section.block { margin-top: 28px; display: grid; gap: 12px; }
+section.block > header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; }
+.savemsg { font-size: .85rem; color: var(--muted); }
+.savemsg.err { color: var(--bad); }
+
+#printArea { display: none; }
+
+@media (max-width: 1000px) {
+  .setup { grid-template-columns: 1fr; }
+  .workspace { grid-template-columns: 1fr; }
+}
+
+@media print {
+  :root:root:root {
+    color-scheme: light;
+    --bg: #fff; --surface: #fff; --sunk: #f1f1f1; --ink: #000; --muted: #444; --line: #bbb;
+    --accent: #8a4f10; --accent-soft: #f2e2c8; --dim: #1f5f9e; --bad: #9a2018; --floor: #ddd; --frame: #333; --arttext: #000;
+    --t0: #f1d9b5; --t1: #cfe3d6; --t2: #d3d9ee; --t3: #ecd0d6; --t4: #e4e2b9; --t5: #cde4e8;
+  }
+  @page { size: A3 landscape; margin: 10mm; }
+  body { background: #fff; font-size: 11pt; }
+  .wrap > :not(#printArea) { display: none !important; }
+  .wrap { padding: 0; max-width: none; }
+  #printArea { display: block; }
+  #printArea h2 { font-size: 16pt; margin-bottom: 2mm; }
+  #printArea .meta { color: #444; margin-bottom: 4mm; }
+  #printArea svg { display: block; max-width: 100%; height: auto; margin: 0 0 6mm; }
+  #printArea table.mont { font-size: 9pt; break-inside: auto; }
+  #printArea tr { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <nav class="apps" aria-label="Værktøjer">
+    <a href="index.html">Udstillingslys</a>
+    <a href="indretning.html">Indretning af rum</a>
+    <a href="ophaeng.html" aria-current="page">Ophængning</a>
+  </nav>
+  <h1>Ophængning af værker</h1>
+  <p>Planlæg hvordan værkerne hænger på en væg. Alle mål er i millimeter, og højder måles fra gulvet. Træk værkerne rundt, lad dem klikke på plads efter hinanden og øjenhøjden, og få en montageliste med mål til montørerne.</p>
+</header>
+
+<section class="setup" aria-label="Væg og forslag">
+  <div class="card">
+    <header><h2>Væg</h2></header>
+    <div class="field">
+      <label for="g_name">Udstilling / væg</label>
+      <input type="text" id="g_name" data-g="name" autocomplete="off">
+    </div>
+    <div class="row2">
+      <div class="field"><label for="g_ww">Bredde</label><div class="unit"><input type="number" id="g_ww" data-g="ww" inputmode="numeric" min="500" step="10"><span>mm</span></div></div>
+      <div class="field"><label for="g_wh">Højde</label><div class="unit"><input type="number" id="g_wh" data-g="wh" inputmode="numeric" min="500" step="10"><span>mm</span></div></div>
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="g_eye">Øjenhøjde</label>
+        <div class="unit"><input type="number" id="g_eye" data-g="eye" inputmode="numeric" step="10"><span>mm</span></div>
+        <span class="hint">Til værkets centrum</span>
+      </div>
+      <div class="field"><label for="g_color">Vægfarve</label><input type="color" id="g_color" data-g="color"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <header><h2>Forslag</h2></header>
+    <p class="muted" style="font-size:.9rem">Værkerne er de samme i alle forslag – kun placeringen er forskellig. Brug forslag til at sammenligne opstillinger.</p>
+    <div class="field">
+      <label for="g_layout">Aktivt forslag</label>
+      <select id="g_layout" data-g="layout"></select>
+    </div>
+    <div class="field">
+      <label for="g_lname">Navn</label>
+      <input type="text" id="g_lname" data-g="lname" autocomplete="off">
+    </div>
+    <div class="btns">
+      <button type="button" class="btn" id="layoutNew">Nyt tomt</button>
+      <button type="button" class="btn" id="layoutCopy">Kopiér</button>
+      <button type="button" class="btn danger" id="layoutDel">Slet</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <header><h2>Hjælp ved placering</h2></header>
+    <label class="check"><input type="checkbox" data-g="snap" id="g_snap"> Klik på plads efter andre værker, vægkanter og øjenhøjde</label>
+    <div class="row2">
+      <div class="field">
+        <label for="g_gap">Mellemrum</label>
+        <div class="unit"><input type="number" id="g_gap" data-g="gap" inputmode="numeric" min="0" step="5"><span>mm</span></div>
+        <span class="hint">Fast afstand mellem værker</span>
+      </div>
+      <div class="field">
+        <label for="g_grid">Gitter</label>
+        <select id="g_grid" data-g="grid">
+          <option value="0">Fra</option>
+          <option value="10">10 mm</option>
+          <option value="50">50 mm</option>
+          <option value="100">100 mm</option>
+        </select>
+        <span class="hint">Runde mål</span>
+      </div>
+    </div>
+    <div class="field">
+      <label for="g_ref">Højde måles fra gulv til værkets …</label>
+      <select id="g_ref" data-g="ref">
+        <option value="bottom">underkant</option>
+        <option value="center">centrum</option>
+        <option value="top">overkant</option>
+      </select>
+      <span class="hint">Bruges til tal i panelet og i montagelisten. Holder du Alt nede under træk, slås hjælpen midlertidigt fra.</span>
+    </div>
+  </div>
+</section>
+
+<div class="workspace">
+  <div>
+    <div class="toolbar" role="toolbar" aria-label="Værktøjer til tegningen">
+      <div class="grp">
+        <button type="button" class="btn" id="undo" title="Fortryd (Ctrl+Z)">Fortryd</button>
+        <button type="button" class="btn" id="redo" title="Gentag (Ctrl+Y)">Gentag</button>
+      </div>
+      <div class="grp">
+        <button type="button" class="btn" id="zoomOut" title="Zoom ud" aria-label="Zoom ud">−</button>
+        <button type="button" class="btn" id="zoomIn" title="Zoom ind" aria-label="Zoom ind">+</button>
+        <button type="button" class="btn" id="zoomFit" title="Vis hele væggen">Tilpas</button>
+      </div>
+      <div class="grp">
+        <button type="button" class="btn" id="multi" aria-pressed="false" title="Tryk på flere værker for at vælge dem sammen (på touch)">Vælg flere</button>
+        <button type="button" class="btn" id="selAll" title="Vælg alle hængte værker (Ctrl+A)">Vælg alle</button>
+        <button type="button" class="btn" id="takeDown" title="Tag valgte ned fra væggen (Delete)">Tag ned</button>
+      </div>
+    </div>
+    <div class="toolbar" role="toolbar" aria-label="Justér valgte værker">
+      <span class="label">Justér valgte</span>
+      <div class="grp">
+        <button type="button" class="btn" data-align="left" title="Ens venstre kant">Venstre</button>
+        <button type="button" class="btn" data-align="cx" title="Centreret vandret">Centrum</button>
+        <button type="button" class="btn" data-align="right" title="Ens højre kant">Højre</button>
+      </div>
+      <div class="grp">
+        <button type="button" class="btn" data-align="top" title="Ens overkant">Top</button>
+        <button type="button" class="btn" data-align="cy" title="Centreret lodret">Midte</button>
+        <button type="button" class="btn" data-align="bottom" title="Ens underkant">Bund</button>
+      </div>
+      <div class="grp">
+        <button type="button" class="btn" data-align="distx" title="Lige stor afstand vandret (mindst 3)">Fordel ↔</button>
+        <button type="button" class="btn" data-align="disty" title="Lige stor afstand lodret (mindst 3)">Fordel ↕</button>
+        <button type="button" class="btn" data-align="gapx" id="gapxBtn">Mellemrum ↔</button>
+        <button type="button" class="btn" data-align="gapy" id="gapyBtn">Mellemrum ↕</button>
+      </div>
+      <div class="grp">
+        <button type="button" class="btn" data-align="eye" title="Flyt valgte så deres centrum ligger på øjenhøjden">På øjenhøjde</button>
+      </div>
+    </div>
+    <div class="stage">
+      <svg id="stage" role="application" tabindex="0" aria-label="Væg med værker. Træk for at flytte, piletaster for at finjustere.">
+        <defs>
+          <pattern id="hatch" width="70" height="70" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="70" height="70" fill="var(--bad-soft)"/>
+            <line x1="0" y1="0" x2="0" y2="70" stroke="var(--bad)" stroke-opacity=".5" stroke-width="14"/>
+          </pattern>
+        </defs>
+        <g id="gBase"></g>
+        <g id="gItems"></g>
+        <g id="gOver" pointer-events="none"></g>
+      </svg>
+    </div>
+    <div class="status" id="status" role="status"></div>
+    <p class="hint">Træk i et værk for at flytte det, og træk i baggrunden for at panorere. Rullehjulet zoomer. Skift + klik vælger flere. Piletaster flytter 10 mm (Skift 100 mm, Alt 1 mm). Delete tager værket ned. Hold Alt nede under træk for at flytte uden hjælp.</p>
+  </div>
+
+  <aside style="display:grid;gap:16px">
+    <div class="card" id="worksCard">
+      <header><h2>Værker</h2><span class="muted" id="worksCount"></span></header>
+      <div class="btns">
+        <button type="button" class="btn primary" id="addWork">Nyt værk</button>
+        <button type="button" class="btn" id="addImages">Fra billeder …</button>
+        <input type="file" id="imgInput" accept="image/*" multiple hidden>
+      </div>
+      <ul class="list" id="workList"></ul>
+      <header><h2>Hindringer</h2></header>
+      <p class="muted" style="font-size:.85rem">Døre, kontakter, ventilation og andet, der skal holdes fri. Gælder alle forslag.</p>
+      <div class="btns"><button type="button" class="btn" id="addObs">Ny hindring</button></div>
+      <ul class="list" id="obsList"></ul>
+    </div>
+    <div class="card" id="selCard"></div>
+  </aside>
+</div>
+
+<section class="block" aria-labelledby="chkH">
+  <header><h2 id="chkH">Bemærkninger</h2></header>
+  <ul class="checks" id="checks"></ul>
+</section>
+
+<section class="block" aria-labelledby="montH">
+  <header>
+    <h2 id="montH">Montageliste</h2>
+    <div class="btns">
+      <button type="button" class="btn" id="csv">Hent som CSV</button>
+    </div>
+  </header>
+  <p class="muted" style="font-size:.9rem">Alle mål er i mm, målt fra væggens venstre kant og fra gulvet. Krogens højde er der, hvor værket bæres.</p>
+  <div class="tablewrap" id="tbl"></div>
+</section>
+
+<section class="block" aria-labelledby="fileH">
+  <header><h2 id="fileH">Fil og udskrift</h2><span class="savemsg" id="saveMsg"></span></header>
+  <div class="btns" style="align-items:end">
+    <button type="button" class="btn" id="exp">Eksportér plan (JSON)</button>
+    <button type="button" class="btn" id="impBtn">Importér plan …</button>
+    <input type="file" id="impInput" accept="application/json,.json" hidden>
+    <button type="button" class="btn" id="sample">Indlæs eksempel</button>
+    <button type="button" class="btn" id="blank">Ny tom plan</button>
+    <span style="width:12px"></span>
+    <div class="field" style="min-width:170px">
+      <label for="pscale">Målestok ved udskrift</label>
+      <select id="pscale">
+        <option value="0">Tilpas til siden</option>
+        <option value="10">1:10</option>
+        <option value="20">1:20</option>
+        <option value="25">1:25</option>
+        <option value="50">1:50</option>
+      </select>
+    </div>
+    <button type="button" class="btn primary" id="print">Udskriv / gem som PDF</button>
+  </div>
+  <p class="muted" style="font-size:.85rem" id="pscaleNote">Udskriften er sat op til A3 i bredden. Arbejdet gemmes løbende i denne browser – eksportér en fil som sikkerhedskopi eller for at dele planen.</p>
+</section>
+
+<div id="printArea" aria-hidden="true"></div>
+
+</div>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- Små hjælpere ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const fmt = n => (Math.round(n * 10) / 10).toLocaleString('da-DK');
+const uid = () => Math.random().toString(36).slice(2, 9);
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const r1 = v => Math.round(v * 10) / 10;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const num = (v, d) => { const n = parseFloat(v); return Number.isFinite(n) ? n : d; };
+
+const KEY = 'ophaeng.draft.v1';
+const REF_NAME = { bottom: 'underkant', center: 'centrum', top: 'overkant' };
+const refOff = (h, ref) => ref === 'bottom' ? 0 : ref === 'top' ? h : h / 2;
+
+/* ---------- Tilstand ---------- */
+let state;                 // alt der kan fortrydes (uden billeder)
+let images = {};           // værk-id -> dataURL
+let imgRev = {};           // værk-id -> versionstæller, så tegningen ved hvornår et billede er skiftet
+let sel = new Set();       // valgte id'er (værker og hindringer)
+let multiMode = false;
+const past = [], future = [];
+
+const L = () => state.layouts.find(l => l.id === state.active) || state.layouts[0];
+const workById = id => state.works.find(w => w.id === id);
+const obsById = id => state.obstacles.find(o => o.id === id);
+
+function newWork(over = {}) {
+  const n = state.seq++;
+  return Object.assign({
+    id: uid(), code: 'K' + n, title: 'Nyt værk', artist: '', year: '',
+    w: 600, h: 800, d: 30, frame: 0,
+    hang: { type: 'one', drop: 100, span: 300 }, note: ''
+  }, over);
+}
+
+function sampleState() {
+  const s = {
+    v: 1, name: 'Vestvæg, sal 2', seq: 1,
+    wall: { w: 6000, h: 3000, eye: 1500, ref: 'bottom', color: '#f1eee6' },
+    snap: true, grid: 0, gap: 150,
+    works: [], obstacles: [], layouts: [], active: ''
+  };
+  state = s;
+  const defs = [
+    ['Landskab ved aftenlys', 'Anna Sørensen', '1924', 1200, 800],
+    ['Portræt af en pige', 'Ukendt', '1887', 600, 900],
+    ['Stilleben', 'H. Lund', '1951', 500, 500],
+    ['Havnen', 'Jens Madsen', '1932', 900, 1200],
+    ['Studie', 'Anna Sørensen', '1921', 400, 300],
+    ['Panorama', 'Jens Madsen', '1936', 1500, 1000]
+  ];
+  defs.forEach(([title, artist, year, w, h]) => s.works.push(newWork({ title, artist, year, w, h, frame: 40, hang: { type: 'two', drop: 120, span: Math.round(w * .5 / 10) * 10 } })));
+  s.works[2].hang = { type: 'one', drop: 100, span: 300 };
+  s.works[4].hang = { type: 'one', drop: 60, span: 300 };
+  s.obstacles.push({ id: uid(), name: 'Dør', x: 4900, y: 0, w: 1000, h: 2100 });
+  s.obstacles.push({ id: uid(), name: 'Stikkontakt', x: 1000, y: 300, w: 90, h: 90 });
+  const a = { id: uid(), name: 'Forslag A – på linje', pos: {} };
+  const eyeY = h => 1500 - h / 2;
+  const xs = [300, 1650, 2400, 3100, 4150];
+  s.works.slice(0, 5).forEach((w, i) => { a.pos[w.id] = { x: xs[i], y: eyeY(w.h) }; });
+  const b = { id: uid(), name: 'Forslag B – gallerivæg', pos: {} };
+  b.pos[s.works[5].id] = { x: 300, y: 900 };
+  b.pos[s.works[0].id] = { x: 1950, y: 1400 };
+  b.pos[s.works[1].id] = { x: 3300, y: 1350 };
+  s.layouts.push(a, b);
+  s.active = a.id;
+  return s;
+}
+
+function blankState() {
+  const s = {
+    v: 1, name: 'Ny væg', seq: 1,
+    wall: { w: 5000, h: 3000, eye: 1500, ref: 'bottom', color: '#f1eee6' },
+    snap: true, grid: 0, gap: 100,
+    works: [], obstacles: [], layouts: [{ id: uid(), name: 'Forslag 1', pos: {} }], active: ''
+  };
+  s.active = s.layouts[0].id;
+  return s;
+}
+
+function normalize(s) {
+  const b = blankState();
+  const o = Object.assign({}, b, s || {});
+  o.wall = Object.assign({}, b.wall, (s && s.wall) || {});
+  ['w', 'h', 'eye'].forEach(k => { o.wall[k] = num(o.wall[k], b.wall[k]); });
+  o.wall.w = Math.max(500, o.wall.w); o.wall.h = Math.max(500, o.wall.h);
+  if (!REF_NAME[o.wall.ref]) o.wall.ref = 'bottom';
+  if (!/^#[0-9a-f]{6}$/i.test(o.wall.color)) o.wall.color = b.wall.color;
+  o.snap = o.snap !== false;
+  o.grid = num(o.grid, 0); o.gap = Math.max(0, num(o.gap, 100)); o.seq = Math.max(1, num(o.seq, 1));
+  o.works = (Array.isArray(o.works) ? o.works : []).map(w => {
+    const n = Object.assign({ id: uid(), code: 'K?', title: '', artist: '', year: '', w: 600, h: 800, d: 30, frame: 0, note: '' }, w);
+    n.hang = Object.assign({ type: 'one', drop: 100, span: 300 }, w && w.hang);
+    if (!['one', 'two', 'none'].includes(n.hang.type)) n.hang.type = 'one';
+    ['w', 'h', 'd', 'frame'].forEach(k => { n[k] = Math.max(k === 'w' || k === 'h' ? 1 : 0, num(n[k], 0)); });
+    n.hang.drop = num(n.hang.drop, 100); n.hang.span = num(n.hang.span, 300);
+    return n;
+  });
+  o.obstacles = (Array.isArray(o.obstacles) ? o.obstacles : []).map(x => ({
+    id: x.id || uid(), name: String(x.name ?? 'Hindring'), x: num(x.x, 0), y: num(x.y, 0), w: Math.max(1, num(x.w, 100)), h: Math.max(1, num(x.h, 100))
+  }));
+  o.layouts = (Array.isArray(o.layouts) ? o.layouts : []).map(l => {
+    const pos = {};
+    Object.entries(l.pos || {}).forEach(([k, p]) => { if (o.works.some(w => w.id === k) && p) pos[k] = { x: num(p.x, 0), y: num(p.y, 0) }; });
+    return { id: l.id || uid(), name: String(l.name ?? 'Forslag'), pos };
+  });
+  if (!o.layouts.length) o.layouts.push({ id: uid(), name: 'Forslag 1', pos: {} });
+  if (!o.layouts.some(l => l.id === o.active)) o.active = o.layouts[0].id;
+  return o;
+}
+
+/* ---------- Fortryd / gentag ---------- */
+const snapshot = () => JSON.stringify(state);
+function pushHistory(before) {
+  if (past[past.length - 1] === before) return;
+  past.push(before);
+  if (past.length > 150) past.shift();
+  future.length = 0;
+}
+let lastKey = null, lastKeyT = 0;
+function mutate(fn, key) {
+  const before = snapshot();
+  fn();
+  if (snapshot() === before) return;
+  const now = performance.now();
+  if (!(key && key === lastKey && now - lastKeyT < 900)) pushHistory(before);
+  lastKey = key || null; lastKeyT = now;
+  afterChange();
+}
+function undo() {
+  if (!past.length) return;
+  future.push(snapshot());
+  state = JSON.parse(past.pop());
+  lastKey = null; afterChange();
+}
+function redo() {
+  if (!future.length) return;
+  past.push(snapshot());
+  state = JSON.parse(future.pop());
+  lastKey = null; afterChange();
+}
+function replaceState(s, imgs) {
+  pushHistory(snapshot());
+  state = normalize(s);
+  Object.assign(images, imgs || {});
+  Object.keys(imgs || {}).forEach(k => { imgRev[k] = (imgRev[k] || 0) + 1; });
+  sel = new Set(); lastKey = null;
+  view.auto = true;
+  afterChange();
+}
+function afterChange() {
+  const ids = new Set([...state.works.map(w => w.id), ...state.obstacles.map(o => o.id)]);
+  sel = new Set([...sel].filter(id => ids.has(id) && (obsById(id) || L().pos[id])));
+  render();
+  scheduleSave();
+}
+
+/* ---------- Gem lokalt ---------- */
+let saveT = null;
+function scheduleSave() { clearTimeout(saveT); saveT = setTimeout(save, 400); }
+function usedImages() {
+  const out = {};
+  state.works.forEach(w => { if (images[w.id]) out[w.id] = images[w.id]; });
+  return out;
+}
+function save() {
+  const msg = $('#saveMsg');
+  try {
+    localStorage.setItem(KEY, JSON.stringify({ state, images: usedImages() }));
+    msg.textContent = 'Gemt i browseren kl. ' + new Date().toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
+    msg.classList.remove('err');
+  } catch (e) {
+    msg.textContent = 'Kunne ikke gemme i browseren (for mange eller for store billeder?). Eksportér planen som fil.';
+    msg.classList.add('err');
+  }
+}
+function load() {
+  try {
+    const p = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (p && p.state && Array.isArray(p.state.works)) {
+      state = normalize(p.state);
+      images = p.images || {};
+      return true;
+    }
+  } catch (e) { /* tom eller ødelagt kladde – start forfra */ }
+  return false;
+}
+
+/* ---------- Geometri ---------- */
+function rectOf(id) {
+  const w = workById(id);
+  if (w) { const p = L().pos[id]; return p ? { id, kind: 'work', x: p.x, y: p.y, w: w.w, h: w.h } : null; }
+  const o = obsById(id);
+  return o ? { id, kind: 'obs', x: o.x, y: o.y, w: o.w, h: o.h } : null;
+}
+function setPos(id, x, y) {
+  if (workById(id)) L().pos[id] = { x, y };
+  else { const o = obsById(id); o.x = x; o.y = y; }
+}
+function allRects() {
+  return [...state.works.map(w => rectOf(w.id)), ...state.obstacles.map(o => rectOf(o.id))].filter(Boolean);
+}
+function bboxOf(rs) {
+  const x = Math.min(...rs.map(r => r.x)), y = Math.min(...rs.map(r => r.y));
+  return { x, y, w: Math.max(...rs.map(r => r.x + r.w)) - x, h: Math.max(...rs.map(r => r.y + r.h)) - y };
+}
+function hooksOf(w, p) {
+  const t = w.hang.type, cx = p.x + w.w / 2, y = p.y + w.h - w.hang.drop;
+  if (t === 'one') return [{ x: cx, y }];
+  if (t === 'two') return [{ x: cx - w.hang.span / 2, y }, { x: cx + w.hang.span / 2, y }];
+  return [];
+}
+
+/* ---------- Visning (zoom og panorering) ---------- */
+const svg = $('#stage');
+const gBase = $('#gBase'), gItems = $('#gItems'), gOver = $('#gOver');
+const view = { cx: 0, cy: 0, mpp: 5, auto: true };   // cx/cy i tegningens mm (y nedad), mpp = mm pr. skærmpixel
+const size = () => { const r = svg.getBoundingClientRect(); return { w: Math.max(1, r.width), h: Math.max(1, r.height), l: r.left, t: r.top }; };
+
+function fitView() {
+  const s = size(), W = state.wall.w, H = state.wall.h;
+  view.mpp = Math.max(W / Math.max(100, s.w - 230), H / Math.max(100, s.h - 90));
+  view.cx = W / 2 + 45 * view.mpp; view.cy = H / 2 + 20 * view.mpp;
+  view.auto = true;
+}
+function applyView() {
+  const s = size();
+  svg.setAttribute('viewBox', `${view.cx - s.w * view.mpp / 2} ${view.cy - s.h * view.mpp / 2} ${s.w * view.mpp} ${s.h * view.mpp}`);
+}
+function toMM(clientX, clientY) {
+  const s = size();
+  return {
+    x: view.cx + (clientX - s.l - s.w / 2) * view.mpp,
+    y: state.wall.h - (view.cy + (clientY - s.t - s.h / 2) * view.mpp)
+  };
+}
+function zoomAt(factor, clientX, clientY) {
+  const s = size();
+  if (clientX == null) { clientX = s.l + s.w / 2; clientY = s.t + s.h / 2; }
+  const ox = clientX - s.l - s.w / 2, oy = clientY - s.t - s.h / 2;
+  const wx = view.cx + ox * view.mpp, wy = view.cy + oy * view.mpp;
+  view.mpp = clamp(view.mpp / factor, 0.15, 60);
+  view.cx = wx - ox * view.mpp; view.cy = wy - oy * view.mpp;
+  view.auto = false;
+  renderLite();
+}
+
+/* ---------- Tegning: væg ---------- */
+function pickStep(mpp) {
+  for (const s of [50, 100, 250, 500, 1000, 2000, 5000]) if (s / mpp >= 46) return s;
+  return 5000;
+}
+
+function baseMarkup(mpp) {
+  const { w: W, h: H, eye, color } = state.wall;
+  const step = pickStep(mpp), px = mpp;
+  let s = '';
+  s += `<rect class="wallrect" x="0" y="0" width="${W}" height="${H}" fill="${esc(color)}"/>`;
+  let d = '';
+  for (let h = step; h < H; h += step) d += `M0 ${H - h}H${W}`;
+  for (let x = step; x < W; x += step) d += `M${x} 0V${H}`;
+  s += `<path class="ruler" d="${d}"/>`;
+  s += `<line class="eyeline" x1="0" x2="${W}" y1="${H - eye}" y2="${H - eye}"/>`;
+  s += `<rect class="floorband" x="-150" y="${H}" width="${W + 300}" height="120"/>`;
+  s += `<line class="wallrect" x1="-150" x2="${W + 150}" y1="${H}" y2="${H}"/>`;
+  for (let h = 0; h <= H; h += step) s += `<text class="rl" x="${-10 * px}" y="${H - h}" text-anchor="end" dominant-baseline="middle">${fmt(h)}</text>`;
+  for (let x = 0; x <= W; x += step) s += `<text class="rl" x="${x}" y="${H + 120 + 6 * px}" text-anchor="middle" dominant-baseline="hanging">${fmt(x)}</text>`;
+  s += `<text class="eyelbl" x="${W + 10 * px}" y="${H - eye}" dominant-baseline="middle">Øjenhøjde ${fmt(eye)}</text>`;
+  return s;
+}
+
+/* ---------- Tegning: værker og hindringer ---------- */
+const tintOf = w => (parseInt(String(w.code).replace(/\D/g, ''), 10) || 0) % 6;
+
+function workMarkup(w, x, y, img) {
+  const f = clamp(w.frame, 0, Math.min(w.w, w.h) / 2 - 1);
+  let s = `<svg class="item work" data-id="${w.id}" x="${x}" y="${y}" width="${w.w}" height="${w.h}" viewBox="0 0 ${w.w} ${w.h}">`;
+  s += `<rect class="frame" width="${w.w}" height="${w.h}"/>`;
+  if (img) {
+    s += `<image href="${img}" x="${f}" y="${f}" width="${w.w - 2 * f}" height="${w.h - 2 * f}" preserveAspectRatio="xMidYMid slice"/>`;
+    s += `<text class="itxt halo" x="${f + 0}" y="${f + 0}" dx=".35em" dy=".35em" dominant-baseline="hanging"><tspan class="code">${esc(w.code)}</tspan></text>`;
+  } else {
+    s += `<rect class="art t${tintOf(w)}" x="${f}" y="${f}" width="${w.w - 2 * f}" height="${w.h - 2 * f}"/>`;
+    s += `<text class="itxt" x="${f}" y="${f}" dx=".4em" dy=".4em" dominant-baseline="hanging"><tspan class="code">${esc(w.code)}</tspan><tspan x="${f}" dx=".4em" dy="1.25em">${esc(w.title)}</tspan></text>`;
+  }
+  return s + '</svg>';
+}
+function obsMarkup(o, x, y) {
+  return `<svg class="item obs" data-id="${o.id}" x="${x}" y="${y}" width="${o.w}" height="${o.h}" viewBox="0 0 ${o.w} ${o.h}">` +
+    `<rect class="obsrect" width="${o.w}" height="${o.h}"/>` +
+    `<text class="obstxt" x=".35em" y=".35em" dominant-baseline="hanging">${esc(o.name)}</text></svg>`;
+}
+
+const itemEls = new Map();   // id -> { el, sig }
+function renderItems() {
+  const H = state.wall.h, want = [];
+  state.obstacles.forEach(o => want.push({ id: o.id, sig: `o|${o.name}|${o.w}|${o.h}`, x: o.x, y: H - o.y - o.h, mk: (x, y) => obsMarkup(o, x, y) }));
+  state.works.forEach(w => {
+    const p = L().pos[w.id];
+    if (!p) return;
+    const img = images[w.id] || '';
+    want.push({
+      id: w.id, sig: `w|${w.code}|${w.title}|${w.w}|${w.h}|${w.frame}|${img ? imgRev[w.id] || 1 : 0}`,
+      x: p.x, y: H - p.y - w.h, mk: (x, y) => workMarkup(w, x, y, img)
+    });
+  });
+  const keep = new Set(want.map(x => x.id));
+  for (const [id, rec] of itemEls) if (!keep.has(id)) { rec.el.remove(); itemEls.delete(id); }
+  const tmp = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  want.forEach(it => {
+    let rec = itemEls.get(it.id);
+    if (!rec || rec.sig !== it.sig) {
+      if (rec) rec.el.remove();
+      tmp.innerHTML = it.mk(it.x, it.y);
+      rec = { el: tmp.firstElementChild, sig: it.sig };
+      gItems.appendChild(rec.el);
+      itemEls.set(it.id, rec);
+    }
+    rec.el.setAttribute('x', it.x);
+    rec.el.setAttribute('y', it.y);
+  });
+  gItems.setAttribute('font-size', 13 * view.mpp);
+}
+
+/* ---------- Tegning: markering, kroge, hjælpelinjer og mål ---------- */
+let guides = { x: [], y: [] };
+function hookMarkup(w, p, r) {
+  const H = state.wall.h;
+  return hooksOf(w, p).map(h => `<circle class="hook" cx="${h.x}" cy="${H - h.y}" r="${r}"/>`).join('');
+}
+function dim(x1, y1, x2, y2, label, tick) {
+  const horiz = y1 === y2;
+  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, off = 5 * view.mpp;
+  const t = horiz ? `<line class="dimline" x1="${x1}" x2="${x1}" y1="${y1 - tick}" y2="${y1 + tick}"/><line class="dimline" x1="${x2}" x2="${x2}" y1="${y2 - tick}" y2="${y2 + tick}"/>`
+    : `<line class="dimline" x1="${x1 - tick}" x2="${x1 + tick}" y1="${y1}" y2="${y1}"/><line class="dimline" x1="${x2 - tick}" x2="${x2 + tick}" y1="${y2}" y2="${y2}"/>`;
+  const txt = horiz
+    ? `<text class="dimtxt" x="${mx}" y="${my - off}" text-anchor="middle">${label}</text>`
+    : `<text class="dimtxt" x="${mx + off}" y="${my}" dominant-baseline="middle">${label}</text>`;
+  return `<line class="dimline" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>${t}${txt}`;
+}
+function dimsFor(r) {
+  const { w: W, h: H } = state.wall, tick = 5 * view.mpp, eps = 0.5;
+  const others = allRects().filter(o => o.id !== r.id);
+  const cx = r.x + r.w / 2, cy = r.y + r.h / 2;
+  const vOver = o => o.y < r.y + r.h - eps && o.y + o.h > r.y + eps;
+  const hOver = o => o.x < r.x + r.w - eps && o.x + o.w > r.x + eps;
+  const pick = (list, key, dir) => list.reduce((b, o) => (b == null || (dir > 0 ? key(o) < key(b) : key(o) > key(b))) ? o : b, null);
+  let s = '';
+  const left = pick(others.filter(o => vOver(o) && o.x + o.w <= r.x + eps), o => o.x + o.w, -1);
+  const right = pick(others.filter(o => vOver(o) && o.x >= r.x + r.w - eps), o => o.x, 1);
+  const below = pick(others.filter(o => hOver(o) && o.y + o.h <= r.y + eps), o => o.y + o.h, -1);
+  const above = pick(others.filter(o => hOver(o) && o.y >= r.y + r.h - eps), o => o.y, 1);
+  const a = left ? left.x + left.w : 0, b = right ? right.x : W;
+  const c = below ? below.y + below.h : 0, d = above ? above.y : H;
+  const sy = v => H - v;
+  if (r.x - a > eps) s += dim(a, sy(cy), r.x, sy(cy), fmt(r.x - a), tick);
+  if (b - (r.x + r.w) > eps) s += dim(r.x + r.w, sy(cy), b, sy(cy), fmt(b - r.x - r.w), tick);
+  if (r.y - c > eps) s += dim(cx, sy(c), cx, sy(r.y), fmt(r.y - c), tick);
+  if (d - (r.y + r.h) > eps) s += dim(cx, sy(r.y + r.h), cx, sy(d), fmt(d - r.y - r.h), tick);
+  return s;
+}
+function renderOverlay() {
+  const { w: W, h: H } = state.wall;
+  let s = '';
+  state.works.forEach(w => { const p = L().pos[w.id]; if (p) s += hookMarkup(w, p, Math.max(9, 3.5 * view.mpp)); });
+  for (const id of sel) {
+    const r = rectOf(id);
+    if (r) s += `<rect class="selbox" x="${r.x}" y="${H - r.y - r.h}" width="${r.w}" height="${r.h}"/>`;
+  }
+  guides.x.forEach(x => { s += `<line class="guide" x1="${x}" x2="${x}" y1="-120" y2="${H + 120}"/>`; });
+  guides.y.forEach(y => { s += `<line class="guide" y1="${H - y}" y2="${H - y}" x1="-120" x2="${W + 120}"/>`; });
+  if (sel.size === 1) { const r = rectOf([...sel][0]); if (r) s += dimsFor(r); }
+  gOver.innerHTML = s;
+  gOver.setAttribute('font-size', 12 * view.mpp);
+}
+
+function renderBase() {
+  gBase.innerHTML = baseMarkup(view.mpp);
+  gBase.setAttribute('font-size', 11 * view.mpp);
+}
+
+/* ---------- Tjek ---------- */
+function computeChecks() {
+  const out = [];
+  const { w: W, h: H } = state.wall, lay = L(), eps = 0.5;
+  const placed = state.works.filter(w => lay.pos[w.id]);
+  placed.forEach(w => {
+    const p = lay.pos[w.id], side = [];
+    if (p.x < -eps) side.push('venstre kant');
+    if (p.x + w.w > W + eps) side.push('højre kant');
+    if (p.y < -eps) side.push('gulvet');
+    if (p.y + w.h > H + eps) side.push('loftet');
+    if (side.length) out.push({ lvl: 'bad', ids: [w.id], text: `${w.code} ${w.title} rager ud over væggen (${side.join(', ')}).` });
+  });
+  for (let i = 0; i < placed.length; i++) for (let j = i + 1; j < placed.length; j++) {
+    const a = placed[i], b = placed[j], pa = lay.pos[a.id], pb = lay.pos[b.id];
+    if (pa.x < pb.x + b.w - eps && pb.x < pa.x + a.w - eps && pa.y < pb.y + b.h - eps && pb.y < pa.y + a.h - eps)
+      out.push({ lvl: 'bad', ids: [a.id, b.id], text: `${a.code} og ${b.code} overlapper hinanden.` });
+  }
+  placed.forEach(w => state.obstacles.forEach(o => {
+    const p = lay.pos[w.id];
+    if (p.x < o.x + o.w - eps && o.x < p.x + w.w - eps && p.y < o.y + o.h - eps && o.y < p.y + w.h - eps)
+      out.push({ lvl: 'warn', ids: [w.id, o.id], text: `${w.code} ${w.title} dækker hindringen «${o.name}».` });
+  }));
+  const un = state.works.filter(w => !lay.pos[w.id]);
+  if (un.length) out.push({ lvl: 'info', ids: [], text: `${un.length} ${un.length === 1 ? 'værk er' : 'værker er'} ikke hængt op i dette forslag: ${un.map(w => w.code).join(', ')}.` });
+  return out;
+}
+function renderChecks() {
+  const list = computeChecks();
+  const bad = list.filter(c => c.lvl !== 'info');
+  const ul = $('#checks');
+  let h = '';
+  if (!bad.length) h += `<li class="ok">Ingen overlap eller værker uden for væggen i dette forslag.</li>`;
+  list.forEach((c, i) => { h += `<li class="${c.lvl}"><button type="button" data-chk="${i}">${esc(c.text)}</button></li>`; });
+  ul.innerHTML = h;
+  ul._list = list;
+}
+
+/* ---------- Montageliste ---------- */
+function mountRows() {
+  const lay = L();
+  return state.works.filter(w => lay.pos[w.id]).map(w => ({ w, p: lay.pos[w.id] }))
+    .sort((a, b) => a.p.x - b.p.x || a.p.y - b.p.y);
+}
+function hookText(w, p) {
+  const hs = hooksOf(w, p);
+  if (!hs.length) return '—';
+  return `x ${hs.map(h => fmt(h.x)).join(' og ')} · h ${fmt(hs[0].y)}`;
+}
+function tableHTML() {
+  const rows = mountRows(), ref = state.wall.ref;
+  if (!rows.length) return '<p class="empty">Ingen værker er hængt op i dette forslag endnu.</p>';
+  const th = (k, t) => `<th class="n ${ref === k ? 'ref' : ''}">${t}</th>`;
+  let h = `<table class="mont"><thead><tr><th>Kode</th><th>Værk</th><th class="n">Mål (b × h)</th><th class="n">Fra venstre</th>${th('bottom', 'Underkant')}${th('center', 'Centrum')}${th('top', 'Overkant')}<th>Krog(e)</th></tr></thead><tbody>`;
+  rows.forEach(({ w, p }) => {
+    const td = (k, v) => `<td class="n ${ref === k ? 'ref' : ''}">${fmt(v)}</td>`;
+    h += `<tr><td class="code">${esc(w.code)}</td><td>${esc(w.title)}${w.artist ? ` <span class="muted">· ${esc(w.artist)}</span>` : ''}</td>` +
+      `<td class="n">${fmt(w.w)} × ${fmt(w.h)}</td><td class="n">${fmt(p.x)}</td>${td('bottom', p.y)}${td('center', p.y + w.h / 2)}${td('top', p.y + w.h)}<td class="n">${hookText(w, p)}</td></tr>`;
+  });
+  return h + '</tbody></table>';
+}
+function renderTable() { $('#tbl').innerHTML = tableHTML(); }
+
+function downloadFile(name, text, type) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+const slug = s => (String(s).toLowerCase().normalize('NFKD').replace(/[^a-z0-9æøå]+/g, '-').replace(/^-|-$/g, '') || 'plan');
+function exportCSV() {
+  const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const head = ['Kode', 'Titel', 'Kunstner', 'År', 'Bredde mm', 'Højde mm', 'Fra venstre mm', 'Underkant mm', 'Centrum mm', 'Overkant mm', 'Krog x mm', 'Krog højde mm'];
+  const lines = [head.map(q).join(';')];
+  mountRows().forEach(({ w, p }) => {
+    const hs = hooksOf(w, p);
+    lines.push([w.code, w.title, w.artist, w.year, w.w, w.h, p.x, p.y, p.y + w.h / 2, p.y + w.h, hs.map(h => h.x).join(' / '), hs.length ? hs[0].y : ''].map(v => typeof v === 'number' ? String(r1(v)).replace('.', ',') : q(v)).join(';'));
+  });
+  downloadFile(slug(state.name) + '-montageliste.csv', '﻿' + lines.join('\r\n'), 'text/csv;charset=utf-8');
+}
+
+/* ---------- Formularer (globale felter) ---------- */
+const G = {
+  name: { get: () => state.name, set: v => { state.name = v; } },
+  ww: { get: () => state.wall.w, set: v => { state.wall.w = Math.max(500, v); } },
+  wh: { get: () => state.wall.h, set: v => { state.wall.h = Math.max(500, v); } },
+  eye: { get: () => state.wall.eye, set: v => { state.wall.eye = v; } },
+  color: { get: () => state.wall.color, set: v => { state.wall.color = v; } },
+  ref: { get: () => state.wall.ref, set: v => { state.wall.ref = v; } },
+  snap: { get: () => state.snap, set: v => { state.snap = !!v; } },
+  gap: { get: () => state.gap, set: v => { state.gap = Math.max(0, v); } },
+  grid: { get: () => String(state.grid), set: v => { state.grid = num(v, 0); } },
+  lname: { get: () => L().name, set: v => { L().name = v; } }
+};
+const NUMERIC_G = new Set(['ww', 'wh', 'eye', 'gap']);
+
+function renderSetup() {
+  $$('[data-g]').forEach(el => {
+    const k = el.dataset.g;
+    if (k === 'layout') {
+      const sig = state.layouts.map(l => l.id + l.name).join('|') + state.active;
+      if (el._sig !== sig) {
+        el.innerHTML = state.layouts.map(l => `<option value="${l.id}">${esc(l.name)}</option>`).join('');
+        el.value = state.active; el._sig = sig;
+      }
+      return;
+    }
+    if (el === document.activeElement) return;
+    const v = G[k].get();
+    if (el.type === 'checkbox') el.checked = !!v; else el.value = v;
+  });
+  $('#layoutDel').disabled = state.layouts.length < 2;
+  const g = state.gap;
+  $('#gapxBtn').title = $('#gapyBtn').title = `Fast mellemrum på ${fmt(g)} mm`;
+}
+
+document.addEventListener('input', e => {
+  const el = e.target.closest('[data-g]');
+  if (!el || el.dataset.g === 'layout') return;
+  const k = el.dataset.g;
+  let v = el.type === 'checkbox' ? el.checked : el.value;
+  if (NUMERIC_G.has(k)) { v = parseFloat(v); if (!Number.isFinite(v)) return; }
+  mutate(() => G[k].set(v), 'g:' + k);
+});
+$('#g_layout').addEventListener('change', e => { state.active = e.target.value; sel = new Set(); afterChange(); });
+$('#layoutNew').addEventListener('click', () => mutate(() => {
+  const l = { id: uid(), name: 'Forslag ' + (state.layouts.length + 1), pos: {} };
+  state.layouts.push(l); state.active = l.id;
+}));
+$('#layoutCopy').addEventListener('click', () => mutate(() => {
+  const src = L(), l = { id: uid(), name: src.name + ' (kopi)', pos: JSON.parse(JSON.stringify(src.pos)) };
+  state.layouts.push(l); state.active = l.id;
+}));
+$('#layoutDel').addEventListener('click', () => {
+  if (state.layouts.length < 2) return;
+  if (!confirm(`Slet forslaget «${L().name}»? Værkerne bevares, men deres placering i forslaget forsvinder.`)) return;
+  mutate(() => { state.layouts = state.layouts.filter(l => l.id !== state.active); state.active = state.layouts[0].id; });
+});
+
+/* ---------- Værkliste og hindringsliste ---------- */
+function renderLists() {
+  const lay = L();
+  $('#worksCount').textContent = `${state.works.filter(w => lay.pos[w.id]).length} af ${state.works.length} hængt op`;
+  $('#workList').innerHTML = state.works.length ? state.works.map(w => {
+    const on = !!lay.pos[w.id];
+    return `<li><button type="button" data-pick="${w.id}" class="${sel.has(w.id) ? 'on' : ''}"><span class="code">${esc(w.code)}</span><span class="t">${esc(w.title) || '(uden titel)'}</span><span class="meta">${fmt(w.w)} × ${fmt(w.h)} mm · ${on ? '<b class="on">hængt op</b>' : '<b>ikke hængt op</b>'}</span></button></li>`;
+  }).join('') : '<li class="empty">Ingen værker endnu. Tilføj et værk, eller vælg billeder.</li>';
+  $('#obsList').innerHTML = state.obstacles.length ? state.obstacles.map(o =>
+    `<li><button type="button" data-pick="${o.id}" class="${sel.has(o.id) ? 'on' : ''}"><span class="code">▨</span><span class="t">${esc(o.name) || '(uden navn)'}</span><span class="meta">${fmt(o.w)} × ${fmt(o.h)} mm</span></button></li>`).join('') : '<li class="empty">Ingen hindringer.</li>';
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-pick]');
+  if (b) {
+    const id = b.dataset.pick;
+    if (e.shiftKey || multiMode) { sel.has(id) ? sel.delete(id) : sel.add(id); } else sel = new Set([id]);
+    render();
+  }
+  const c = e.target.closest('[data-chk]');
+  if (c) {
+    const item = $('#checks')._list[+c.dataset.chk];
+    if (item && item.ids.length) { sel = new Set(item.ids.filter(id => rectOf(id))); render(); }
+  }
+});
+
+function addWork(over, img) {
+  let id;
+  mutate(() => {
+    const w = newWork(over || {});
+    id = w.id; state.works.push(w);
+    if (img) { images[id] = img; imgRev[id] = (imgRev[id] || 0) + 1; }
+  });
+  sel = new Set([id]); render();
+  return id;
+}
+function hangWork(id) {
+  const w = workById(id);
+  mutate(() => { L().pos[id] = { x: r1(state.wall.w / 2 - w.w / 2), y: r1(state.wall.eye - w.h / 2) }; });
+}
+$('#addWork').addEventListener('click', () => { addWork(); const t = $('#selCard [data-k="title"]'); if (t) { t.focus(); t.select(); } });
+$('#addObs').addEventListener('click', () => {
+  const o = { id: uid(), name: 'Hindring', x: 200, y: 200, w: 200, h: 200 };
+  mutate(() => state.obstacles.push(o));
+  sel = new Set([o.id]); render();
+});
+
+/* Billeder: skaleres ned, så planen kan gemmes i browseren */
+function readImage(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file), im = new Image();
+    im.onload = () => {
+      const k = Math.min(1, 900 / Math.max(im.width, im.height));
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(im.width * k)); c.height = Math.max(1, Math.round(im.height * k));
+      const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      resolve({ data: c.toDataURL('image/jpeg', 0.85), ratio: im.width / im.height });
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Kunne ikke læse billedet')); };
+    im.src = url;
+  });
+}
+$('#addImages').addEventListener('click', () => $('#imgInput').click());
+$('#imgInput').addEventListener('change', async e => {
+  const files = [...e.target.files]; e.target.value = '';
+  for (const f of files) {
+    try {
+      const { data, ratio } = await readImage(f);
+      const w = 600, h = Math.round(w / ratio / 10) * 10;
+      addWork({ title: f.name.replace(/\.[^.]+$/, ''), w, h: Math.max(10, h) }, data);
+    } catch (err) { flash(err.message); }
+  }
+});
+
+/* ---------- Formular for valgt værk / hindring ---------- */
+const HANG_OPTS = [['one', 'Én krog'], ['two', 'To kroge'], ['none', 'Skinne / ingen krog']];
+function WF() {   // værkfelter
+  const P = id => L().pos[id];
+  return [
+    { k: 'title', label: 'Titel', type: 'text', get: w => w.title, set: (w, v) => { w.title = v; } },
+    { k: 'artist', label: 'Kunstner', type: 'text', half: 1, get: w => w.artist, set: (w, v) => { w.artist = v; } },
+    { k: 'year', label: 'År', type: 'text', half: 1, get: w => w.year, set: (w, v) => { w.year = v; } },
+    { k: 'w', label: 'Bredde (yderst)', type: 'num', unit: 1, half: 1, min: 1, get: w => w.w, set: (w, v) => { w.w = Math.max(1, v); } },
+    {
+      k: 'h', label: 'Højde (yderst)', type: 'num', unit: 1, half: 1, min: 1, get: w => w.h, set: (w, v) => {
+        const p = P(w.id), ref = state.wall.ref;
+        if (p) p.y = r1(p.y + refOff(w.h, ref) - refOff(Math.max(1, v), ref));
+        w.h = Math.max(1, v);
+      }
+    },
+    { k: 'frame', label: 'Ramme pr. side', type: 'num', unit: 1, half: 1, min: 0, get: w => w.frame, set: (w, v) => { w.frame = Math.max(0, v); } },
+    { k: 'd', label: 'Dybde', type: 'num', unit: 1, half: 1, min: 0, get: w => w.d, set: (w, v) => { w.d = Math.max(0, v); } },
+    { k: 'px', label: 'Fra væggens venstre kant', type: 'num', unit: 1, placed: 1, get: w => P(w.id) ? r1(P(w.id).x) : '', set: (w, v) => { P(w.id).x = v; } },
+    {
+      k: 'py', label: () => `Højde fra gulv til ${REF_NAME[state.wall.ref]}`, type: 'num', unit: 1, placed: 1,
+      get: w => P(w.id) ? r1(P(w.id).y + refOff(w.h, state.wall.ref)) : '', set: (w, v) => { P(w.id).y = r1(v - refOff(w.h, state.wall.ref)); }
+    },
+    { k: 'ht', label: 'Ophængning', type: 'select', opts: HANG_OPTS, get: w => w.hang.type, set: (w, v) => { w.hang.type = v; } },
+    { k: 'hd', label: 'Krog under overkant', type: 'num', unit: 1, half: 1, show: w => w.hang.type !== 'none', get: w => w.hang.drop, set: (w, v) => { w.hang.drop = v; } },
+    { k: 'hs', label: 'Afstand mellem kroge', type: 'num', unit: 1, half: 1, show: w => w.hang.type === 'two', get: w => w.hang.span, set: (w, v) => { w.hang.span = Math.max(0, v); } },
+    { k: 'note', label: 'Note', type: 'area', get: w => w.note, set: (w, v) => { w.note = v; } }
+  ];
+}
+function OF() {   // hindringsfelter
+  return [
+    { k: 'title', label: 'Navn', type: 'text', get: o => o.name, set: (o, v) => { o.name = v; } },
+    { k: 'px', label: 'Fra væggens venstre kant', type: 'num', unit: 1, get: o => r1(o.x), set: (o, v) => { o.x = v; } },
+    { k: 'py', label: 'Højde fra gulv til underkant', type: 'num', unit: 1, get: o => r1(o.y), set: (o, v) => { o.y = v; } },
+    { k: 'w', label: 'Bredde', type: 'num', unit: 1, half: 1, get: o => o.w, set: (o, v) => { o.w = Math.max(1, v); } },
+    { k: 'h', label: 'Højde', type: 'num', unit: 1, half: 1, get: o => o.h, set: (o, v) => { o.h = Math.max(1, v); } }
+  ];
+}
+const labelOf = f => typeof f.label === 'function' ? f.label() : f.label;
+function fieldHTML(f) {
+  let ctl;
+  if (f.type === 'select') ctl = `<select data-k="${f.k}">${f.opts.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select>`;
+  else if (f.type === 'area') ctl = `<textarea data-k="${f.k}" rows="3"></textarea>`;
+  else if (f.type === 'num') ctl = `<div class="unit"><input type="number" inputmode="decimal" step="1" ${f.min != null ? `min="${f.min}"` : ''} data-k="${f.k}"><span>mm</span></div>`;
+  else ctl = `<input type="text" data-k="${f.k}" autocomplete="off">`;
+  return `<div class="field" data-fk="${f.k}"><span class="lbl">${esc(labelOf(f))}</span>${ctl}</div>`;
+}
+function groupHalves(fields) {
+  let h = '', i = 0;
+  while (i < fields.length) {
+    if (fields[i].half && fields[i + 1] && fields[i + 1].half) { h += `<div class="row2">${fieldHTML(fields[i])}${fieldHTML(fields[i + 1])}</div>`; i += 2; }
+    else { h += fieldHTML(fields[i]); i++; }
+  }
+  return h;
+}
+
+let formSig = '';
+function currentItem() {
+  if (sel.size !== 1) return null;
+  const id = [...sel][0], w = workById(id);
+  if (w) return { kind: 'work', id, ref: w };
+  const o = obsById(id);
+  return o ? { kind: 'obs', id, ref: o } : null;
+}
+function renderForm() {
+  const card = $('#selCard'), it = currentItem();
+  const sig = it ? it.kind + it.id + (it.kind === 'work' ? !!L().pos[it.id] : '') + state.wall.ref : 'n' + sel.size;
+  if (sig !== formSig) {
+    formSig = sig;
+    if (it && it.kind === 'work') {
+      const placed = !!L().pos[it.id];
+      card.innerHTML = `<header><h2>Valgt værk</h2><span class="kv" id="wkCode"></span></header>
+        <img class="thumb" id="thumb" alt="" hidden>
+        ${groupHalves(WF().filter(f => placed || !f.placed))}
+        <div class="kv" id="hookInfo"></div>
+        <div class="btns">
+          <button type="button" class="btn" data-act="img">Vælg billede …</button>
+          <button type="button" class="btn" data-act="rmimg" id="rmimg">Fjern billede</button>
+          <input type="file" accept="image/*" hidden id="oneImg">
+        </div>
+        <div class="btns">
+          ${placed ? '<button type="button" class="btn" data-act="down">Tag ned</button><button type="button" class="btn" data-act="eye">På øjenhøjde</button>' : '<button type="button" class="btn primary" data-act="up">Hæng op</button>'}
+          <button type="button" class="btn" data-act="dup">Dublér</button>
+          <button type="button" class="btn danger" data-act="del">Slet værk</button>
+        </div>`;
+    } else if (it) {
+      card.innerHTML = `<header><h2>Valgt hindring</h2></header>${groupHalves(OF())}
+        <div class="btns"><button type="button" class="btn danger" data-act="delobs">Slet hindring</button></div>`;
+    } else if (sel.size > 1) {
+      card.innerHTML = `<header><h2>${sel.size} valgte</h2></header><p class="muted" style="font-size:.9rem">Brug «Justér valgte» over tegningen til at stille dem op i forhold til hinanden. Træk i ét af dem for at flytte alle sammen.</p>
+        <div class="btns"><button type="button" class="btn" data-act="down">Tag ned</button></div>`;
+    } else {
+      card.innerHTML = `<header><h2>Valgt</h2></header><p class="muted" style="font-size:.9rem">Vælg et værk eller en hindring på væggen eller i listen for at se og rette mål, placering og ophængning.</p>`;
+    }
+  }
+  if (!it) return;
+  const fields = it.kind === 'work' ? WF() : OF();
+  fields.forEach(f => {
+    const row = $(`[data-fk="${f.k}"]`, card);
+    if (!row) return;
+    $('.lbl', row).textContent = labelOf(f);
+    row.hidden = !!(f.show && !f.show(it.ref));
+    const el = $('[data-k]', row);
+    if (el && el !== document.activeElement) el.value = f.get(it.ref);
+  });
+  if (it.kind === 'work') {
+    const w = it.ref, p = L().pos[w.id];
+    $('#wkCode').textContent = w.code;
+    const th = $('#thumb'), has = !!images[w.id];
+    th.hidden = !has; if (has && th.dataset.rev !== String(imgRev[w.id])) { th.src = images[w.id]; th.dataset.rev = String(imgRev[w.id]); }
+    $('#rmimg').hidden = !has;
+    $('#hookInfo').textContent = p ? 'Krog: ' + hookText(w, p) + ' (fra væggens venstre kant og fra gulv)' : '';
+  }
+}
+$('#selCard').addEventListener('input', e => {
+  const el = e.target.closest('[data-k]'), it = currentItem();
+  if (!el || !it) return;
+  const f = (it.kind === 'work' ? WF() : OF()).find(x => x.k === el.dataset.k);
+  if (!f) return;
+  let v = el.value;
+  if (f.type === 'num') { v = parseFloat(v); if (!Number.isFinite(v)) return; }
+  mutate(() => f.set(it.ref, v), 'f:' + f.k + it.id);
+});
+$('#selCard').addEventListener('change', async e => {
+  if (e.target.id !== 'oneImg') return;
+  const it = currentItem(), file = e.target.files[0]; e.target.value = '';
+  if (!it || !file) return;
+  try {
+    const { data } = await readImage(file);
+    images[it.id] = data; imgRev[it.id] = (imgRev[it.id] || 0) + 1;
+    afterChange();
+  } catch (err) { flash(err.message); }
+});
+$('#selCard').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]');
+  if (!b) return;
+  const act = b.dataset.act, it = currentItem();
+  if (act === 'img') return $('#oneImg').click();
+  if (act === 'rmimg' && it) { delete images[it.id]; imgRev[it.id] = (imgRev[it.id] || 0) + 1; return afterChange(); }
+  if (act === 'up' && it) return hangWork(it.id);
+  if (act === 'down') return takeDown();
+  if (act === 'eye') return align('eye');
+  if (act === 'dup' && it) {
+    const src = it.ref, pos = L().pos[it.id];
+    let id;
+    mutate(() => {
+      const w = newWork(Object.assign(JSON.parse(JSON.stringify(src)), { id: uid(), code: undefined }));
+      w.code = 'K' + (state.seq - 1); w.title = src.title + ' (kopi)'; id = w.id;
+      state.works.push(w);
+      if (images[src.id]) { images[id] = images[src.id]; imgRev[id] = 1; }
+      if (pos) L().pos[id] = { x: pos.x + 100, y: pos.y - 100 };
+    });
+    sel = new Set([id]); return render();
+  }
+  if (act === 'del' && it) {
+    mutate(() => {
+      state.works = state.works.filter(w => w.id !== it.id);
+      state.layouts.forEach(l => { delete l.pos[it.id]; });
+    });
+    flash('Værket er slettet. Fortryd med Ctrl+Z.');
+  }
+  if (act === 'delobs' && it) { mutate(() => { state.obstacles = state.obstacles.filter(o => o.id !== it.id); }); }
+});
+
+function takeDown() {
+  const ids = [...sel];
+  if (!ids.length) return;
+  mutate(() => {
+    ids.forEach(id => {
+      if (workById(id)) delete L().pos[id];
+      else state.obstacles = state.obstacles.filter(o => o.id !== id);
+    });
+  });
+}
+
+/* ---------- Justér valgte ---------- */
+function align(op) {
+  const ids = [...sel].filter(id => workById(id) && L().pos[id]);
+  if (!ids.length) return;
+  const rs = ids.map(rectOf);
+  const bb = bboxOf(rs);
+  mutate(() => {
+    const set = (r, x, y) => { L().pos[r.id] = { x: r1(x), y: r1(y) }; };
+    if (op === 'eye') rs.forEach(r => set(r, r.x, state.wall.eye - r.h / 2));
+    if (op === 'left') rs.forEach(r => set(r, bb.x, r.y));
+    if (op === 'right') rs.forEach(r => set(r, bb.x + bb.w - r.w, r.y));
+    if (op === 'cx') rs.forEach(r => set(r, bb.x + bb.w / 2 - r.w / 2, r.y));
+    if (op === 'bottom') rs.forEach(r => set(r, r.x, bb.y));
+    if (op === 'top') rs.forEach(r => set(r, r.x, bb.y + bb.h - r.h));
+    if (op === 'cy') rs.forEach(r => set(r, r.x, bb.y + bb.h / 2 - r.h / 2));
+    const seq = (key, size, fixed) => {
+      const s = [...rs].sort((a, b) => a[key] - b[key]);
+      let gap = fixed;
+      if (gap == null) gap = (bb[key] + bb[size] - bb[key] - s.reduce((t, r) => t + r[size], 0)) / (s.length - 1);
+      let pos = s[0][key];
+      s.forEach(r => { key === 'x' ? set(r, pos, r.y) : set(r, r.x, pos); pos += r[size] + gap; });
+    };
+    if (op === 'distx' && rs.length > 2) seq('x', 'w');
+    if (op === 'disty' && rs.length > 2) seq('y', 'h');
+    if (op === 'gapx' && rs.length > 1) seq('x', 'w', state.gap);
+    if (op === 'gapy' && rs.length > 1) seq('y', 'h', state.gap);
+  });
+}
+$$('[data-align]').forEach(b => b.addEventListener('click', () => align(b.dataset.align)));
+
+/* ---------- Status ---------- */
+let hover = null, flashT = null, flashMsg = '';
+function flash(msg) { flashMsg = msg; clearTimeout(flashT); flashT = setTimeout(() => { flashMsg = ''; updateStatus(); }, 3500); updateStatus(); }
+function updateStatus(live) {
+  const el = $('#status'), ref = state.wall.ref;
+  let t;
+  if (flashMsg) t = flashMsg;
+  else if (live) t = live;
+  else if (sel.size === 1 && rectOf([...sel][0])) {
+    const id = [...sel][0], r = rectOf(id), w = workById(id);
+    t = `${w ? w.code : (obsById(id).name)} · ${fmt(r.w)} × ${fmt(r.h)} · fra venstre ${fmt(r.x)} · ${REF_NAME[ref]} ${fmt(r.y + refOff(r.h, ref))} fra gulv`;
+  } else if (sel.size > 1) t = `${sel.size} valgte`;
+  else if (hover) t = `Markør: ${fmt(hover.x)} mm fra venstre · ${fmt(hover.y)} mm fra gulv`;
+  else t = 'Vælg et værk, eller træk et fra listen op på væggen med «Hæng op».';
+  el.textContent = t;
+}
+
+/* ---------- Træk, klik og zoom ---------- */
+const pointers = new Map();
+let drag = null, pan = null, pinch = null;
+
+function snapMove(bb, ids) {
+  const { w: W, h: H, eye } = state.wall, thr = 8 * view.mpp, gap = state.gap;
+  const others = allRects().filter(r => !ids.has(r.id));
+  const fx = { l: bb.x, c: bb.x + bb.w / 2, r: bb.x + bb.w };
+  const fy = { b: bb.y, c: bb.y + bb.h / 2, t: bb.y + bb.h };
+  const cx = [], cy = [];
+  if (state.snap) {
+    cx.push({ f: 'l', v: 0 }, { f: 'r', v: W }, { f: 'c', v: W / 2 });
+    cy.push({ f: 'b', v: 0 }, { f: 't', v: H }, { f: 'c', v: eye });
+    others.forEach(o => {
+      cx.push({ f: 'l', v: o.x }, { f: 'c', v: o.x + o.w / 2 }, { f: 'r', v: o.x + o.w }, { f: 'l', v: o.x + o.w }, { f: 'r', v: o.x });
+      cy.push({ f: 'b', v: o.y }, { f: 'c', v: o.y + o.h / 2 }, { f: 't', v: o.y + o.h }, { f: 'b', v: o.y + o.h }, { f: 't', v: o.y });
+      if (gap > 0) {
+        cx.push({ f: 'l', v: o.x + o.w + gap, g: 1 }, { f: 'r', v: o.x - gap, g: 1 });
+        cy.push({ f: 'b', v: o.y + o.h + gap, g: 1 }, { f: 't', v: o.y - gap, g: 1 });
+      }
+    });
+  }
+  const best = (cands, feat) => {
+    let bd = Infinity;
+    cands.forEach(c => { const d = c.v - feat[c.f]; if (Math.abs(d) <= thr && Math.abs(d) < Math.abs(bd)) bd = d; });
+    if (bd === Infinity) return null;
+    const lines = [...new Set(cands.filter(c => !c.g && Math.abs(c.v - feat[c.f] - bd) < 0.01).map(c => c.v))];
+    return { d: bd, lines };
+  };
+  let bx = best(cx, fx), by = best(cy, fy);
+  const grid = state.grid;
+  if (grid > 0) {
+    if (!bx) { const d = Math.round(fx.l / grid) * grid - fx.l; if (Math.abs(d) <= thr) bx = { d, lines: [] }; }
+    if (!by) {
+      const k = state.wall.ref === 'bottom' ? 'b' : state.wall.ref === 'top' ? 't' : 'c';
+      const d = Math.round(fy[k] / grid) * grid - fy[k]; if (Math.abs(d) <= thr) by = { d, lines: [] };
+    }
+  }
+  return { dx: bx ? bx.d : 0, dy: by ? by.d : 0, gx: bx ? bx.lines : [], gy: by ? by.lines : [] };
+}
+
+svg.addEventListener('pointerdown', e => {
+  if (e.button > 0 && e.pointerType === 'mouse') return;
+  svg.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 2) { startPinch(); return; }
+  if (pointers.size > 2) return;
+  svg.focus({ preventScroll: true });
+  const g = e.target.closest('[data-id]');
+  if (g) {
+    const id = g.dataset.id, multi = e.shiftKey || multiMode;
+    const wasSel = sel.has(id);
+    if (multi) { wasSel ? sel.delete(id) : sel.add(id); }
+    else if (!wasSel) sel = new Set([id]);
+    renderLite(); renderLists(); renderForm();
+    if (!sel.has(id)) return;
+    const ids = [...sel].filter(i => rectOf(i));
+    const start = {}; ids.forEach(i => { const r = rectOf(i); start[i] = { x: r.x, y: r.y }; });
+    drag = {
+      ids, idSet: new Set(ids), start, bb: bboxOf(ids.map(rectOf)), p0: toMM(e.clientX, e.clientY),
+      cx0: e.clientX, cy0: e.clientY, moved: false, before: snapshot(), collapse: wasSel && !multi && ids.length > 1, id
+    };
+  } else {
+    if (!(e.shiftKey || multiMode) && sel.size) { sel = new Set(); render(); }
+    pan = { x: e.clientX, y: e.clientY, cx: view.cx, cy: view.cy };
+  }
+});
+svg.addEventListener('pointermove', e => {
+  if (pointers.has(e.pointerId)) pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch && pointers.size === 2) return movePinch();
+  if (drag) {
+    if (!drag.moved && Math.hypot(e.clientX - drag.cx0, e.clientY - drag.cy0) < 3) return;
+    drag.moved = true; svg.classList.add('dragging');
+    const p = toMM(e.clientX, e.clientY);
+    let dx = Math.round(p.x - drag.p0.x), dy = Math.round(p.y - drag.p0.y);
+    guides = { x: [], y: [] };
+    if (!e.altKey) {
+      const s = snapMove({ x: drag.bb.x + dx, y: drag.bb.y + dy, w: drag.bb.w, h: drag.bb.h }, drag.idSet);
+      dx += s.dx; dy += s.dy; guides = { x: s.gx, y: s.gy };
+    }
+    drag.ids.forEach(id => setPos(id, r1(drag.start[id].x + dx), r1(drag.start[id].y + dy)));
+    renderLite();
+    const r = rectOf(drag.id), ref = state.wall.ref;
+    if (r) updateStatus(`fra venstre ${fmt(r.x)} · ${REF_NAME[ref]} ${fmt(r.y + refOff(r.h, ref))} fra gulv`);
+    return;
+  }
+  if (pan) {
+    view.cx = pan.cx - (e.clientX - pan.x) * view.mpp;
+    view.cy = pan.cy - (e.clientY - pan.y) * view.mpp;
+    view.auto = false; renderLite(); return;
+  }
+  hover = toMM(e.clientX, e.clientY);
+  if (!sel.size) updateStatus();
+});
+function endPointer(e) {
+  pointers.delete(e.pointerId);
+  if (pointers.size < 2) pinch = null;
+  if (drag) {
+    const d = drag; drag = null; svg.classList.remove('dragging');
+    guides = { x: [], y: [] };
+    if (d.moved) {
+      if (snapshot() !== d.before) { pushHistory(d.before); lastKey = null; }
+    } else if (d.collapse) sel = new Set([d.id]);
+    afterChange();
+  }
+  pan = null;
+}
+svg.addEventListener('pointerup', endPointer);
+svg.addEventListener('pointercancel', endPointer);
+svg.addEventListener('pointerleave', () => { hover = null; if (!sel.size && !drag) updateStatus(); });
+svg.addEventListener('wheel', e => {
+  e.preventDefault();
+  zoomAt(Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0015)), e.clientX, e.clientY);
+}, { passive: false });
+
+function startPinch() {
+  if (drag) { // afbryd et træk, så fingrene bruges til zoom
+    drag.ids.forEach(id => setPos(id, drag.start[id].x, drag.start[id].y)); drag = null; guides = { x: [], y: [] };
+  }
+  pan = null;
+  const [a, b] = [...pointers.values()];
+  pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, mpp: view.mpp, cx: view.cx, cy: view.cy };
+}
+function movePinch() {
+  const [a, b] = [...pointers.values()], s = size();
+  const d = Math.hypot(a.x - b.x, a.y - b.y) || 1, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+  const wx = pinch.cx + (pinch.mx - s.l - s.w / 2) * pinch.mpp, wy = pinch.cy + (pinch.my - s.t - s.h / 2) * pinch.mpp;
+  view.mpp = clamp(pinch.mpp * pinch.d / d, 0.15, 60);
+  view.cx = wx - (mx - s.l - s.w / 2) * view.mpp; view.cy = wy - (my - s.t - s.h / 2) * view.mpp;
+  view.auto = false; renderLite();
+}
+
+/* ---------- Taster ---------- */
+document.addEventListener('keydown', e => {
+  const t = e.target;
+  if (t.closest && t.closest('input, select, textarea')) return;
+  const mod = e.ctrlKey || e.metaKey, k = e.key.toLowerCase();
+  if (mod && k === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+  if (mod && k === 'y') { e.preventDefault(); redo(); return; }
+  if (mod && k === 'a') { e.preventDefault(); selectAll(); return; }
+  if (mod || e.altKey && !k.startsWith('arrow')) return;
+  if (k === 'escape') { sel = new Set(); render(); return; }
+  if (k === 'delete' || k === 'backspace') { if (sel.size) { e.preventDefault(); takeDown(); } return; }
+  const dir = { arrowleft: [-1, 0], arrowright: [1, 0], arrowup: [0, 1], arrowdown: [0, -1] }[k];
+  if (dir && sel.size) {
+    e.preventDefault();
+    const step = e.altKey ? 1 : e.shiftKey ? 100 : 10, ids = [...sel].filter(id => rectOf(id));
+    mutate(() => ids.forEach(id => { const r = rectOf(id); setPos(id, r1(r.x + dir[0] * step), r1(r.y + dir[1] * step)); }), 'nudge');
+  }
+});
+function selectAll() { sel = new Set(state.works.filter(w => L().pos[w.id]).map(w => w.id)); render(); }
+
+/* ---------- Værktøjslinje ---------- */
+$('#undo').addEventListener('click', undo);
+$('#redo').addEventListener('click', redo);
+$('#zoomIn').addEventListener('click', () => zoomAt(1.3));
+$('#zoomOut').addEventListener('click', () => zoomAt(1 / 1.3));
+$('#zoomFit').addEventListener('click', () => { fitView(); renderLite(); });
+$('#multi').addEventListener('click', () => { multiMode = !multiMode; $('#multi').setAttribute('aria-pressed', multiMode); });
+$('#selAll').addEventListener('click', selectAll);
+$('#takeDown').addEventListener('click', takeDown);
+function renderToolbar() {
+  $('#undo').disabled = !past.length; $('#redo').disabled = !future.length;
+  const n = [...sel].filter(id => workById(id) && L().pos[id]).length;
+  $$('[data-align]').forEach(b => {
+    const op = b.dataset.align;
+    b.disabled = op === 'eye' ? n < 1 : op === 'distx' || op === 'disty' ? n < 3 : n < 2;
+  });
+  $('#takeDown').disabled = !sel.size;
+}
+
+/* ---------- Fil ---------- */
+$('#exp').addEventListener('click', () => {
+  downloadFile(slug(state.name) + '-ophaengning.json', JSON.stringify({ format: 'ophaengning', version: 1, state, images: usedImages() }), 'application/json');
+});
+$('#impBtn').addEventListener('click', () => $('#impInput').click());
+$('#impInput').addEventListener('change', async e => {
+  const f = e.target.files[0]; e.target.value = '';
+  if (!f) return;
+  try {
+    const p = JSON.parse(await f.text());
+    if (p.format !== 'ophaengning' || !p.state || !Array.isArray(p.state.works)) throw new Error('Filen ser ikke ud til at være en ophængningsplan.');
+    replaceState(p.state, p.images);
+    flash('Planen er indlæst.');
+  } catch (err) { flash(err.message || 'Filen kunne ikke læses.'); }
+});
+$('#sample').addEventListener('click', () => { replaceState(sampleState()); flash('Eksemplet er indlæst. Fortryd med Ctrl+Z.'); });
+$('#blank').addEventListener('click', () => { replaceState(blankState()); flash('Ny tom plan. Fortryd med Ctrl+Z.'); });
+$('#csv').addEventListener('click', exportCSV);
+
+/* ---------- Udskrift ---------- */
+function printSvg(den) {
+  const { w: W, h: H } = state.wall, lay = L();
+  const padL = 420, padR = 520, padT = 120, padB = 380;
+  const total = W + padL + padR;
+  const mpp = den ? den * 0.2646 : total / 1250;
+  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${-padL} ${-padT} ${total} ${H + padT + padB}" style="width:${den ? (total / den) + 'mm' : '100%'}">`;
+  s += `<defs><pattern id="hatchP" width="70" height="70" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="70" height="70" fill="var(--bad-soft)"/><line x1="0" y1="0" x2="0" y2="70" stroke="var(--bad)" stroke-opacity=".5" stroke-width="14"/></pattern></defs>`;
+  s += `<g font-size="${11 * mpp}">${baseMarkup(mpp)}</g>`;
+  s += `<g font-size="${12 * mpp}">`;
+  state.obstacles.forEach(o => { s += obsMarkup(o, o.x, H - o.y - o.h).replace('url(#hatch)', 'url(#hatchP)'); });
+  state.works.forEach(w => { const p = lay.pos[w.id]; if (p) s += workMarkup(w, p.x, H - p.y - w.h, images[w.id] || ''); });
+  state.works.forEach(w => { const p = lay.pos[w.id]; if (p) s += hookMarkup(w, p, Math.max(9, 3 * mpp)); });
+  return s + '</g></svg>';
+}
+function buildPrint() {
+  const den = num($('#pscale').value, 0);
+  $('#printArea').innerHTML = `<h2>${esc(state.name)}</h2><p class="meta">${esc(L().name)} · væg ${fmt(state.wall.w)} × ${fmt(state.wall.h)} mm · højder fra gulv · ${den ? 'målestok 1:' + den : 'ikke i målfast skala'} · ${new Date().toLocaleDateString('da-DK')}</p>` +
+    printSvg(den) + tableHTML();
+}
+function pscaleNote() {
+  const den = num($('#pscale').value, 0), el = $('#pscaleNote');
+  const base = 'Udskriften er sat op til A3 i bredden. Arbejdet gemmes løbende i denne browser – eksportér en fil som sikkerhedskopi eller for at dele planen.';
+  const mm = (state.wall.w + 940) / (den || 1);
+  el.textContent = den && mm > 395 ? `Ved 1:${den} bliver tegningen ca. ${Math.round(mm)} mm bred og kan ikke være på en A3-side. ` + base : base;
+}
+$('#pscale').addEventListener('change', pscaleNote);
+$('#print').addEventListener('click', () => window.print());
+window.addEventListener('beforeprint', buildPrint);
+
+/* ---------- Samlet tegning ---------- */
+function renderLite() {
+  applyView(); renderBase(); renderItems(); renderOverlay(); updateStatus();
+}
+function render() {
+  if (view.auto) fitView();
+  renderSetup(); renderLite(); renderLists(); renderForm(); renderChecks(); renderTable(); renderToolbar(); pscaleNote();
+}
+
+new ResizeObserver(() => { if (!state) return; if (view.auto) fitView(); renderLite(); }).observe(svg);
+
+/* ---------- Start ---------- */
+if (!load()) { sampleState(); state = normalize(state); }
+render();
+save();
+// Testhjælp: gør det muligt at undersøge tilstanden fra konsollen
+window.__ophaeng = { get state() { return state; }, get sel() { return sel; }, toMM, view };
+})();
+</script>
+</body>
+</html>
