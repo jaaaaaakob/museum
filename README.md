@@ -49,7 +49,7 @@ Værktøjet markerer elementer der overlapper eller står uden for rummet, og pa
 ## Væg og værker
 
 - **Væg** – bredde, højde, vægfarve og en øjenhøjde-linje (til værkets centrum, standard 1500 mm).
-- **Værker** – titel, kunstner, år, yderste mål, ramme, dybde, ophængning (én krog, to kroge eller skinne) og eventuelt et billede. «Fra billeder …» opretter værker direkte ud fra billedfiler.
+- **Værker** – titel, kunstner, år, yderste mål, ramme (bredde og farve – vælg en af de hurtige farver eller en hvilken som helst), dybde, ophængning (én krog, to kroge eller skinne) og eventuelt et billede. «Fra billeder …» opretter værker direkte ud fra billedfiler.
 - **Hindringer** – døre, kontakter og andet, der skal holdes frit. De gælder alle forslag.
 - **Forslag** – værkerne er fælles; placeringen gemmes pr. forslag, så flere opstillinger kan sammenlignes. Forslag kan kopieres.
 
