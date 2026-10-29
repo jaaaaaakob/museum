@@ -1,0 +1,6176 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.197486,
+     56.157107
+    ]
+   },
+   "properties": {
+    "id": "DK-0001",
+    "navn": "Emma Augusta Hansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vestergade 84",
+    "postnr": "8000",
+    "by": "Aarhus C",
+    "kommune": "Aarhus",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/emma-augusta-hansen/",
+    "snublesten_dk_id": 913,
+    "wikidata": "",
+    "osm_node": "10946691693",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Én OSM-node uden navn dækker familiens 4 sten"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.197476,
+     56.157187
+    ]
+   },
+   "properties": {
+    "id": "DK-0002",
+    "navn": "Ib Hansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vestergade 84",
+    "postnr": "8000",
+    "by": "Aarhus C",
+    "kommune": "Aarhus",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/ib-hansen/",
+    "snublesten_dk_id": 915,
+    "wikidata": "",
+    "osm_node": "10946691693",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Én OSM-node uden navn dækker familiens 4 sten"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.197546,
+     56.157067
+    ]
+   },
+   "properties": {
+    "id": "DK-0003",
+    "navn": "Preben Hansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vestergade 84",
+    "postnr": "8000",
+    "by": "Aarhus C",
+    "kommune": "Aarhus",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/preben-hansen/",
+    "snublesten_dk_id": 916,
+    "wikidata": "",
+    "osm_node": "10946691693",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Én OSM-node uden navn dækker familiens 4 sten"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.197646,
+     56.156997
+    ]
+   },
+   "properties": {
+    "id": "DK-0004",
+    "navn": "Thorvald Hansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vestergade 84",
+    "postnr": "8000",
+    "by": "Aarhus C",
+    "kommune": "Aarhus",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/thorvald-hansen/",
+    "snublesten_dk_id": 909,
+    "wikidata": "",
+    "osm_node": "10946691693",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Én OSM-node uden navn dækker familiens 4 sten"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.635227,
+     55.596799
+    ]
+   },
+   "properties": {
+    "id": "DK-0007",
+    "navn": "Jørgen Emil Thers",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Hovedgaden 34",
+    "postnr": "2791",
+    "by": "Dragør",
+    "kommune": "Dragør",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/joergen-emil-thers/",
+    "snublesten_dk_id": 3245,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.673444,
+     55.591282
+    ]
+   },
+   "properties": {
+    "id": "DK-0008",
+    "navn": "Ellen Wilhelmine Nielsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Rønne Allé 42",
+    "postnr": "2770",
+    "by": "Dragør",
+    "kommune": "Dragør",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/ellen-wilhelmine-nielsen/",
+    "snublesten_dk_id": 2373,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Afvigelse – tjek",
+    "note": "Postnr 2770 er Kastrup, men by angivet som Dragør (2791)"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.540168,
+     55.676893
+    ]
+   },
+   "properties": {
+    "id": "DK-0009",
+    "navn": "Gabrielle Salmonsen",
+    "fodt_aar": "1855",
+    "udfald": "Omkom",
+    "adresse": "Bianco Lunos Allé 1",
+    "postnr": "1868",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / GABRIELLE / SALMONSEN / GEB. HEIMANN 1855 / VERHAFTET 2.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 10.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/gabrielle-salmonsen/",
+    "snublesten_dk_id": 539,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Gabrielle Salmonsen (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.552644,
+     55.679161
+    ]
+   },
+   "properties": {
+    "id": "DK-0010",
+    "navn": "Jacob Thalmay",
+    "fodt_aar": "1904",
+    "udfald": "Omkom",
+    "adresse": "Carl Plougsvej 7",
+    "postnr": "1913",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / JACOB THALMAY / GEBOREN 1904 / DEPORTIERT 1944 / SACHSENHAUSEN / AUSCHWITZ / UMGEKOMMEN 9.3.1945 / TODESMARSCH NACH MELK",
+    "kilde_url": "https://snublesten.dk/snublesten/jacob-thalmay/",
+    "snublesten_dk_id": 182,
+    "wikidata": "Q64691522",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Jacob Thalmay (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.523745,
+     55.689206
+    ]
+   },
+   "properties": {
+    "id": "DK-0011",
+    "navn": "\"Jeanne\" Johanne Nathansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Drosselvej 6",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jeanne-johanne-nathansen/",
+    "snublesten_dk_id": 3208,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.523655,
+     55.689256
+    ]
+   },
+   "properties": {
+    "id": "DK-0012",
+    "navn": "Henri Nathansen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Drosselvej 6",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/henri-nathansen/",
+    "snublesten_dk_id": 3207,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535448,
+     55.682217
+    ]
+   },
+   "properties": {
+    "id": "DK-0013",
+    "navn": "Elieser Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Falkoner Allé 38",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/elieser-cipikoff/",
+    "snublesten_dk_id": 3267,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535438,
+     55.682147
+    ]
+   },
+   "properties": {
+    "id": "DK-0014",
+    "navn": "Nechama Lea Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Falkoner Allé 38",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/nechama-lea-cipikoff/",
+    "snublesten_dk_id": 3271,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535448,
+     55.682207
+    ]
+   },
+   "properties": {
+    "id": "DK-0015",
+    "navn": "Noah Abraham Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Falkoner Allé 38",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/noah-abraham-cipikoff/",
+    "snublesten_dk_id": 3236,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.554004,
+     55.679368
+    ]
+   },
+   "properties": {
+    "id": "DK-0016",
+    "navn": "Carl Joseph Glückstadt",
+    "fodt_aar": "1882",
+    "udfald": "Omkom",
+    "adresse": "Forchhammersvej 5",
+    "postnr": "1920",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / CARL JOSEPH / GLÜCKSTADT / GEBOREN 1882 / VERHAFTET 1943 / DEPORTIERT / THERESIENSTADT / UMGEKOMMEN 15.11.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/carl-joseph-gluckstadt/",
+    "snublesten_dk_id": 537,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Carl Joseph Glückstadt (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553914,
+     55.679268
+    ]
+   },
+   "properties": {
+    "id": "DK-0017",
+    "navn": "Olga Johanne Glückstadt",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Forchhammersvej 5",
+    "postnr": "1920",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/olga-johanne-gluckstadt/",
+    "snublesten_dk_id": 2793,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535348,
+     55.67082
+    ]
+   },
+   "properties": {
+    "id": "DK-0018",
+    "navn": "Max Hartwig",
+    "fodt_aar": "1867",
+    "udfald": "Overlevede",
+    "adresse": "Frydendalsvej 33",
+    "postnr": "1809",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / MAX HARTWIG / 'GUBBEN' / GEBOREN 1867 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/max-hartwig/",
+    "snublesten_dk_id": 897,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Max Hartwig (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535488,
+     55.67087
+    ]
+   },
+   "properties": {
+    "id": "DK-0019",
+    "navn": "Rose Hartwig",
+    "fodt_aar": "1880",
+    "udfald": "Omkom",
+    "adresse": "Frydendalsvej 33",
+    "postnr": "1809",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSE HARTWIG / GEB. SALOMON 1880 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 25.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/rose-hartwig/",
+    "snublesten_dk_id": 896,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Rose Hartwig (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.516996,
+     55.690045
+    ]
+   },
+   "properties": {
+    "id": "DK-0020",
+    "navn": "Johanne Caroline Gray",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Godthåbsvej 131",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/johanne-caroline-gray/",
+    "snublesten_dk_id": 2310,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546309,
+     55.679716
+    ]
+   },
+   "properties": {
+    "id": "DK-0021",
+    "navn": "Ada Elvira Bomhoff",
+    "fodt_aar": "1892",
+    "udfald": "Overlevede",
+    "adresse": "Harsdorffsvej 7",
+    "postnr": "1874",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ADA ELVIRA / BOMHOFF / GEB. ALS REICHMANN 1892 / UNTERSTÜTZTE DIE / WIDERSTANDSBEWEGUNG / VERHAFTET 4.9.1944 / INTERNIERUNGSLAGER FRØSLEV / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/ada-elvira-bomhoff/",
+    "snublesten_dk_id": 922,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Ada Elvira Bomhoff (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546349,
+     55.679886
+    ]
+   },
+   "properties": {
+    "id": "DK-0022",
+    "navn": "Gunnar Johan Bomhoff",
+    "fodt_aar": "1887",
+    "udfald": "Omkom",
+    "adresse": "Harsdorffsvej 7",
+    "postnr": "1874",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / GUNNAR JOHAN / BOMHOFF / GEB. 1887 / VERHAFTET 18.10.1944 / DEPORTIERT 1945 / DACHAU / ERMORDET 13.4.1945 / NEUENGAMME",
+    "kilde_url": "https://snublesten.dk/snublesten/gunnar-johan-bomhoff/",
+    "snublesten_dk_id": 921,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Gunnar Johan Bomhoff (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535976,
+     55.675991
+    ]
+   },
+   "properties": {
+    "id": "DK-0023",
+    "navn": "Sam Besekow",
+    "fodt_aar": "1911",
+    "udfald": "Overlevede",
+    "adresse": "Hollændervej 11",
+    "postnr": "1855",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / SAMUEL 'SAM' / BESEKOW / GEBOREN 1911 / VERHAFTET 29.8.1943 / INTERNIERT IN HORSERØD / FREIGELASSEN 15.10.1943 / FLUCHT NACH SCHWEDEN / 22.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/samuel-besekow/",
+    "snublesten_dk_id": 582,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Samuel Besekow (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.529438,
+     55.679931
+    ]
+   },
+   "properties": {
+    "id": "DK-0024",
+    "navn": "Frants Aleks Karl Sundstrøm",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Howitzvej 30",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/frants-aleks-carl-sundstroem/",
+    "snublesten_dk_id": 2309,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Tidl. politistation"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546459,
+     55.680873
+    ]
+   },
+   "properties": {
+    "id": "DK-0025",
+    "navn": "Bernhard Schermeister",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "J.M. Thielesvej 1A",
+    "postnr": "1961",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/bernhard-schermeister/",
+    "snublesten_dk_id": 2333,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546469,
+     55.680793
+    ]
+   },
+   "properties": {
+    "id": "DK-0026",
+    "navn": "Edith Schermeister",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "J.M. Thielesvej 1A",
+    "postnr": "1961",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/edith-schermeister/",
+    "snublesten_dk_id": 2336,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546509,
+     55.680923
+    ]
+   },
+   "properties": {
+    "id": "DK-0027",
+    "navn": "Inge Schermeister",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "J.M. Thielesvej 1A",
+    "postnr": "1961",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/inge-schermeister/",
+    "snublesten_dk_id": 2340,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546539,
+     55.680903
+    ]
+   },
+   "properties": {
+    "id": "DK-0028",
+    "navn": "Jeanne Schermeister",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "J.M. Thielesvej 1A",
+    "postnr": "1961",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jeanne-schermeister/",
+    "snublesten_dk_id": 2341,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546389,
+     55.680913
+    ]
+   },
+   "properties": {
+    "id": "DK-0029",
+    "navn": "Lis Schermeister",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "J.M. Thielesvej 1A",
+    "postnr": "1961",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/lis-schermeister/",
+    "snublesten_dk_id": 2337,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553481,
+     55.680322
+    ]
+   },
+   "properties": {
+    "id": "DK-0030",
+    "navn": "Jonas Bornstein",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Julius Thomsens Plads 2",
+    "postnr": "1925",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jonas-bornstein/",
+    "snublesten_dk_id": 2366,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553581,
+     55.680312
+    ]
+   },
+   "properties": {
+    "id": "DK-0031",
+    "navn": "Jytte Bornstein",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Julius Thomsens Plads 2",
+    "postnr": "1925",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jytte-bornstein/",
+    "snublesten_dk_id": 2356,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553481,
+     55.680222
+    ]
+   },
+   "properties": {
+    "id": "DK-0032",
+    "navn": "Lilly Bornstein",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Julius Thomsens Plads 2",
+    "postnr": "1925",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/lilly-bornstein/",
+    "snublesten_dk_id": 2363,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553551,
+     55.680372
+    ]
+   },
+   "properties": {
+    "id": "DK-0033",
+    "navn": "Preben Bornstein",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Julius Thomsens Plads 2",
+    "postnr": "1925",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/preben-bornstein/",
+    "snublesten_dk_id": 2360,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.540779,
+     55.675484
+    ]
+   },
+   "properties": {
+    "id": "DK-0034",
+    "navn": "Kai Adolf Levin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Madvigs Allé 9",
+    "postnr": "1829",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/kai-levin/",
+    "snublesten_dk_id": 1671,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.540849,
+     55.675484
+    ]
+   },
+   "properties": {
+    "id": "DK-0035",
+    "navn": "Zerline Levin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Madvigs Allé 9",
+    "postnr": "1829",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/zerline-levin/",
+    "snublesten_dk_id": 1681,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553837,
+     55.678245
+    ]
+   },
+   "properties": {
+    "id": "DK-0036",
+    "navn": "Irma Hertz",
+    "fodt_aar": "1878",
+    "udfald": "Omkom",
+    "adresse": "Vodroffslund 3",
+    "postnr": "1419",
+    "by": "Frederiksberg C",
+    "kommune": "Frederiksberg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / IRMA HERTZ / GEB. ALS LEVY 1878 / VERHAFTET 7.10.1943 / DEPORTIERT / THERESIENSTADT / UMGEKOMMEN 21.12.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/irma-hertz/",
+    "snublesten_dk_id": 538,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Irma Hertz (Frederiksberg).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "de.wikipedia angiver adresse 'Vordruffslund 3'"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574903,
+     55.73692
+    ]
+   },
+   "properties": {
+    "id": "DK-0037",
+    "navn": "Hugo Wulff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ahlmanns Allé 2",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/hugo-wulff/",
+    "snublesten_dk_id": 3195,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574764,
+     55.736984
+    ]
+   },
+   "properties": {
+    "id": "DK-0038",
+    "navn": "Rose Wulff",
+    "fodt_aar": "1878",
+    "udfald": "Omkom",
+    "adresse": "Ahlmanns Allé 2",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSE WULFF / GEBOREN 1878 ALS SALOMONSEN / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 7.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/rose-wulff/",
+    "snublesten_dk_id": 1402,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Rose Wulff (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.530049,
+     55.745362
+    ]
+   },
+   "properties": {
+    "id": "DK-0039",
+    "navn": "Anna Bär",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Frugtparken 6",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/anna-bar/",
+    "snublesten_dk_id": 2374,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.530129,
+     55.745263
+    ]
+   },
+   "properties": {
+    "id": "DK-0040",
+    "navn": "Simon Titus Bär",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Frugtparken 6",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/simon-titus-bar/",
+    "snublesten_dk_id": 2376,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.542236,
+     55.751911
+    ]
+   },
+   "properties": {
+    "id": "DK-0041",
+    "navn": "Kaj James Cordosa Nagler",
+    "fodt_aar": "1895",
+    "udfald": "Overlevede",
+    "adresse": "Gentoftegade 4",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / KAJ JAMES / CORDOSA NAGLER / GEBOREN 1895 / VERHAFTET 2.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/kaj-james-cordosa-nagler/",
+    "snublesten_dk_id": 1388,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Kaj James Cordosa Nagler (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.568715,
+     55.767772
+    ]
+   },
+   "properties": {
+    "id": "DK-0042",
+    "navn": "Arne Jacobsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Gotfred Rodes Vej 2",
+    "postnr": "2920",
+    "by": "Charlottenlund",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/arne-jacobsen/",
+    "snublesten_dk_id": 2024,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.538961,
+     55.753054
+    ]
+   },
+   "properties": {
+    "id": "DK-0043",
+    "navn": "Tage Fox Maule",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Henning Bojesens Vej 2",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/tage-fox-maule/",
+    "snublesten_dk_id": 2352,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.56236,
+     55.736147
+    ]
+   },
+   "properties": {
+    "id": "DK-0044",
+    "navn": "Niels Haae Laub",
+    "fodt_aar": "1924",
+    "udfald": "Omkom",
+    "adresse": "Henningsens Allé 19",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / NIELS HAAE LAUB / GEBOREN 1924 / VERHAFTET 14.10.1944 / GEFÄNGNIS VESTRE / DEPORTIERT 1945 / NEUENGAMME / DESSAUER UFER / BULLENHUSER DAMM / ERMORDET 28.3.1945",
+    "kilde_url": "https://snublesten.dk/snublesten/niels-haae-laub/",
+    "snublesten_dk_id": 908,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Niels Haae Laub (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.562271,
+     55.736126
+    ]
+   },
+   "properties": {
+    "id": "DK-0045",
+    "navn": "Wilhelm Haae Laub",
+    "fodt_aar": "1887",
+    "udfald": "Omkom",
+    "adresse": "Henningsens Allé 19",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / WILHELM / HAAE LAUB / GEBOREN 1887 / WIDERSTANDSKÄMPFER / ERSCHOSSEN IN SEINEM HAUS / 16.2.1945",
+    "kilde_url": "https://snublesten.dk/snublesten/wilhelm-haae-laub/",
+    "snublesten_dk_id": 907,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Wilhelm Haae Laub (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.553561,
+     55.741931
+    ]
+   },
+   "properties": {
+    "id": "DK-0046",
+    "navn": "Alex Eisenberg",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Heslegårdsvej 45",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/alex-eisenberg/",
+    "snublesten_dk_id": 2331,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578911,
+     55.734188
+    ]
+   },
+   "properties": {
+    "id": "DK-0047",
+    "navn": "Alfred Heymann",
+    "fodt_aar": "1856",
+    "udfald": "Omkom",
+    "adresse": "Lille Strandvej 18B",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ALFRED HEYMANN / GEBOREN 1856 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 21.5.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/alfred-heymann/",
+    "snublesten_dk_id": 1032,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Alfred Heymann (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.503658,
+     55.747897
+    ]
+   },
+   "properties": {
+    "id": "DK-0048",
+    "navn": "Lilian Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Mosegårdsvej 134",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/lilian-cipikoff/",
+    "snublesten_dk_id": 3265,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.503808,
+     55.747997
+    ]
+   },
+   "properties": {
+    "id": "DK-0049",
+    "navn": "Martin Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Mosegårdsvej 134",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/martin-cipikoff/",
+    "snublesten_dk_id": 3260,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.503688,
+     55.747997
+    ]
+   },
+   "properties": {
+    "id": "DK-0050",
+    "navn": "Preben Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Mosegårdsvej 134",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/preben-cipikoff/",
+    "snublesten_dk_id": 3266,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.503798,
+     55.747997
+    ]
+   },
+   "properties": {
+    "id": "DK-0051",
+    "navn": "Sara Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Mosegårdsvej 134",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/sara-cipikoff/",
+    "snublesten_dk_id": 3262,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.50316,
+     55.747977
+    ]
+   },
+   "properties": {
+    "id": "DK-0052",
+    "navn": "Arnold Valdemar Skaade",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Mosegårdsvej 144",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/arnold-valdemar-skaade/",
+    "snublesten_dk_id": 3234,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574534,
+     55.735489
+    ]
+   },
+   "properties": {
+    "id": "DK-0053",
+    "navn": "Emil Valdemar Abrahamson",
+    "fodt_aar": "1867",
+    "udfald": "Omkom",
+    "adresse": "Strandvejen 191",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / EMIL VALDEMR / ABRAHAMSON / GEBOREN 1867 / VERHAFTET 1.10.1943 / DEPORTIERT / THERESIENSTADT / ERMORDET 15.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/emil-valdemar-abrahamson/",
+    "snublesten_dk_id": 1364,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Emil Valdemar Abrahamson (Gentofte).jpg",
+    "status": "Afvigelse – tjek",
+    "note": "Indskrift ifølge de.wikipedia: 'EMIL VALDEMR' – stavefejl på stenen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580785,
+     55.733876
+    ]
+   },
+   "properties": {
+    "id": "DK-0054",
+    "navn": "Alexander Benny Cordosa",
+    "fodt_aar": "1863",
+    "udfald": "Omkom",
+    "adresse": "Sundvej 6",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ALEXANDER BENNY / CORDOSA / GEBOREN 1863 / VERHAFTET 2.10.1943 / DEPORTIERT / THERESIENSTADT / ERMORDET 13.11.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/alexander-cordosa/",
+    "snublesten_dk_id": 1372,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Alexander Benny Cordosa (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580745,
+     55.733806
+    ]
+   },
+   "properties": {
+    "id": "DK-0055",
+    "navn": "Regitze Cordosa",
+    "fodt_aar": "1863",
+    "udfald": "Omkom",
+    "adresse": "Sundvej 6",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / REGITZE CORDOSA / GEBOREN 1863 / VERHAFTET 2.10.1943 / DEPORTIERT / THERESIENSTADT / ERMORDET 20.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/regitze-cordosa/",
+    "snublesten_dk_id": 1371,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Regitze Cordosa (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.591511,
+     55.770106
+    ]
+   },
+   "properties": {
+    "id": "DK-0056",
+    "navn": "Willie William Levysohn",
+    "fodt_aar": "1889",
+    "udfald": "Omkom",
+    "adresse": "Sølystparken 1",
+    "postnr": "2820",
+    "by": "Gentofte",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / WILLIE WILLIAM / LEVYSOHN / GEBOREN 1889 / VERHAFTET 29.8.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 16.3.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/willie-william-levysohn/",
+    "snublesten_dk_id": 973,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Willie William Levysohn (Gentofte).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.566934,
+     55.75108
+    ]
+   },
+   "properties": {
+    "id": "DK-0057",
+    "navn": "Lily Henriette Pfiffer-Madsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Wernersvej 8",
+    "postnr": "2920",
+    "by": "Charlottenlund",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/lily-henriette-pfiffer-madsen/",
+    "snublesten_dk_id": 2763,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.566954,
+     55.75115
+    ]
+   },
+   "properties": {
+    "id": "DK-0058",
+    "navn": "Rena Pfiffer-Madsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Wernersvej 8",
+    "postnr": "2920",
+    "by": "Charlottenlund",
+    "kommune": "Gentofte",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/rena-pfiffer-madsen/",
+    "snublesten_dk_id": 2760,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.510515,
+     55.729887
+    ]
+   },
+   "properties": {
+    "id": "DK-0059",
+    "navn": "Chaim Leiser Altermann",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Runebergs Allé 55-57",
+    "postnr": "2860",
+    "by": "Søborg",
+    "kommune": "Gladsaxe",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/chaim-leiser-altermann/",
+    "snublesten_dk_id": 2400,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.723118,
+     55.715653
+    ]
+   },
+   "properties": {
+    "id": "DK-0060",
+    "navn": "Poul Villy Christensen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Borchsvej 3",
+    "postnr": "4300",
+    "by": "Holbæk",
+    "kommune": "Holbæk",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/poul-villy-christensen/",
+    "snublesten_dk_id": 2794,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.471617,
+     55.484092
+    ]
+   },
+   "properties": {
+    "id": "DK-0061",
+    "navn": "Karinus Johannes Felsted",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Agtrupvej 1",
+    "postnr": "6000",
+    "by": "Kolding",
+    "kommune": "Kolding",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/karinus-felsted-modstandsmand/",
+    "snublesten_dk_id": 553,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.468492,
+     55.486167
+    ]
+   },
+   "properties": {
+    "id": "DK-0062",
+    "navn": "Kai Ibsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Clemensgade 1",
+    "postnr": "6000",
+    "by": "Kolding",
+    "kommune": "Kolding",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/kai-ibsen-kommunist-og-modstandsmand/",
+    "snublesten_dk_id": 550,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.470961,
+     55.470788
+    ]
+   },
+   "properties": {
+    "id": "DK-0063",
+    "navn": "Jørgen Kelstrup",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Haderslevvej 25",
+    "postnr": "6000",
+    "by": "Kolding",
+    "kommune": "Kolding",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jorgen-kelstrup-modstandsmand/",
+    "snublesten_dk_id": 918,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.471081,
+     55.470828
+    ]
+   },
+   "properties": {
+    "id": "DK-0064",
+    "navn": "Poul Seidenfaden",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Haderslevvej 25",
+    "postnr": "6000",
+    "by": "Kolding",
+    "kommune": "Kolding",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/poul-seidenfaden/",
+    "snublesten_dk_id": 917,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.471821,
+     55.482581
+    ]
+   },
+   "properties": {
+    "id": "DK-0065",
+    "navn": "Alice Henriette Dinesen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Hjelmsvej 11",
+    "postnr": "6000",
+    "by": "Kolding",
+    "kommune": "Kolding",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/alice-henriette-dinesen/",
+    "snublesten_dk_id": 554,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.589726,
+     55.697468
+    ]
+   },
+   "properties": {
+    "id": "DK-0066",
+    "navn": "Emma Heilbrun",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Arendalsgade 3",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/emma-heilbrun/",
+    "snublesten_dk_id": 2820,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583631,
+     55.663691
+    ]
+   },
+   "properties": {
+    "id": "DK-0067",
+    "navn": "Lauritz Nielsen Ferslev",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Artillerivej 55",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/lauritz-nielsen-ferslev/",
+    "snublesten_dk_id": 2372,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.568182,
+     55.686352
+    ]
+   },
+   "properties": {
+    "id": "DK-0068",
+    "navn": "Gerda von Essen",
+    "fodt_aar": "1856",
+    "udfald": "Omkom",
+    "adresse": "Bartholinsgade 1",
+    "postnr": "1356",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / GERDA VON ESSEN / GEB. ALS NATHANSEN 1856 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 28.1.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/gerda-von-essen/",
+    "snublesten_dk_id": 546,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Gerda von Essen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571623,
+     55.696875
+    ]
+   },
+   "properties": {
+    "id": "DK-0069",
+    "navn": "Niels Bohr",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Blegdamsvej 17",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/niels-bohr/",
+    "snublesten_dk_id": 1841,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4859,
+     55.684234
+    ]
+   },
+   "properties": {
+    "id": "DK-0070",
+    "navn": "Holger Koppel",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Bogholder Allé 68",
+    "postnr": "2720",
+    "by": "Vanløse",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/holger-koppel/",
+    "snublesten_dk_id": 2736,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48585,
+     55.684244
+    ]
+   },
+   "properties": {
+    "id": "DK-0071",
+    "navn": "Morris Sophus Koppel",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Bogholder Allé 68",
+    "postnr": "2720",
+    "by": "Vanløse",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/morris-sophus-koppel/",
+    "snublesten_dk_id": 2729,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4858,
+     55.684194
+    ]
+   },
+   "properties": {
+    "id": "DK-0072",
+    "navn": "Nissine Cecilie Koppel",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Bogholder Allé 68",
+    "postnr": "2720",
+    "by": "Vanløse",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/nissine-cecilie-koppel/",
+    "snublesten_dk_id": 2733,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.534398,
+     55.711969
+    ]
+   },
+   "properties": {
+    "id": "DK-0073",
+    "navn": "Adolf Anté Fischermann",
+    "fodt_aar": "1925",
+    "udfald": "Omkom",
+    "adresse": "Bogtrykkervej 43",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ADOLF ANTÉ / FISCHERMANN / GEBOREN 1925 / ERTRUNKEN AUF DER / FLUCHT NACH SCHWEDEN / 8.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/adolf-ante-fischermann/",
+    "snublesten_dk_id": 949,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Adolf Anté Fischermann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.534378,
+     55.712009
+    ]
+   },
+   "properties": {
+    "id": "DK-0074",
+    "navn": "Elias Leopold Fischermann",
+    "fodt_aar": "1894",
+    "udfald": "Omkom",
+    "adresse": "Bogtrykkervej 43",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ELIAS LEOPOLD / FISCHERMANN / GEBOREN 1894 / ERTRUNKEN AUF DER / FLUCHT NACH SCHWEDEN / 8.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/elias-leopold-fischermann/",
+    "snublesten_dk_id": 953,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Elias Leopold Fischermann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.534408,
+     55.711929
+    ]
+   },
+   "properties": {
+    "id": "DK-0075",
+    "navn": "Martha Fischermann",
+    "fodt_aar": "1896",
+    "udfald": "Overlevede",
+    "adresse": "Bogtrykkervej 43",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / MARTHA / FISCHERMANN / GEB. ALS WIGOTSKA 1896 / VERHAFTET 2.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/martha-fischermann/",
+    "snublesten_dk_id": 948,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Martha Fischermann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574926,
+     55.707897
+    ]
+   },
+   "properties": {
+    "id": "DK-0076",
+    "navn": "Ellen Hertz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Borgmester Jensens Allé 9",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/ellen-hertz/",
+    "snublesten_dk_id": 2821,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.54016,
+     55.700703
+    ]
+   },
+   "properties": {
+    "id": "DK-0077",
+    "navn": "Liselotte Schlachcis",
+    "fodt_aar": "1910",
+    "udfald": "Omkom",
+    "adresse": "Borgmestervangen 4A",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / LISELOTTE / SCHLACHCIS / GEBOREN 1910 / VERHAFTET 27.6.1941 / ABGESCHOBEN NACH DEUTSCHLAND / 3.8.1941 / ERMORDET 30.1.1943 / AUSCHWITZ",
+    "kilde_url": "https://snublesten.dk/snublesten/liselotte-schlachcis/",
+    "snublesten_dk_id": 234,
+    "wikidata": "Q64691540",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Liselotte Schlachcis (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.587398,
+     55.681237
+    ]
+   },
+   "properties": {
+    "id": "DK-0078",
+    "navn": "Ernst Platzko",
+    "fodt_aar": "1882",
+    "udfald": "Omkom",
+    "adresse": "Bredgade 3",
+    "postnr": "1260",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ERNST PLATZKO / GEBOREN 1882 / VERHAFTET 17.9.1940 / ABGESCHOBEN NACH DEUTSCHLAND / 18.9.1940 / SACHSENHAUSEN / ERMORDET 16.10.1942",
+    "kilde_url": "https://snublesten.dk/snublesten/ernst-platzko/",
+    "snublesten_dk_id": 243,
+    "wikidata": "Q64691631",
+    "osm_node": "13137562973 (?)",
+    "commons_fil": "Stolperstein für Ernst Platzko (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 25 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.590531,
+     55.685084
+    ]
+   },
+   "properties": {
+    "id": "DK-0079",
+    "navn": "Eva Salomonsen",
+    "fodt_aar": "1855",
+    "udfald": "Omkom",
+    "adresse": "Bredgade 51",
+    "postnr": "1260",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / EVA SALOMONSEN / GEB. ALS WAGNER 1855 / VERHAFTET 2.10.1943 / DEPORTIERT / THERESIENSTADT / UMGEKOMMEN 14.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/eva-salomonsen/",
+    "snublesten_dk_id": 532,
+    "wikidata": "",
+    "osm_node": "13136804794 (?)",
+    "commons_fil": "Stolperstein für Eva Salomonsen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 15 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583943,
+     55.684878
+    ]
+   },
+   "properties": {
+    "id": "DK-0080",
+    "navn": "Georg Kruse Christensen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Dronningens Tværgade 48",
+    "postnr": "1302",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/georg-kruse-christensen/",
+    "snublesten_dk_id": 1707,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.573036,
+     55.678953
+    ]
+   },
+   "properties": {
+    "id": "DK-0081",
+    "navn": "Abraham Axel Margolinsky",
+    "fodt_aar": "1888",
+    "udfald": "Overlevede",
+    "adresse": "Dyrkøb 3",
+    "postnr": "1166",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ABRAHAM 'AXEL' / MARGOLINSKY / GEBOREN 1888 / VERHAFTET 29.8.1943 / INTERNIERT IN HORSERØD / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/abraham-margolinsky/",
+    "snublesten_dk_id": 868,
+    "wikidata": "",
+    "osm_node": "13136772058 (?)",
+    "commons_fil": "Stolperstein für Abraham Margolinsky (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 11 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.573126,
+     55.678933
+    ]
+   },
+   "properties": {
+    "id": "DK-0082",
+    "navn": "Tove Margolinsky",
+    "fodt_aar": "1898",
+    "udfald": "Overlevede",
+    "adresse": "Dyrkøb 3",
+    "postnr": "1166",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / TOVE MARGOLINSKY / GEB. HEIMANN 1898 / FLUCHT NACH SCHWEDEN / 4.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/tove-margolinsky/",
+    "snublesten_dk_id": 869,
+    "wikidata": "",
+    "osm_node": "13136772058 (?)",
+    "commons_fil": "Stolperstein für Tove Margolinsky (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 11 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580049,
+     55.665497
+    ]
+   },
+   "properties": {
+    "id": "DK-0083",
+    "navn": "Betti Ruben",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/betti-ruben/",
+    "snublesten_dk_id": 3193,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580079,
+     55.665567
+    ]
+   },
+   "properties": {
+    "id": "DK-0084",
+    "navn": "Daniel Ruben",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/daniel-ruben/",
+    "snublesten_dk_id": 3198,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580079,
+     55.665547
+    ]
+   },
+   "properties": {
+    "id": "DK-0085",
+    "navn": "Judith Ruben",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/judith-ruben/",
+    "snublesten_dk_id": 3199,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580149,
+     55.665537
+    ]
+   },
+   "properties": {
+    "id": "DK-0086",
+    "navn": "Klara Ruben",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/klara-ruben/",
+    "snublesten_dk_id": 3194,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580109,
+     55.665597
+    ]
+   },
+   "properties": {
+    "id": "DK-0087",
+    "navn": "Leon Abraham Ruben",
+    "fodt_aar": "1895",
+    "udfald": "Omkom",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / LEON ABRAHAM / RUBEN / GEB. 1895 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 15.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/leon-abraham-ruben/",
+    "snublesten_dk_id": 535,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Leon Abraham Ruben (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580009,
+     55.665587
+    ]
+   },
+   "properties": {
+    "id": "DK-0088",
+    "navn": "Moses \"Mænni\" Ruben",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Egilsgade 29A",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/moses-maenni-ruben/",
+    "snublesten_dk_id": 3197,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.569392,
+     55.683694
+    ]
+   },
+   "properties": {
+    "id": "DK-0089",
+    "navn": "Edel Oppenheim",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Frederiksborggade 21",
+    "postnr": "1362",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/edel-oppenheim/",
+    "snublesten_dk_id": 2796,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.569472,
+     55.683824
+    ]
+   },
+   "properties": {
+    "id": "DK-0090",
+    "navn": "Gerson Oppenheim",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Frederiksborggade 21",
+    "postnr": "1360",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/gerson-oppenheim/",
+    "snublesten_dk_id": 2767,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.531661,
+     55.702259
+    ]
+   },
+   "properties": {
+    "id": "DK-0091",
+    "navn": "Leja 'Lea' Grünbaum",
+    "fodt_aar": "1893",
+    "udfald": "Overlevede",
+    "adresse": "Frederikssundsvej 39",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / LEJA 'LEA' / GRÜNBAUM / GEB. KATZ 1893 / VERHAFTET 4.10.1943 / INTERNIERT IN HORSERØD / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/leja-grunbaum/",
+    "snublesten_dk_id": 903,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Leja Grünbaum (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.53166,
+     55.702299
+    ]
+   },
+   "properties": {
+    "id": "DK-0092",
+    "navn": "Moshe Grünbaum",
+    "fodt_aar": "1882",
+    "udfald": "Overlevede",
+    "adresse": "Frederikssundsvej 39",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / MOSHE 'MOSES' / GRÜNBAUM / GEBOREN 1882 / VERHAFTET 4.10.1943 / INTERNIERT IN HORSERØD / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/moshe-grunbaum/",
+    "snublesten_dk_id": 902,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Moshe Grünbaum (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.531761,
+     55.702429
+    ]
+   },
+   "properties": {
+    "id": "DK-0093",
+    "navn": "Rachel Kagan",
+    "fodt_aar": "1928",
+    "udfald": "Overlevede",
+    "adresse": "Frederikssundsvej 39",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / RACHEL KAGAN / GEBOREN 1928 / VERHAFTET 4.10.1943 / INTERNIERT IN HORSERØD / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/rachel-kagan/",
+    "snublesten_dk_id": 904,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Rachel Kagan (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578854,
+     55.702699
+    ]
+   },
+   "properties": {
+    "id": "DK-0094",
+    "navn": "Johan Grün",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Gustav Adolfs Gade 5",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/johan-grun/",
+    "snublesten_dk_id": 2369,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578734,
+     55.702649
+    ]
+   },
+   "properties": {
+    "id": "DK-0095",
+    "navn": "Olaf Salomon Grün",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Gustav Adolfs Gade 5",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/olaf-salomon-grun/",
+    "snublesten_dk_id": 2370,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.525049,
+     55.650499
+    ]
+   },
+   "properties": {
+    "id": "DK-0096",
+    "navn": "Anker Herman Knudsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Haydnsvej 1",
+    "postnr": "2450",
+    "by": "København SV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/anker-herman-knudsen/",
+    "snublesten_dk_id": 3276,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.547125,
+     55.695198
+    ]
+   },
+   "properties": {
+    "id": "DK-0097",
+    "navn": "Josef Flammenbaum",
+    "fodt_aar": "1890",
+    "udfald": "Omkom",
+    "adresse": "Heinesgade 1",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / JOSEF / FLAMMENBAUM / GEB. 1890 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 19.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/josef-flammenbaum/",
+    "snublesten_dk_id": 548,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Josef Flammenbaum (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.54714,
+     55.695162
+    ]
+   },
+   "properties": {
+    "id": "DK-0098",
+    "navn": "Meniche Flammenbaum",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Heinesgade 1",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/meniche-flammenbaum/",
+    "snublesten_dk_id": 2773,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.633526,
+     55.657119
+    ]
+   },
+   "properties": {
+    "id": "DK-0099",
+    "navn": "Willy Engel",
+    "fodt_aar": "1871",
+    "udfald": "Omkom",
+    "adresse": "Italiensvej 73",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "HER BOEDE WILLY ENGEL FØDT 1871 ARRESTERET 1.10.1943 DEPORTERET 1943 THERESIENSTADT MYRDET 23.2.1944",
+    "indskrift_de_wiki": "HIER WOHNTE / WILLY ENGEL / GEBOREN 1871 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 23.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/willy-engel/",
+    "snublesten_dk_id": 543,
+    "wikidata": "",
+    "osm_node": "12294906974",
+    "commons_fil": "Stolperstein für Willy Engel (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.549639,
+     55.686016
+    ]
+   },
+   "properties": {
+    "id": "DK-0100",
+    "navn": "Rudolf Apter",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Jægergade 5-15",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/rudolf-apter/",
+    "snublesten_dk_id": 1704,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.549589,
+     55.686166
+    ]
+   },
+   "properties": {
+    "id": "DK-0101",
+    "navn": "Sonja Apter",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Jægergade 5-15",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/sonja-apter/",
+    "snublesten_dk_id": 1705,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.626273,
+     55.645847
+    ]
+   },
+   "properties": {
+    "id": "DK-0102",
+    "navn": "Svend Arne Larsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kastrupvej 173",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/svend-arne-larsen/",
+    "snublesten_dk_id": 2739,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.619657,
+     55.653413
+    ]
+   },
+   "properties": {
+    "id": "DK-0103",
+    "navn": "Berl Kanter",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kastrupvej 75",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/berl-kanter/",
+    "snublesten_dk_id": 2823,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.619607,
+     55.653433
+    ]
+   },
+   "properties": {
+    "id": "DK-0104",
+    "navn": "Sima Ente Kanter",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kastrupvej 75",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/sima-ente-kanter/",
+    "snublesten_dk_id": 2822,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.579007,
+     55.703802
+    ]
+   },
+   "properties": {
+    "id": "DK-0105",
+    "navn": "Helene Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kirsteinsgade 4",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/helene-cipikoff/",
+    "snublesten_dk_id": 3256,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.579067,
+     55.703962
+    ]
+   },
+   "properties": {
+    "id": "DK-0106",
+    "navn": "Nison 'Nathan' Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kirsteinsgade 4",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/nison-nathan-cipikoff/",
+    "snublesten_dk_id": 3254,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.473948,
+     55.708391
+    ]
+   },
+   "properties": {
+    "id": "DK-0107",
+    "navn": "Egon Henry Johannesen",
+    "fodt_aar": "1918",
+    "udfald": "Omkom",
+    "adresse": "Korsager Allé 38",
+    "postnr": "2700",
+    "by": "Brønshøj",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / EGON HENRY / JOHANNESEN / GEBOREN 1918 / FLUCHTHELFER FÜR JUDEN / ZU HAUSE ERSCHOSSEN / 24.11.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/egon-henry-johannesen/",
+    "snublesten_dk_id": 526,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Egon Henry Johannesen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.582023,
+     55.70446
+    ]
+   },
+   "properties": {
+    "id": "DK-0108",
+    "navn": "Claus Christian Heilesen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Krausesvej 6",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/claus-christian-heilesen/",
+    "snublesten_dk_id": 2407,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.579736,
+     55.680815
+    ]
+   },
+   "properties": {
+    "id": "DK-0109",
+    "navn": "Ruth Fanni Niedrig",
+    "fodt_aar": "1920",
+    "udfald": "Omkom",
+    "adresse": "Kronprinsensgade 13",
+    "postnr": "1114",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / RUTH FANNI / NIEDRIG / GEBOREN 1920 ALS SECKELSON / VERHAFTET 4.5.1940 / ABGESCHOBEN NACH DEUTSCHLAND / 11.7.1940 / ERMORDET AUG. 1943 / AUSCHWITZ",
+    "kilde_url": "https://snublesten.dk/snublesten/ruth-fanni-niedrig/",
+    "snublesten_dk_id": 244,
+    "wikidata": "Q64691643",
+    "osm_node": "13136795321 (?)",
+    "commons_fil": "Stolperstein für Ruth Fanni Niedrig (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 5 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.579666,
+     55.680955
+    ]
+   },
+   "properties": {
+    "id": "DK-0110",
+    "navn": "Schulim Niedrig",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Kronprinsensgade 13",
+    "postnr": "1114",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/schulim-niedrig/",
+    "snublesten_dk_id": 2766,
+    "wikidata": "",
+    "osm_node": "13136795321 (?)",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 5 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5732,
+     55.681384
+    ]
+   },
+   "properties": {
+    "id": "DK-0111",
+    "navn": "Beile Malka Zipikoff",
+    "fodt_aar": "1861",
+    "udfald": "Omkom",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BEILE MALKA / ZIPIKOFF / GEBOREN 1861 ALS UNTERSCHLAG / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 21.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/beile-malka-zipikoff/",
+    "snublesten_dk_id": 926,
+    "wikidata": "Q88907771",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Beile Malka Zipikoff (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57319,
+     55.681424
+    ]
+   },
+   "properties": {
+    "id": "DK-0112",
+    "navn": "Blima Itzkowitz",
+    "fodt_aar": "1861",
+    "udfald": "Overlevede",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BLIMA ITZKOWITZ / GEB. WARSAWSKI 1861 / VERHAFTET 4.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/blima-itzkowitz/",
+    "snublesten_dk_id": 576,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Blima Itzkowitz (Kopenhagen).jpg",
+    "status": "Afvigelse – tjek",
+    "note": "de.wikipedia angiver adresse 'Vibevej 45'; OSM-node uden navn 41 m væk – hvilken sten på adressen?; AFVIGELSE: snublesten.dk siger Krystalgade 12, de.wikipedia Vibevej 45"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57311,
+     55.681314
+    ]
+   },
+   "properties": {
+    "id": "DK-0113",
+    "navn": "Isak Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/isak-waniewitz/",
+    "snublesten_dk_id": 1675,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.573059,
+     55.681382
+    ]
+   },
+   "properties": {
+    "id": "DK-0114",
+    "navn": "Klara Nathan",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/klara-nathan/",
+    "snublesten_dk_id": 2756,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57316,
+     55.681283
+    ]
+   },
+   "properties": {
+    "id": "DK-0115",
+    "navn": "Martin Isidor Cohen",
+    "fodt_aar": "1865",
+    "udfald": "Omkom",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / MARTIN ISIDOR / COHEN / GEBOREN 1865 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 14.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/martin-isidor-cohen/",
+    "snublesten_dk_id": 919,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Martin Isidor Cohen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57321,
+     55.681413
+    ]
+   },
+   "properties": {
+    "id": "DK-0116",
+    "navn": "Rosa Nachemsohn",
+    "fodt_aar": "1868",
+    "udfald": "Omkom",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSA NACHEMSOHN / GEBOREN 1868 ALS HILLELSOHN / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 22.12.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/rosa-nachemsohn/",
+    "snublesten_dk_id": 927,
+    "wikidata": "Q88907774",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Rosa Nachemsohn (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57308,
+     55.681434
+    ]
+   },
+   "properties": {
+    "id": "DK-0117",
+    "navn": "Rosette Meyer",
+    "fodt_aar": "1871",
+    "udfald": "Omkom",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSETTE MEYER / GEBOREN 1871 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 17.6.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/rosette-meyer/",
+    "snublesten_dk_id": 920,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Rosette Meyer (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5731,
+     55.681393
+    ]
+   },
+   "properties": {
+    "id": "DK-0118",
+    "navn": "Sofie Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/sofie-waniewitz/",
+    "snublesten_dk_id": 1678,
+    "wikidata": "",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57305,
+     55.681314
+    ]
+   },
+   "properties": {
+    "id": "DK-0119",
+    "navn": "Thora Krogmann",
+    "fodt_aar": "1875",
+    "udfald": "Omkom",
+    "adresse": "Krystalgade 12",
+    "postnr": "1172",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / THORA KROGMANN / GEBOREN 1875 ALS WOHLMUTH / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 13.8.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/thora-krogmann/",
+    "snublesten_dk_id": 925,
+    "wikidata": "Q88907777",
+    "osm_node": "13136783332 (?)",
+    "commons_fil": "Stolperstein für Thora Krogmann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 41 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.590516,
+     55.681571
+    ]
+   },
+   "properties": {
+    "id": "DK-0120",
+    "navn": "William Melchior",
+    "fodt_aar": "1884",
+    "udfald": "Omkom",
+    "adresse": "Lille Strandstræde 26",
+    "postnr": "1254",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / WILLIAM MELCHIOR / GEBOREN 1884 / VERHAFTET 1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 27.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/william-melchior/",
+    "snublesten_dk_id": 544,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für William Melchior (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583223,
+     55.707765
+    ]
+   },
+   "properties": {
+    "id": "DK-0121",
+    "navn": "Arthur Ascher",
+    "fodt_aar": "1881",
+    "udfald": "Omkom",
+    "adresse": "Løgstørgade 19",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ARTHUR ASHER / GEBOREN 1881 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 5.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/arthur-ascher/",
+    "snublesten_dk_id": 528,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Arthur Ascher (Kopenhagen).jpg",
+    "status": "Afvigelse – tjek",
+    "note": "Indskrift ifølge de.wikipedia: 'ARTHUR ASHER' – stavefejl på stenen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583163,
+     55.707725
+    ]
+   },
+   "properties": {
+    "id": "DK-0122",
+    "navn": "Martha Mathilde Goldberg",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Løgstørgade 19",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/martha-mathilde-goldberg/",
+    "snublesten_dk_id": 2411,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.575712,
+     55.676603
+    ]
+   },
+   "properties": {
+    "id": "DK-0123",
+    "navn": "Michael Rubin Singerowitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Magstræde 8",
+    "postnr": "1204",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/michael-rubin-singerowitz/",
+    "snublesten_dk_id": 3209,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.562357,
+     55.682048
+    ]
+   },
+   "properties": {
+    "id": "DK-0124",
+    "navn": "Elias Levin",
+    "fodt_aar": "1909",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 19",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ELIAS LEVIN / GEBOREN 1909 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/elias-levin/",
+    "snublesten_dk_id": 870,
+    "wikidata": "",
+    "osm_node": "13136734631 (?)",
+    "commons_fil": "Stolperstein für Elias Levin (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 35 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.562417,
+     55.682078
+    ]
+   },
+   "properties": {
+    "id": "DK-0125",
+    "navn": "Nachman Simcha Levin",
+    "fodt_aar": "1873",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 19",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / NACHMAN SIMCHA / LEVIN / GEBOREN 1873 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/nachman-simcha-levin/",
+    "snublesten_dk_id": 987,
+    "wikidata": "",
+    "osm_node": "13136734631 (?)",
+    "commons_fil": "Stolperstein für Nachman Simcha Levin (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 35 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.562447,
+     55.681968
+    ]
+   },
+   "properties": {
+    "id": "DK-0126",
+    "navn": "Rifka Rebecca Levin",
+    "fodt_aar": "1901",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 19",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / RIFKA REBECCA / LEVIN / GEBOREN 1901 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/rifka-levin/",
+    "snublesten_dk_id": 871,
+    "wikidata": "",
+    "osm_node": "13136734631 (?)",
+    "commons_fil": "Stolperstein für Rifka Rebecca Levin (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 35 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.564847,
+     55.682933
+    ]
+   },
+   "properties": {
+    "id": "DK-0127",
+    "navn": "Alfred Fürst",
+    "fodt_aar": "1905",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 52",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ALFRED FÜRST / GEBOREN 1905 / VERHAFTET 6.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/alfred-furst/",
+    "snublesten_dk_id": 877,
+    "wikidata": "",
+    "osm_node": "13136781586 (?)",
+    "commons_fil": "Stolperstein für Alfred Fürst (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 1 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.564717,
+     55.683053
+    ]
+   },
+   "properties": {
+    "id": "DK-0128",
+    "navn": "Anna Fürst",
+    "fodt_aar": "1907",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 52",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ANNA NAHAMA FÜRST / GEB. LEVIN 1907 / VERHAFTET 6.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/anna-furst/",
+    "snublesten_dk_id": 882,
+    "wikidata": "",
+    "osm_node": "13136781586 (?)",
+    "commons_fil": "Stolperstein für Anna Nahama Fürst (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 1 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.564827,
+     55.682903
+    ]
+   },
+   "properties": {
+    "id": "DK-0129",
+    "navn": "Hennie Fürst",
+    "fodt_aar": "1944",
+    "udfald": "Overlevede",
+    "adresse": "Nansensgade 52",
+    "postnr": "1366",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HENNIE FÜRST / GEBOREN 31.3.1944 / IN THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/hennie-furst/",
+    "snublesten_dk_id": 875,
+    "wikidata": "",
+    "osm_node": "13136781586 (?)",
+    "commons_fil": "Stolperstein für Hennie Fürst (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 1 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581717,
+     55.701677
+    ]
+   },
+   "properties": {
+    "id": "DK-0130",
+    "navn": "Børge Daub Fogel",
+    "fodt_aar": "1913",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BØRGE DAUB / FOGEL / GEBOREN 1913 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/borge-daub-fogel/",
+    "snublesten_dk_id": 888,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Borge Daub Fogel (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581717,
+     55.701647
+    ]
+   },
+   "properties": {
+    "id": "DK-0131",
+    "navn": "Eva Fogel",
+    "fodt_aar": "1886",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / EVA FOGEL / GEB. LEVIN 1886 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/eva-fogel/",
+    "snublesten_dk_id": 887,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Eva Fogel (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581817,
+     55.701667
+    ]
+   },
+   "properties": {
+    "id": "DK-0132",
+    "navn": "Inge-Lise Jensen",
+    "fodt_aar": "1936",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / INGE-LISE JENSEN / GEBOREN 1936 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / FREIGEKOMMEN 14.1.1944 / MIT HILFE IHRES VATERS",
+    "kilde_url": "https://snublesten.dk/snublesten/inge-lise-jensen/",
+    "snublesten_dk_id": 895,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Inge-Lise Jensen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581787,
+     55.701617
+    ]
+   },
+   "properties": {
+    "id": "DK-0133",
+    "navn": "Nisop Fogel",
+    "fodt_aar": "1878",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / NISOP 'NATHAN' / FOGEL / GEBOREN 1878 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/nisop-nathan-fogel/",
+    "snublesten_dk_id": 886,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Nisop Fogel (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581767,
+     55.701577
+    ]
+   },
+   "properties": {
+    "id": "DK-0134",
+    "navn": "Paula Gurli Jensen",
+    "fodt_aar": "1917",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / PAULA GURLI / JENSEN / GEB. FOGEL 1917 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/paula-gurli-jensen/",
+    "snublesten_dk_id": 894,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Paula Gurli Jensen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.581747,
+     55.701557
+    ]
+   },
+   "properties": {
+    "id": "DK-0135",
+    "navn": "Sonja Doris Fogel",
+    "fodt_aar": "1912",
+    "udfald": "Overlevede",
+    "adresse": "Nordre Frihavnsgade 32",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / SONJA DORIS / FOGEL / GEBOREN 1912 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/sonja-fogel/",
+    "snublesten_dk_id": 892,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Sonja Doris Fogel (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.576536,
+     55.673833
+    ]
+   },
+   "properties": {
+    "id": "DK-0136",
+    "navn": "Britta Edel Nathanson",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ny Kongensgade 8",
+    "postnr": "1472",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/britta-edel-nathanson/",
+    "snublesten_dk_id": 2759,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.576626,
+     55.674023
+    ]
+   },
+   "properties": {
+    "id": "DK-0137",
+    "navn": "Jurika Nathanson",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ny Kongensgade 8",
+    "postnr": "1472",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jurika-nathanson/",
+    "snublesten_dk_id": 2758,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.576586,
+     55.673843
+    ]
+   },
+   "properties": {
+    "id": "DK-0138",
+    "navn": "Rebekka Wattkin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ny Kongensgade 8",
+    "postnr": "1472",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/rebekka-wattkin/",
+    "snublesten_dk_id": 2789,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.570902,
+     55.680622
+    ]
+   },
+   "properties": {
+    "id": "DK-0139",
+    "navn": "Irma Barasch",
+    "fodt_aar": "1893",
+    "udfald": "Omkom",
+    "adresse": "Nørregade 27",
+    "postnr": "1165",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / IRMA BARASCH / GEBOREN 1893 ALS MARCUSE / VERHAFTET 29.8.1942 / ABGESCHOBEN NACH DEUTSCHLAND / 7.9.1942 / AUSCHWITZ / ERMORDET",
+    "kilde_url": "https://snublesten.dk/snublesten/irma-barasch/",
+    "snublesten_dk_id": 929,
+    "wikidata": "",
+    "osm_node": "13136756200 (?)",
+    "commons_fil": "Stolperstein für Irma Barasch (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 8 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.570962,
+     55.680772
+    ]
+   },
+   "properties": {
+    "id": "DK-0140",
+    "navn": "Julius Barasch",
+    "fodt_aar": "1898",
+    "udfald": "Omkom",
+    "adresse": "Nørregade 27",
+    "postnr": "1165",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / JULIUS BARASCH / GEBOREN 1898 / VERHAFTET 29.8.1942 / ABGESCHOBEN NACH DEUTSCHLAND / 7.9.1942 / ERMORDET 23.10.1943 / AUSCHWITZ",
+    "kilde_url": "https://snublesten.dk/snublesten/julius-barasch/",
+    "snublesten_dk_id": 928,
+    "wikidata": "",
+    "osm_node": "13136756200 (?)",
+    "commons_fil": "Stolperstein für Julius Barasch (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 8 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571776,
+     55.689335
+    ]
+   },
+   "properties": {
+    "id": "DK-0141",
+    "navn": "Birgit Krasnik",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ole Suhrs Gade 13",
+    "postnr": "1354",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/birgit-krasnik/",
+    "snublesten_dk_id": 1696,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571716,
+     55.689245
+    ]
+   },
+   "properties": {
+    "id": "DK-0142",
+    "navn": "Isak Krasnik",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ole Suhrs Gade 13",
+    "postnr": "1354",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/isak-krasnik/",
+    "snublesten_dk_id": 1694,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571766,
+     55.689245
+    ]
+   },
+   "properties": {
+    "id": "DK-0143",
+    "navn": "Preben Krasnik",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ole Suhrs Gade 13",
+    "postnr": "1354",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/preben-krasnik/",
+    "snublesten_dk_id": 1698,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.571766,
+     55.689365
+    ]
+   },
+   "properties": {
+    "id": "DK-0144",
+    "navn": "Rachel Krasnik",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ole Suhrs Gade 13",
+    "postnr": "1354",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/rachel-krasnik/",
+    "snublesten_dk_id": 1692,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.55971,
+     55.684634
+    ]
+   },
+   "properties": {
+    "id": "DK-0145",
+    "navn": "Jeremias Tarchis",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Peblinge Dossering 32A",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jeremias-tarchis/",
+    "snublesten_dk_id": 2787,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.55966,
+     55.684544
+    ]
+   },
+   "properties": {
+    "id": "DK-0146",
+    "navn": "Marie Tarchis",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Peblinge Dossering 32A",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/marie-tarchis/",
+    "snublesten_dk_id": 2788,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.551309,
+     55.686008
+    ]
+   },
+   "properties": {
+    "id": "DK-0147",
+    "navn": "Herschel Fischel Choleva",
+    "fodt_aar": "1885",
+    "udfald": "Omkom",
+    "adresse": "Rantzausgade 18",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / HERSCHEL FISCHEL / CHOLEVA / GEBOREN 1885 / VERHAFTET 4.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 17.10.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/herschel-fischel-choleva/",
+    "snublesten_dk_id": 233,
+    "wikidata": "Q64691528",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Herschel Fischel Choleva (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.563151,
+     55.688437
+    ]
+   },
+   "properties": {
+    "id": "DK-0148",
+    "navn": "Pinkus Katz",
+    "fodt_aar": "1875",
+    "udfald": "Omkom",
+    "adresse": "Ravnsborg Tværgade 3",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "Her boede Pinkus Katz født 1875 arresteret 1.10.1943 deporteret 1943 Theresienstadt omkommet 15.3.1944",
+    "indskrift_de_wiki": "HIER WOHNTE / PINKUS KATZ / GEBOREN 1875 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 15.3.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/pinkus-katz/",
+    "snublesten_dk_id": 238,
+    "wikidata": "Q64691614",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Pinkus Katz (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580542,
+     55.701902
+    ]
+   },
+   "properties": {
+    "id": "DK-0149",
+    "navn": "Birger Mouritsen",
+    "fodt_aar": "1921",
+    "udfald": "Omkom",
+    "adresse": "Ribegade 2",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BIRGER MOURITSEN / GEBOREN 1921 / VERHAFTET 2.6.1944 / DEPORTIERT / PORTA WESTFALICA / NEUENGAMME / ERMORDET 28.11.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/birger-mouritsen/",
+    "snublesten_dk_id": 547,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Birger Mouritsen (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57945,
+     55.698738
+    ]
+   },
+   "properties": {
+    "id": "DK-0150",
+    "navn": "Jacob Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Rosenvængets Allé 6",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jacob-waniewitz/",
+    "snublesten_dk_id": 1679,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57949,
+     55.698708
+    ]
+   },
+   "properties": {
+    "id": "DK-0151",
+    "navn": "Poula Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Rosenvængets Allé 6",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/poula-waniewitz/",
+    "snublesten_dk_id": 1688,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57949,
+     55.698848
+    ]
+   },
+   "properties": {
+    "id": "DK-0152",
+    "navn": "Rifka Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Rosenvængets Allé 6",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/rifka-waniewitz/",
+    "snublesten_dk_id": 1691,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57942,
+     55.698888
+    ]
+   },
+   "properties": {
+    "id": "DK-0153",
+    "navn": "Zirla Waniewitz",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Rosenvængets Allé 6",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/zirla-waniewitz/",
+    "snublesten_dk_id": 1686,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.555655,
+     55.681805
+    ]
+   },
+   "properties": {
+    "id": "DK-0154",
+    "navn": "Dorothea Polack",
+    "fodt_aar": "1862",
+    "udfald": "Omkom",
+    "adresse": "Rosenørns Allé 10",
+    "postnr": "1634",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / DOROTHEA POLACK / GEBOREN 1862 / VERHAFTET OCTOBER 1943 / DEPORTIERT / THERESIENSTADT / UMGEKOMMEN 8.12.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/dorothea-polack/",
+    "snublesten_dk_id": 529,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574294,
+     55.68296
+    ]
+   },
+   "properties": {
+    "id": "DK-0155",
+    "navn": "Julius Jacob Moritzon Lazarus",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Sankt Gertruds Stræde 1",
+    "postnr": "1129",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/julius-jacob-moritzon-lazarus/",
+    "snublesten_dk_id": 2757,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.588691,
+     55.687009
+    ]
+   },
+   "properties": {
+    "id": "DK-0156",
+    "navn": "Abraham Schwartz",
+    "fodt_aar": "1877",
+    "udfald": "Overlevede",
+    "adresse": "Sankt Pauls Gade 7",
+    "postnr": "1313",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ABRAHAM / SCHWARTZ / GEBOREN 1877 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/abraham-schwartz/",
+    "snublesten_dk_id": 939,
+    "wikidata": "",
+    "osm_node": "13136776310 (?)",
+    "commons_fil": "Stolperstein für Abraham Schwartz (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 9 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.588771,
+     55.686909
+    ]
+   },
+   "properties": {
+    "id": "DK-0157",
+    "navn": "Rachel \"Rose\" Schwartz",
+    "fodt_aar": "1876",
+    "udfald": "Overlevede",
+    "adresse": "Sankt Pauls Gade 7",
+    "postnr": "1313",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / RACHEL 'ROSE' / SCHWARTZ / GEB. SCHWARZFEDER 1876 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/rachel-rose-schwartz/",
+    "snublesten_dk_id": 938,
+    "wikidata": "",
+    "osm_node": "13136776310 (?)",
+    "commons_fil": "Stolperstein für Rachel Schwartz (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 9 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.563853,
+     55.682168
+    ]
+   },
+   "properties": {
+    "id": "DK-0158",
+    "navn": "Benno Politur",
+    "fodt_aar": "1872",
+    "udfald": "Omkom",
+    "adresse": "Schacksgade 11",
+    "postnr": "1365",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BENNO POLITUR / GEB. 1872 / VERHAFTET OKT. 1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 13.9.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/benno-politur/",
+    "snublesten_dk_id": 530,
+    "wikidata": "",
+    "osm_node": "13136703438 (?)",
+    "commons_fil": "Stolperstein für Benno Politur (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 11 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.606499,
+     55.658921
+    ]
+   },
+   "properties": {
+    "id": "DK-0159",
+    "navn": "Chaim Wassermann",
+    "fodt_aar": "1897",
+    "udfald": "Omkom",
+    "adresse": "Shetlandsgade 2",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "HER BOEDE CHAIM WASSERMANN FØDT 1897 DRUKNET UNDER FLUGT TIL SVERIGE 5.10.1943",
+    "indskrift_de_wiki": "HIER WOHNTE / CHAIM / WASSERMANN / GEBOREN 1897 / ERTRUNKEN AUF DER / FLUCHT NACH SCHWEDEN / 5.10.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/chaim-wassermann/",
+    "snublesten_dk_id": 536,
+    "wikidata": "",
+    "osm_node": "12300491690",
+    "commons_fil": "Stolperstein für Chaim Wassermann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.572747,
+     55.676821
+    ]
+   },
+   "properties": {
+    "id": "DK-0160",
+    "navn": "Hans Erik Andersen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Slutterigade 1",
+    "postnr": "1461",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/hans-erik-andersen/",
+    "snublesten_dk_id": 2314,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.587699,
+     55.684537
+    ]
+   },
+   "properties": {
+    "id": "DK-0161",
+    "navn": "Else Margolinsky",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Store Kongensgade 61",
+    "postnr": "1264",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/else-margolinsky/",
+    "snublesten_dk_id": 3249,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.580941,
+     55.686894
+    ]
+   },
+   "properties": {
+    "id": "DK-0162",
+    "navn": "Schmul Sender Jonisch",
+    "fodt_aar": "1899",
+    "udfald": "Omkom",
+    "adresse": "Sølvgade 34",
+    "postnr": "1307",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2019",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / SCHMUL / SENDER JONISCH / GEBOREN 1899 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET MÄRZ 1944 / AUSCHWITZ",
+    "kilde_url": "https://snublesten.dk/snublesten/schmul-sender-jonisch/",
+    "snublesten_dk_id": 239,
+    "wikidata": "Q64691620",
+    "osm_node": "13136775872 (?)",
+    "commons_fil": "Stolperstein für Schmul Sender Jonisch (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 12 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.572778,
+     55.690039
+    ]
+   },
+   "properties": {
+    "id": "DK-0163",
+    "navn": "Cecilia Goldschmidt",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Sølvgade 95",
+    "postnr": "1307",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2024",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/cecilia-goldschmidt/",
+    "snublesten_dk_id": 2308,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578047,
+     55.667087
+    ]
+   },
+   "properties": {
+    "id": "DK-0164",
+    "navn": "Blume Blenda Becker",
+    "fodt_aar": "1883",
+    "udfald": "Overlevede",
+    "adresse": "Thorshavnsgade 28",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / BLUME BLENDA / BECKER / GEB. ALS BECKER 1883 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/blume-blenda-becker/",
+    "snublesten_dk_id": 936,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Blume Blenda Becker (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5781,
+     55.667053
+    ]
+   },
+   "properties": {
+    "id": "DK-0165",
+    "navn": "Hirsch 'Herman' Becker",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Thorshavnsgade 28",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/hirsch-herman-becker/",
+    "snublesten_dk_id": 2738,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578137,
+     55.667117
+    ]
+   },
+   "properties": {
+    "id": "DK-0166",
+    "navn": "Salomon Moses Becker",
+    "fodt_aar": "1880",
+    "udfald": "Omkom",
+    "adresse": "Thorshavnsgade 28",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / SALOMON MOSES / BECKER / GEBOREN 1880 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / UMGEKOMMEN 21.2.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/salomon-moses-becker/",
+    "snublesten_dk_id": 937,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Salomon Moses Becker (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598784,
+     55.668428
+    ]
+   },
+   "properties": {
+    "id": "DK-0167",
+    "navn": "Rose Kielberg",
+    "fodt_aar": "1877",
+    "udfald": "Omkom",
+    "adresse": "Vermlandsgade 18",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2022",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "HER BOEDE ROSE KIELBERG FØDT GRAFF 1877 ARRESTERET 1.10.1943 DEPORTERET 1943 THERESIENSTADT MYRDET 28.3.1944",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSE KIELBERG / GEB. GRAFF 1877 / VERHAFTET 1.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / ERMORDET 28.3.1944",
+    "kilde_url": "https://snublesten.dk/snublesten/rose-kielberg/",
+    "snublesten_dk_id": 574,
+    "wikidata": "",
+    "osm_node": "12300516015",
+    "commons_fil": "Stolperstein für Rose Kielberg (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574512,
+     55.673511
+    ]
+   },
+   "properties": {
+    "id": "DK-0168",
+    "navn": "Rosalie Galathea Salomon",
+    "fodt_aar": "1860",
+    "udfald": "Omkom",
+    "adresse": "Vester Voldgade 92",
+    "postnr": "1552",
+    "by": "København K",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2020",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ROSALIE GALATHEA / SALOMON / GEB. COHEN 1860 / VERHAFTET 2.10.1943 / DEPORTIERT / THERESIENSTADT / UMGEKOMMEN 18.11.1943",
+    "kilde_url": "https://snublesten.dk/snublesten/rosalie-galathea-salomon/",
+    "snublesten_dk_id": 531,
+    "wikidata": "",
+    "osm_node": "13136761371 (?)",
+    "commons_fil": "Stolperstein für Rosalie Galathea Salomon (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "OSM-node uden navn 11 m væk – hvilken sten på adressen?"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.530304,
+     55.699057
+    ]
+   },
+   "properties": {
+    "id": "DK-0169",
+    "navn": "Annie Smaalann",
+    "fodt_aar": "1930",
+    "udfald": "Overlevede",
+    "adresse": "Vibevej 45",
+    "postnr": "2400",
+    "by": "København NV",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ANNIE SMAALANN / GEBOREN 1930 / VERHAFTET 4.10.1943 / DEPORTIERT 1943 / THERESIENSTADT / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/annie-smaalan/",
+    "snublesten_dk_id": 549,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Annie Smaalann (Kopenhagen).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546134,
+     55.699631
+    ]
+   },
+   "properties": {
+    "id": "DK-0170",
+    "navn": "David Ruben Gendlin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ægirsgade 41",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/david-ruben-gendlin/",
+    "snublesten_dk_id": 1725,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546124,
+     55.699491
+    ]
+   },
+   "properties": {
+    "id": "DK-0171",
+    "navn": "Leif Gendlin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ægirsgade 41",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/leif-gendlin/",
+    "snublesten_dk_id": 1727,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.546134,
+     55.699621
+    ]
+   },
+   "properties": {
+    "id": "DK-0172",
+    "navn": "Sara Gendlin",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Ægirsgade 41",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": "København",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/sara-gendlin/",
+    "snublesten_dk_id": 1723,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.544121,
+     55.785829
+    ]
+   },
+   "properties": {
+    "id": "DK-0173",
+    "navn": "Elisabeth Bomhoff",
+    "fodt_aar": "1912",
+    "udfald": "Overlevede",
+    "adresse": "Langs Hegnet 28B",
+    "postnr": "2800",
+    "by": "Kongens Lyngby",
+    "kommune": "Lyngby-Taarbæk",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / ELISABETH BOMHOFF / GEB. ALS NIELSEN 1912 / UNTERSTÜTZTE DIE / WIDERSTANDSBEWEGUNG / VERHAFTET 18.10.1944 / INTERNIERUNGSLAGER FRØSLEV / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/elisabeth-bomhoff/",
+    "snublesten_dk_id": 923,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Elisabeth Bomhoff (Kongens Lyngby).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.544151,
+     55.785739
+    ]
+   },
+   "properties": {
+    "id": "DK-0174",
+    "navn": "Helmer Bomhoff",
+    "fodt_aar": "1916",
+    "udfald": "Overlevede",
+    "adresse": "Langs Hegnet 28B",
+    "postnr": "2800",
+    "by": "Kongens Lyngby",
+    "kommune": "Lyngby-Taarbæk",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "HIER WOHNTE / HELMER BOMHOFF / GEB. 1916 / UNTERSTÜTZTE DIE / WIDERSTANDSBEWEGUNG / VERHAFTET 18.10.1944 / INTERNIERUNGSLAGER FRØSLEV / BEFREIT",
+    "kilde_url": "https://snublesten.dk/snublesten/helmer-bomhoff/",
+    "snublesten_dk_id": 924,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "Stolperstein für Helmer Bomhoff (Kongens Lyngby).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48097,
+     55.761335
+    ]
+   },
+   "properties": {
+    "id": "DK-0175",
+    "navn": "Jacob Cipikoff",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Skeltoftevej 75",
+    "postnr": "2800",
+    "by": "Kongens Lyngby",
+    "kommune": "Lyngby-Taarbæk",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/jacob-cipikoff/",
+    "snublesten_dk_id": 3240,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.728751,
+     55.235932
+    ]
+   },
+   "properties": {
+    "id": "DK-0178",
+    "navn": "Max Faden",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Holebækvej 4",
+    "postnr": "5871",
+    "by": "Frørup",
+    "kommune": "Nyborg",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2026",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/max-faden/",
+    "snublesten_dk_id": 3242,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.396196,
+     55.382956
+    ]
+   },
+   "properties": {
+    "id": "DK-0187",
+    "navn": "Axel Mogens Metz",
+    "fodt_aar": "1903",
+    "udfald": "Omkom",
+    "adresse": "Hjallesevej 98",
+    "postnr": "5230",
+    "by": "Odense M",
+    "kommune": "Odense",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2021",
+    "nedlagt_dato": "2021-08-08",
+    "sat_af": "Snublesten Fyn / Snublesten Danmark",
+    "indskrift_da": "Her boede Axel Mogens Metz født 1903 arresteret 2.10.1943 deporteret 1943 Theresienstadt omkommet 12.3.1944",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/axel-mogens-metz/",
+    "snublesten_dk_id": 540,
+    "wikidata": "",
+    "osm_node": "8995512612",
+    "commons_fil": "Stolperstein für Axel Mogens Metz (Odense).jpg",
+    "status": "Fra gruppens egen liste",
+    "note": "Står på begge gruppers sider"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.029983,
+     56.461888
+    ]
+   },
+   "properties": {
+    "id": "DK-0196",
+    "navn": "Børge Thomsen",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Søren Møllers Gade 19",
+    "postnr": "8900",
+    "by": "Randers",
+    "kommune": "Randers",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/boerge-thomsen/",
+    "snublesten_dk_id": 1659,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": "Kilden staver 'Søren Mølllers Gade'"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.038386,
+     56.45712
+    ]
+   },
+   "properties": {
+    "id": "DK-0197",
+    "navn": "Ester Hartogsohn",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Tørvebryggen 4-6",
+    "postnr": "8900",
+    "by": "Randers",
+    "kommune": "Randers",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/ester-hartogsohn/",
+    "snublesten_dk_id": 1718,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.038536,
+     56.4571
+    ]
+   },
+   "properties": {
+    "id": "DK-0198",
+    "navn": "John Philip Hartogsohn",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Tørvebryggen 4-6",
+    "postnr": "8900",
+    "by": "Randers",
+    "kommune": "Randers",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/john-philip-hartogsohn/",
+    "snublesten_dk_id": 1661,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.038486,
+     56.45703
+    ]
+   },
+   "properties": {
+    "id": "DK-0199",
+    "navn": "Kurt Philip Hartogsohn",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Tørvebryggen 4-6",
+    "postnr": "8900",
+    "by": "Randers",
+    "kommune": "Randers",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/kurt-philip-hartogsohn/",
+    "snublesten_dk_id": 1720,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.038536,
+     56.45694
+    ]
+   },
+   "properties": {
+    "id": "DK-0200",
+    "navn": "Philip Michael Hartogsohn",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Tørvebryggen 4-6",
+    "postnr": "8900",
+    "by": "Randers",
+    "kommune": "Randers",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/philip-michael-hartogsohn/",
+    "snublesten_dk_id": 1719,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.770122,
+     55.158403
+    ]
+   },
+   "properties": {
+    "id": "DK-0204",
+    "navn": "Alfred Philip Møller",
+    "fodt_aar": "1904",
+    "udfald": "",
+    "adresse": "",
+    "postnr": "6780",
+    "by": "Skærbæk",
+    "kommune": "Tønder",
+    "koord_kilde": "Commons (foto-GPS)",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "2025-05-05",
+    "sat_af": "Historisk Forening Skærbæk (?)",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://historiskforeningskaerbaek.dk/om/snublesten",
+    "snublesten_dk_id": "",
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "20260313 Stolperstein Moller Alfred Philip 1904.jpg",
+    "status": "Skal verificeres",
+    "note": "Kun kendt fra Commons-fotos; foreningens liste ikke gennemgået. Adresse mangler"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.762281,
+     55.158058
+    ]
+   },
+   "properties": {
+    "id": "DK-0205",
+    "navn": "Herman Svendsen",
+    "fodt_aar": "1906",
+    "udfald": "",
+    "adresse": "",
+    "postnr": "6780",
+    "by": "Skærbæk",
+    "kommune": "Tønder",
+    "koord_kilde": "Commons (foto-GPS)",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "2025-05-05",
+    "sat_af": "Historisk Forening Skærbæk (?)",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://historiskforeningskaerbaek.dk/om/snublesten",
+    "snublesten_dk_id": "",
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "20260313 Stolperstein Svendsen Herman 1906.jpg",
+    "status": "Skal verificeres",
+    "note": "Kun kendt fra Commons-fotos; foreningens liste ikke gennemgået. Adresse mangler"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.762278,
+     55.15805
+    ]
+   },
+   "properties": {
+    "id": "DK-0206",
+    "navn": "Johann Nielsen",
+    "fodt_aar": "1913",
+    "udfald": "",
+    "adresse": "",
+    "postnr": "6780",
+    "by": "Skærbæk",
+    "kommune": "Tønder",
+    "koord_kilde": "Commons (foto-GPS)",
+    "nedlagt_aar": "2025",
+    "nedlagt_dato": "2025-05-05",
+    "sat_af": "Historisk Forening Skærbæk (?)",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://historiskforeningskaerbaek.dk/om/snublesten",
+    "snublesten_dk_id": "",
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "20260313 Stolperstein Nielsen Johann 1913.jpg",
+    "status": "Skal verificeres",
+    "note": "Kun kendt fra Commons-fotos; foreningens liste ikke gennemgået. Adresse mangler"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.433917,
+     55.672331
+    ]
+   },
+   "properties": {
+    "id": "DK-0207",
+    "navn": "Chaja Ellberger",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vilstrupvej 2",
+    "postnr": "7100",
+    "by": "Vejle",
+    "kommune": "Vejle",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/chaja-ellberger/",
+    "snublesten_dk_id": 1914,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.433927,
+     55.672221
+    ]
+   },
+   "properties": {
+    "id": "DK-0208",
+    "navn": "Max Ellberger",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vilstrupvej 2",
+    "postnr": "7100",
+    "by": "Vejle",
+    "kommune": "Vejle",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/max-ellberger/",
+    "snublesten_dk_id": 1907,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.433767,
+     55.672161
+    ]
+   },
+   "properties": {
+    "id": "DK-0209",
+    "navn": "Viktoria Ellberger",
+    "fodt_aar": "",
+    "udfald": "",
+    "adresse": "Vilstrupvej 2",
+    "postnr": "7100",
+    "by": "Vejle",
+    "kommune": "Vejle",
+    "koord_kilde": "snublesten.dk",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "",
+    "sat_af": "Snublesten Danmark",
+    "indskrift_da": "",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://snublesten.dk/snublesten/viktoria-viola-ellberger/",
+    "snublesten_dk_id": 1910,
+    "wikidata": "",
+    "osm_node": "",
+    "commons_fil": "",
+    "status": "Fra gruppens egen liste",
+    "note": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.15768,
+     54.99714
+    ]
+   },
+   "properties": {
+    "id": "DK-0210",
+    "navn": "Leo Købmann",
+    "fodt_aar": "1904",
+    "udfald": "Overlevede",
+    "adresse": "",
+    "postnr": "",
+    "by": "Kalvehave (?)",
+    "kommune": "Vordingborg",
+    "koord_kilde": "OpenStreetMap",
+    "nedlagt_aar": "2023",
+    "nedlagt_dato": "2023-10-10",
+    "sat_af": "Ukendt",
+    "indskrift_da": "Her boede Leo Købmann Født 1904 Arresteret 28.12.1944 Deporteret 1945 Dachau Befriet",
+    "indskrift_de_wiki": "",
+    "kilde_url": "https://www.openstreetmap.org/node/12782095035",
+    "snublesten_dk_id": "",
+    "wikidata": "",
+    "osm_node": "12782095035",
+    "commons_fil": "",
+    "status": "Skal verificeres",
+    "note": "Kun kendt fra OSM. By udledt af koordinat"
+   }
+  }
+ ]
+}
