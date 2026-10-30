@@ -14,6 +14,7 @@
 - Kopiér link og Forrige/Næste (også pil venstre/højre).
 - Større markører for enkeltsten; valgt klynge fremhæves.
 - Farveprik pr. kommune (liste, detalje, kort og foldbar legende).
+- Baggrundsfoto (sløret, med slør for læsbarhed) som i den fremsendte baggrundsversion, og en samlet kreditering/licens-sektion nederst på siden.
 - Tilføjet manglende viewport-meta, så mobilvisningen faktisk aktiveres på telefoner.
 
 Bemærk: registret bør ifølge den oprindelige LÆS_MIG ikke publiceres før aftale med grupperne.
