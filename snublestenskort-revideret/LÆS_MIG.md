@@ -15,6 +15,9 @@
 - Større markører for enkeltsten; valgt klynge fremhæves.
 - Farveprik pr. kommune (liste, detalje, kort og foldbar legende).
 - Baggrundsfoto (sløret, med slør for læsbarhed) som i den fremsendte baggrundsversion, og en samlet kreditering/licens-sektion nederst på siden.
+- Flettet fra baggrundsversionen: 227 sten (nu også Aalborg og Frederikshavn), bedre linjeskift på pladerne, flere linknavne i detaljevisningen, rollover på logoet og opdateret "Mangler endnu".
 - Tilføjet manglende viewport-meta, så mobilvisningen faktisk aktiveres på telefoner.
+
+Bemærk: `data/` er stadig registret med de 210 sten fra 24. okt; siden indeholder nu 227 (de 17 nye findes kun i siden, ikke i csv/geojson/xlsx).
 
 Bemærk: registret bør ifølge den oprindelige LÆS_MIG ikke publiceres før aftale med grupperne.
