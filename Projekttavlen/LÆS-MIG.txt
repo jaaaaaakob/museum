@@ -1,0 +1,13 @@
+PROJEKTTAVLEN – sådan bruger du den
+
+1. Læg mappen "Projekttavlen" i din Dropbox.
+2. Dobbeltklik på Projekttavlen.html (åbner i din browser – ingen installation, ingen internetforbindelse nødvendig).
+3. Første gang, i Chrome eller Edge: tryk "Opret datafil" nederst og gem projekttavlen-data.json i samme Dropbox-mappe.
+   Herefter gemmes alt automatisk i den fil, og tavlen opdateres, når du skifter tilbage til fanen, hvis filen er ændret fra en anden computer.
+4. På en anden computer: åbn Projekttavlen.html og tryk "Åbn datafil" og vælg projekttavlen-data.json.
+   Browseren kan bede dig om at "Genforbinde" datafilen efter at have været lukket – tryk på knappen.
+
+Firefox/Safari kan ikke skrive direkte til filen: brug "Eksportér" (sikkerhedskopi) og "Importér".
+Uden datafil gemmes data kun i den pågældende browser.
+
+Tip: Åbn ikke tavlen på to computere samtidig – sidst gemte ændring vinder.

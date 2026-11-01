@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projekttavlen</title>
+<style>
+:root{
+  --bg:#eaf0f1; --surface:#fbfdfd; --ink:#11262e; --muted:#566a72; --line:#cfdadd; --line-soft:#e1e8ea;
+  --accent:#0d6870; --accent-ink:#ffffff;
+  --p-hoej:#c2410c; --p-mellem:#b8860b; --p-lav:#94a7ad;
+  --st-gang:#0d6870; --st-venter:#9a5b00; --st-ide:#5a4a90; --st-faerdig:#5f7379;
+  --bad:#b42318; --warn:#9a5b00;
+  --display:"Barlow Condensed","Arial Narrow","Roboto Condensed",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0d171b; --surface:#132228; --ink:#e3ecee; --muted:#93a7ae; --line:#24363d; --line-soft:#1b2c32;
+  --accent:#4fb3b8; --accent-ink:#06191c;
+  --p-hoej:#f07a45; --p-mellem:#d9ad3c; --p-lav:#5f767d;
+  --st-gang:#4fb3b8; --st-venter:#e0a54a; --st-ide:#a99ae0; --st-faerdig:#8ea2a8;
+  --bad:#f2786b; --warn:#e0a54a; color-scheme:dark }}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;padding:20px 16px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+header.top h1{font-size:44px;font-weight:700;letter-spacing:.01em;line-height:1}
+header.top .sub{color:var(--muted);margin-top:4px}
+.mark{font-family:var(--mono);font-size:12.5px;text-align:right;color:var(--muted);line-height:1.5}
+.mark b{display:block;font-family:var(--display);font-size:30px;font-weight:600;color:var(--ink);letter-spacing:.01em}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.stat{background:var(--surface);padding:10px 14px;display:flex;flex-direction:column;gap:2px;border:0;text-align:left;cursor:pointer}
+.stat:hover{background:var(--line-soft)}
+.stat[aria-pressed="true"]{box-shadow:inset 0 -3px 0 var(--accent)}
+.stat .n{font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .l{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.stat.alert .n{color:var(--p-hoej)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.filters input[type=search]{flex:1 1 220px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 11px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13.5px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toggle{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);cursor:pointer}
+.sortsel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:14px}
+.group{display:flex;flex-direction:column;gap:8px}
+.group-h{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.group-h h2{font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.group-h .c{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:6px}
+.row{background:var(--surface);border:1px solid var(--line-soft);border-left:5px solid var(--p-lav);border-radius:5px;padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center}
+.row.p-Høj{border-left-color:var(--p-hoej)} .row.p-Mellem{border-left-color:var(--p-mellem)}
+.row.done{opacity:.62}
+.row .main{min-width:0}
+.row h3{font-family:var(--body);font-size:16px;font-weight:600;line-height:1.3}
+.row .next{color:var(--muted);font-size:14px;margin:2px 0 0;overflow-wrap:anywhere}
+.row .next::before{content:"Næste: ";color:var(--ink);opacity:.55;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.due{font-family:var(--mono);font-size:12px;margin-left:8px;white-space:nowrap;color:var(--muted)}
+.due.soon{color:var(--warn);font-weight:500} .due.late{color:var(--bad);font-weight:500}
+.ctrls{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:flex-end}
+.ctrls select,.ctrls input[type=date]{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 9px;font-size:13px;cursor:pointer}
+.ctrls input[type=date]{font-family:var(--mono);font-size:12px;border-radius:6px}
+select.st{font-weight:600}
+select.st-I-gang{color:var(--st-gang);border-color:color-mix(in srgb,var(--st-gang) 45%,transparent)}
+select.st-Venter{color:var(--st-venter);border-color:color-mix(in srgb,var(--st-venter) 45%,transparent)}
+select.st-Idé{color:var(--st-ide);border-color:color-mix(in srgb,var(--st-ide) 45%,transparent)}
+select.st-Færdig{color:var(--st-faerdig)}
+select.plan-unset{border-style:dashed;color:var(--muted)}
+.ico{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:3px 9px;font-size:13px;cursor:pointer}
+.ico:hover{background:var(--line-soft)}
+.editor{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:8px;border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+.editor label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.editor input,.editor textarea,.editor select{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink)}
+.editor textarea{min-height:64px;resize:vertical}
+.editor .acts{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:6px;padding:6px 14px;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.danger{background:transparent;color:var(--bad);border-color:color-mix(in srgb,var(--bad) 50%,transparent)}
+.btn.danger.armed{background:var(--bad);color:var(--surface)}
+.add{background:var(--surface);border:1px dashed var(--line);border-radius:6px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.add input,.add select{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px}
+.add input{flex:1 1 240px;min-width:0}
+.legend{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.msg{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;font-size:14px;max-width:calc(100% - 32px)}
+.data{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.data .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.data .status{font-size:13px;color:var(--muted)}
+.data .status.ok{color:var(--st-gang)} .data .status.warn{color:var(--warn)}
+@media (max-width:640px){
+  header.top h1{font-size:36px}
+  .row{grid-template-columns:minmax(0,1fr)}
+  .ctrls{justify-content:flex-start}
+  .mark{text-align:left}
+}
+</style></head><body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Projekttavlen</h1>
+      <div class="sub">Alt der ligger på bordet — museum, research, sideprojekter, karriere og hjemme.</div>
+    </div>
+    <div class="mark" id="countdown"></div>
+  </header>
+  <div class="stats" id="stats"></div>
+  <div class="filters">
+    <input type="search" id="q" placeholder="Søg i titler og næste skridt" aria-label="Søg">
+    <select class="sortsel" id="sort" aria-label="Sortér">
+      <option value="prio">Sortér: prioritet</option>
+      <option value="frist">Sortér: frist</option>
+      <option value="status">Sortér: status</option>
+    </select>
+    <label class="toggle"><input type="checkbox" id="hideDone" checked> Skjul færdige</label>
+  </div>
+  <div class="chips" id="kats"></div>
+  <div class="legend">
+    <span><i style="background:var(--p-hoej)"></i>Høj prioritet</span>
+    <span><i style="background:var(--p-mellem)"></i>Mellem</span>
+    <span><i style="background:var(--p-lav)"></i>Lav</span>
+    <span>Museumsprojekter har en ekstra vælger: hvad sker der med dem inden fratrædelsen.</span>
+  </div>
+  <main id="board"></main>
+  <form class="add" id="addForm">
+    <input id="newTitle" placeholder="Nyt projekt" required aria-label="Titel på nyt projekt">
+    <select id="newKat" aria-label="Område"></select>
+    <button class="btn" type="submit">Tilføj</button>
+  </form>
+
+  <section class="data" aria-label="Data">
+    <div class="bar" id="dataBar"></div>
+    <div class="status" id="dataStatus"></div>
+    <p class="note" style="margin:0">Tavlen gemmer altid i browseren. Knyt en datafil i din Dropbox-mappe (Chrome eller Edge), så følger projekterne med mellem computere. I andre browsere: brug Eksportér/Importér.</p>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+<script>
+const SEED={
+ "version": 1,
+ "projekter": [
+  {
+   "id": "aalborg-bibliotekerne",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Afvent svar",
+   "prioritet": "Mellem",
+   "status": "Venter",
+   "titel": "Ansøgning: Aalborg Bibliotekerne, Hovedbiblioteket"
+  },
+  {
+   "id": "alleudstillinger",
+   "frist": "",
+   "kategori": "Sideprojekter",
+   "naeste": "Crawler og de første museumskilder",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "alleudstillinger (crawler over danske museers udstillinger)"
+  },
+  {
+   "id": "bangsbo-udstilling",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Tekster med Bokkenheuser-citater og faktabokse til 4×4 m-rummet",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Bangsbo og dets historie (Bokkenheuser-udstillingen)"
+  },
+  {
+   "id": "bedst-for-os",
+   "frist": "2026-11-02",
+   "kategori": "Karriere",
+   "naeste": "Send ansøgningen (udkast fra 27. okt)",
+   "prioritet": "Høj",
+   "status": "Færdig",
+   "titel": "Ansøgning: Bedst for Os, Region Nordjylland"
+  },
+  {
+   "id": "black-box-laden",
+   "frist": "",
+   "kategori": "Bygninger & rum",
+   "naeste": "Gør forslaget færdigt",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "Idé",
+   "titel": "Black box i Bangsbo-laden"
+  },
+  {
+   "id": "boelgemaskine",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Byg og test 1:3-udsnittet",
+   "plan": "Ikke besluttet",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "Bølgemaskinen (621 cm, håndsving)"
+  },
+  {
+   "id": "bogreol",
+   "frist": "",
+   "kategori": "Privat",
+   "naeste": "4 kolonner, 155 × 288 cm",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Bogreol i birkefiner"
+  },
+  {
+   "id": "broenderslev-kulturskole",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Forbered samtalen med panelet; sæt dato ind som frist",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "Jobsamtale: leder af Brønderslev Kulturskole"
+  },
+  {
+   "id": "caisa-aau",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Afvent svar (frist var 28. okt)",
+   "prioritet": "Mellem",
+   "status": "Venter",
+   "titel": "Ansøgning: AC-fuldmægtig, CAISA, AAU"
+  },
+  {
+   "id": "danskesnublesten",
+   "frist": "",
+   "kategori": "Sideprojekter",
+   "naeste": "Udvid registret og Wikidata ud over Aalborg og Frederikshavn",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "danskesnublesten.dk"
+  },
+  {
+   "id": "egestammer",
+   "frist": "",
+   "kategori": "Bygninger & rum",
+   "naeste": "Undersøg indkøb, transport og opstilling",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "Idé",
+   "titel": "Egestammer ved Ellingåskibet"
+  },
+  {
+   "id": "erato",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "Kildenotat afsluttet",
+   "plan": "Færdiggør",
+   "prioritet": "Lav",
+   "status": "Færdig",
+   "titel": "Erato-forliset 1894"
+  },
+  {
+   "id": "escape-room",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Byggeri og playtest efter produktionsplanen",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Escape room 1962, Bangsbo Fort"
+  },
+  {
+   "id": "freelance",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Plan B hvis opsigelsen står ved magt",
+   "prioritet": "Lav",
+   "status": "Idé",
+   "titel": "Freelance i museumsverdenen"
+  },
+  {
+   "id": "gulvkort",
+   "frist": "",
+   "kategori": "Bygninger & rum",
+   "naeste": "Vælg slidstærk maling og topcoat",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "Idé",
+   "titel": "Malet gulvkort på epoxygulv"
+  },
+  {
+   "id": "halvvaeg",
+   "frist": "",
+   "kategori": "Privat",
+   "naeste": "",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Halvvæg i gips"
+  },
+  {
+   "id": "havnehistorie",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "Gennemgå det fotograferede materiale og opdatér kildeoversigterne",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Frederikshavn Havns historie og værftssagen"
+  },
+  {
+   "id": "kiosksystem",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Indkøb og opsætning af stationer",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Offline kiosksystem til udstillingsstationer"
+  },
+  {
+   "id": "kulturkonsulent-aalborg",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Afvent svar",
+   "prioritet": "Mellem",
+   "status": "Venter",
+   "titel": "Ansøgning: kulturkonsulent, Aalborg Kommune"
+  },
+  {
+   "id": "linkedin",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Første faglige opslag med bredt kulturelt fokus",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Genstart af LinkedIn"
+  },
+  {
+   "id": "lysfestival",
+   "frist": "",
+   "kategori": "Sideprojekter",
+   "naeste": "Find ansøgningsfristen; pitch til kommunen og dommerkomitéen",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Aalborg Lysfestival, open call"
+  },
+  {
+   "id": "mindevaeg",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Send de færdige biografier til faktatjek og lås dem",
+   "plan": "Ikke besluttet",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "Mindevæggen i Mindehallen, Skagen"
+  },
+  {
+   "id": "navneskifte",
+   "frist": "",
+   "kategori": "Strategi & kommunikation",
+   "naeste": "Afklar med direktøren",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "Venter",
+   "titel": "Navneskifte: Kystmuseum eller Kystmuseerne"
+  },
+  {
+   "id": "nfc-audioguide",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Vælg enhed: refurbished Galaxy A eller Redmi 15C",
+   "plan": "Ikke besluttet",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "NFC-audioguide, Kystmuseet Skagen"
+  },
+  {
+   "id": "partshoering",
+   "frist": "",
+   "kategori": "Karriere",
+   "naeste": "Afvent endelig beslutning (bemærkninger, CV og tilbud om nedsat tid sendt)",
+   "prioritet": "Høj",
+   "status": "Venter",
+   "titel": "Partshøring om påtænkt opsigelse"
+  },
+  {
+   "id": "saeby-borgere",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "Find dokumentation for distriktslæge Timm som største skatteyder",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Sæby-borgere ca. 1880–1910"
+  },
+  {
+   "id": "siams-flag",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Hav plancher klar til et evt. besøg fra den nye ambassadør",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "Venter",
+   "titel": "Siams flag og thailandske besøg"
+  },
+  {
+   "id": "skibsmaegler-protokoller",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Beslut bogvugge i akryl og opslag",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "Idé",
+   "titel": "Skibsmægler-protokoller i autentisk miljø"
+  },
+  {
+   "id": "skolestue-saeby",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Produktion af duftstation og elevidentiteter (Folketællingen 1901)",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Skolestuen i Sæby: duftstation og elevidentiteter"
+  },
+  {
+   "id": "snublestensbog",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "Fortsæt kapitel for kapitel",
+   "plan": "Ikke besluttet",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "Faktatjek af snublestensbogen"
+  },
+  {
+   "id": "soemaerker",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Spirbakken og Kandestederne (Højen er færdig)",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Sømærke-modeller 1:40"
+  },
+  {
+   "id": "some-strategi",
+   "frist": "",
+   "kategori": "Strategi & kommunikation",
+   "naeste": "Beslut kontostrukturen",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "SoMe-strategi 2026–28"
+  },
+  {
+   "id": "strategi-kat3",
+   "frist": "",
+   "kategori": "Strategi & kommunikation",
+   "naeste": "Afventer ledelsens prioritering",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "Venter",
+   "titel": "Strategi for omklassificering til kategori 3"
+  },
+  {
+   "id": "svampe",
+   "frist": "",
+   "kategori": "Sideprojekter",
+   "naeste": "Container eller lejet kælder?",
+   "prioritet": "Lav",
+   "status": "Idé",
+   "titel": "Svampedyrkning i container"
+  },
+  {
+   "id": "svelletrapper",
+   "frist": "",
+   "kategori": "Bygninger & rum",
+   "naeste": "Vælg skridsikring inden vinteren",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "Idé",
+   "titel": "Glatte svelletrapper i Skagen"
+  },
+  {
+   "id": "tordenvejr",
+   "frist": "",
+   "kategori": "Museumsteknik",
+   "naeste": "Koordinér med audioguiden i samme rum",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Tordenvejr i redningsbådsrummet"
+  },
+  {
+   "id": "trello-mcp",
+   "frist": "",
+   "kategori": "Sideprojekter",
+   "naeste": "",
+   "prioritet": "Lav",
+   "status": "Færdig",
+   "titel": "Trello MCP-server"
+  },
+  {
+   "id": "troppetransporter",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "",
+   "plan": "Ikke besluttet",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Tyske troppetransporter gennem danske havne til Norge"
+  },
+  {
+   "id": "udstillingstekster",
+   "frist": "",
+   "kategori": "Udstilling & formidling",
+   "naeste": "Vindmølle-teksterne i Skagen",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Udstillingstekster (Locher, Dana III, vindmøllen)"
+  },
+  {
+   "id": "visuel-identitet",
+   "frist": "",
+   "kategori": "Strategi & kommunikation",
+   "naeste": "Beslutningsoplæg om Kystmuseerne til bestyrelsen",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "Visuel identitet og logo"
+  },
+  {
+   "id": "website",
+   "frist": "",
+   "kategori": "Strategi & kommunikation",
+   "naeste": "Redigeringsflade og første sider på GitHub",
+   "plan": "Ikke besluttet",
+   "prioritet": "Høj",
+   "status": "I gang",
+   "titel": "Ny kystmuseet.dk"
+  },
+  {
+   "id": "wwii-arkiv",
+   "frist": "",
+   "kategori": "Research",
+   "naeste": "Skriftlig forespørgsel til Arolsen om Røgild Nielsen og Mühlberg",
+   "plan": "Ikke besluttet",
+   "prioritet": "Mellem",
+   "status": "I gang",
+   "titel": "WWII-arkivresearch, Nordjylland"
+  },
+  {
+   "id": "zigbee",
+   "frist": "",
+   "kategori": "Privat",
+   "naeste": "",
+   "prioritet": "Lav",
+   "status": "I gang",
+   "titel": "Zigbee-hjem med Raspberry Pi og iPad Mini"
+  }
+ ]
+};
+const KAT=["Karriere","Udstilling & formidling","Research","Museumsteknik","Bygninger & rum","Strategi & kommunikation","Sideprojekter","Privat"];
+const MUSEUM=new Set(["Udstilling & formidling","Research","Museumsteknik","Bygninger & rum","Strategi & kommunikation"]);
+const STATUS=["I gang","Venter","Idé","Færdig"];
+const PRIO=["Høj","Mellem","Lav"];
+const PLAN=["Ikke besluttet","Færdiggør","Overdrag","Dokumentér og parkér"];
+const FRATRAED=new Date(2027,1,27);
+const LS_KEY="projekttavlen.v1";
+
+let items=[];
+const ui={q:"",kat:null,hideDone:true,sort:"prio",stat:null};
+const open=new Set(), armed=new Set();
+let pendingRender=false;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const today=()=>{const d=new Date();d.setHours(0,0,0,0);return d};
+const parseD=s=>{if(!s)return null;const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const daysTo=d=>Math.round((d-today())/864e5);
+function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,3200)}
+
+/* ---------- Lagring: localStorage + valgfri datafil (File System Access API) ---------- */
+let fileHandle=null, fileState="none", lastSeenMod=0, saveChain=Promise.resolve();
+const payload=()=>JSON.stringify({version:1,gemt:new Date().toISOString(),projekter:items},null,1);
+
+function loadLocal(){
+  try{const r=localStorage.getItem(LS_KEY); if(r){const d=JSON.parse(r); if(Array.isArray(d.projekter))return d.projekter}}catch(_){}
+  return null;
+}
+function persist(){
+  try{localStorage.setItem(LS_KEY,payload())}catch(_){}
+  if(fileHandle&&fileState==="ok"){
+    saveChain=saveChain.then(async()=>{
+      try{
+        const w=await fileHandle.createWritable(); await w.write(payload()); await w.close();
+        lastSeenMod=(await fileHandle.getFile()).lastModified; setStatus();
+      }catch(e){fileState="error";setStatus("Kunne ikke skrive til datafilen: "+(e.message||e))}
+    });
+  }
+}
+function parseData(txt){
+  const d=JSON.parse(txt); const arr=Array.isArray(d)?d:d.projekter;
+  if(!Array.isArray(arr))throw new Error("Filen ligner ikke en projekttavle-fil");
+  return arr.filter(x=>x&&x.id&&x.titel);
+}
+
+/* IndexedDB til at huske filhåndtaget */
+const idb=(mode,fn)=>new Promise((res,rej)=>{
+  const r=indexedDB.open("projekttavlen",1);
+  r.onupgradeneeded=()=>r.result.createObjectStore("kv");
+  r.onerror=()=>rej(r.error);
+  r.onsuccess=()=>{const tx=r.result.transaction("kv",mode),st=tx.objectStore("kv");const q=fn(st);tx.oncomplete=()=>res(q&&q.result);tx.onerror=()=>rej(tx.error)};
+});
+const rememberHandle=h=>idb("readwrite",s=>s.put(h,"handle")).catch(()=>{});
+const forgetHandle=()=>idb("readwrite",s=>s.delete("handle")).catch(()=>{});
+
+async function readFromFile(){
+  const f=await fileHandle.getFile(); lastSeenMod=f.lastModified;
+  items=parseData(await f.text()); try{localStorage.setItem(LS_KEY,payload())}catch(_){}
+}
+async function attach(h,mode){ // mode: "open" læser filen, "create" skriver nuværende tavle
+  fileHandle=h; fileState="ok";
+  if(mode==="open")await readFromFile(); else{const w=await h.createWritable();await w.write(payload());await w.close();lastSeenMod=(await h.getFile()).lastModified}
+  await rememberHandle(h); setStatus(); render();
+}
+const fsOk=()=>"showOpenFilePicker" in window;
+const filters=[{description:"Projekttavle (JSON)",accept:{"application/json":[".json"]}}];
+
+async function openFile(){
+  try{const [h]=await showOpenFilePicker({types:filters});await attach(h,"open");toast("Datafil åbnet")}
+  catch(e){if(e.name!=="AbortError")toast("Kunne ikke åbne filen: "+e.message)}
+}
+async function createFile(){
+  try{const h=await showSaveFilePicker({suggestedName:"projekttavlen-data.json",types:filters});await attach(h,"create");toast("Datafil oprettet")}
+  catch(e){if(e.name!=="AbortError")toast("Kunne ikke oprette filen: "+e.message)}
+}
+async function reconnect(){
+  try{
+    if(await fileHandle.requestPermission({mode:"readwrite"})!=="granted")return;
+    fileState="ok"; await readFromFile(); setStatus(); render(); toast("Forbundet til datafilen");
+  }catch(e){toast("Kunne ikke forbinde: "+e.message)}
+}
+async function unlink(){fileHandle=null;fileState="none";await forgetHandle();setStatus()}
+async function syncFromFile(){ // hent ændringer fra Dropbox, hvis filen er ændret udefra
+  if(!fileHandle||fileState!=="ok")return;
+  try{
+    const f=await fileHandle.getFile();
+    if(f.lastModified>lastSeenMod&&!document.activeElement?.closest?.(".editor")){await readFromFile();render();toast("Opdateret fra datafilen")}
+  }catch(_){}
+}
+
+function exportJSON(){
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([payload()],{type:"application/json"}));
+  a.download="projekttavlen-"+new Date().toISOString().slice(0,10)+".json";
+  a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function importJSON(file){
+  const r=new FileReader();
+  r.onload=()=>{try{
+    const arr=parseData(r.result);
+    if(!confirm(`Importér ${arr.length} projekter og erstat nuværende tavle?`))return;
+    items=arr;persist();render();toast("Importeret")
+  }catch(e){toast("Import mislykkedes: "+e.message)}};
+  r.readAsText(file);
+}
+
+function setStatus(err){
+  const s=$("#dataStatus"), b=$("#dataBar");
+  let btns=`<button class="btn ghost" data-d="export">Eksportér</button><button class="btn ghost" data-d="import">Importér</button>`;
+  if(fsOk()){
+    if(fileState==="ok")btns=`<button class="btn ghost" data-d="unlink">Frakobl datafil</button>`+btns;
+    else if(fileState==="needperm")btns=`<button class="btn" data-d="reconnect">Genforbind datafil</button>`+btns;
+    else btns=`<button class="btn" data-d="open">Åbn datafil</button><button class="btn ghost" data-d="create">Opret datafil</button>`+btns;
+  }
+  b.innerHTML=btns;
+  if(err){s.className="status warn";s.textContent=err}
+  else if(fileState==="ok"){s.className="status ok";s.textContent="Gemmer automatisk i: "+fileHandle.name}
+  else if(fileState==="needperm"){s.className="status warn";s.textContent="Datafilen "+fileHandle.name+" skal genforbindes (browseren kræver et klik)."}
+  else{s.className="status";s.textContent=fsOk()?"Ingen datafil knyttet — gemmer kun i denne browser.":"Gemmer kun i denne browser. Brug Eksportér for at lave en sikkerhedskopi i Dropbox."}
+}
+document.addEventListener("click",e=>{
+  const d=e.target.closest("[data-d]"); if(!d)return;
+  ({open:openFile,create:createFile,reconnect,unlink,export:exportJSON,import:()=>$("#importFile").click()})[d.dataset.d]?.();
+});
+$("#importFile").addEventListener("change",e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=""});
+window.addEventListener("focus",syncFromFile);
+
+/* ---------- Visning ---------- */
+function dueInfo(it){
+  const d=parseD(it.frist); if(!d) return "";
+  const n=daysTo(d), lbl=d.toLocaleDateString("da-DK",{day:"numeric",month:"short"});
+  if(it.status==="Færdig") return `<span class="due">${lbl}</span>`;
+  const rel=n<0?`overskredet`:n===0?"i dag":n===1?"i morgen":`om ${n} dage`;
+  const cls=n<0?"late":n<=7?"soon":"";
+  return `<span class="due ${cls}">${lbl} · ${rel}</span>`;
+}
+function renderCountdown(){$("#countdown").innerHTML=`<b>${daysTo(FRATRAED)} dage</b>til 27. feb 2027`}
+function counts(){
+  const c={gang:0,venter:0,ide:0,hoej:0,uafkl:0,frist:0};
+  for(const it of items){
+    if(it.status==="I gang")c.gang++; if(it.status==="Venter")c.venter++; if(it.status==="Idé")c.ide++;
+    if(it.status!=="Færdig"){
+      if(it.prioritet==="Høj")c.hoej++;
+      if(MUSEUM.has(it.kategori)&&(!it.plan||it.plan==="Ikke besluttet"))c.uafkl++;
+      const d=parseD(it.frist); if(d&&daysTo(d)<=14)c.frist++;
+    }
+  }
+  return c;
+}
+function renderStats(){
+  const c=counts();
+  const tiles=[["gang",c.gang,"I gang"],["venter",c.venter,"Venter"],["ide",c.ide,"Idéer"],["hoej",c.hoej,"Høj prioritet"],["frist",c.frist,"Frist inden 14 dage"],["uafkl",c.uafkl,"Museum: plan uafklaret"]];
+  $("#stats").innerHTML=tiles.map(([k,n,l])=>`<button class="stat ${k==="frist"&&n?"alert":""}" data-stat="${k}" aria-pressed="${ui.stat===k}"><span class="n">${n}</span><span class="l">${l}</span></button>`).join("");
+}
+function renderKats(){
+  const all=`<button class="chip" data-kat="" aria-pressed="${!ui.kat}">Alle</button>`;
+  $("#kats").innerHTML=all+KAT.map(k=>`<button class="chip" data-kat="${esc(k)}" aria-pressed="${ui.kat===k}">${esc(k)}</button>`).join("");
+}
+function passes(it){
+  if(ui.hideDone&&it.status==="Færdig"&&ui.stat==null)return false;
+  if(ui.kat&&it.kategori!==ui.kat)return false;
+  if(ui.q){const h=(it.titel+" "+(it.naeste||"")).toLowerCase(); if(!h.includes(ui.q))return false}
+  switch(ui.stat){
+    case "gang":return it.status==="I gang";
+    case "venter":return it.status==="Venter";
+    case "ide":return it.status==="Idé";
+    case "hoej":return it.prioritet==="Høj"&&it.status!=="Færdig";
+    case "uafkl":return MUSEUM.has(it.kategori)&&(!it.plan||it.plan==="Ikke besluttet")&&it.status!=="Færdig";
+    case "frist":{const d=parseD(it.frist);return d&&daysTo(d)<=14&&it.status!=="Færdig"}
+  }
+  return true;
+}
+function cmp(a,b){
+  const fa=parseD(a.frist),fb=parseD(b.frist);
+  const byF=(fa?fa.getTime():Infinity)-(fb?fb.getTime():Infinity);
+  const byP=PRIO.indexOf(a.prioritet)-PRIO.indexOf(b.prioritet);
+  const byS=STATUS.indexOf(a.status)-STATUS.indexOf(b.status);
+  if(ui.sort==="frist")return byF||byP||byS||a.titel.localeCompare(b.titel,"da");
+  if(ui.sort==="status")return byS||byP||byF||a.titel.localeCompare(b.titel,"da");
+  return (a.status==="Færdig")-(b.status==="Færdig")||byP||byF||byS||a.titel.localeCompare(b.titel,"da");
+}
+const opts=(arr,v)=>arr.map(o=>`<option${o===v?" selected":""}>${esc(o)}</option>`).join("");
+function rowHTML(it){
+  const museum=MUSEUM.has(it.kategori), plan=it.plan||"Ikke besluttet", isOpen=open.has(it.id);
+  return `<article class="row p-${esc(it.prioritet)} ${it.status==="Færdig"?"done":""}" data-id="${esc(it.id)}">
+    <div class="main"><h3>${esc(it.titel)}${dueInfo(it)}</h3>${it.naeste?`<p class="next">${esc(it.naeste)}</p>`:""}</div>
+    <div class="ctrls">
+      <select class="st st-${esc((it.status||"").replace(/ /g,"-"))}" data-f="status" aria-label="Status">${opts(STATUS,it.status)}</select>
+      <select data-f="prioritet" aria-label="Prioritet">${opts(PRIO,it.prioritet)}</select>
+      ${museum?`<select data-f="plan" class="${plan==="Ikke besluttet"?"plan-unset":""}" aria-label="Plan inden fratrædelse" title="Plan inden 27. feb 2027">${opts(PLAN,plan)}</select>`:""}
+      <input type="date" data-f="frist" value="${esc(it.frist||"")}" aria-label="Frist">
+      <button class="ico" data-act="toggle" aria-expanded="${isOpen}">${isOpen?"Luk":"Redigér"}</button>
+    </div>
+    ${isOpen?`<div class="editor">
+      <label>Titel<input id="t-${esc(it.id)}" data-f="titel" value="${esc(it.titel)}"></label>
+      <label>Næste skridt<textarea id="n-${esc(it.id)}" data-f="naeste">${esc(it.naeste||"")}</textarea></label>
+      <label>Område<select id="k-${esc(it.id)}" data-f="kategori">${opts(KAT,it.kategori)}</select></label>
+      <div class="acts"><button class="btn danger ${armed.has(it.id)?"armed":""}" data-act="del">${armed.has(it.id)?"Bekræft sletning":"Slet projekt"}</button><button class="btn ghost" data-act="toggle">Færdig med at redigere</button></div>
+    </div>`:""}
+  </article>`;
+}
+function render(){
+  const a=document.activeElement;
+  if(a&&a.closest&&a.closest(".editor")&&(a.tagName==="TEXTAREA"||a.tagName==="INPUT")){pendingRender=true;return}
+  pendingRender=false;
+  renderCountdown(); renderStats(); renderKats();
+  const board=$("#board");
+  if(!items.length){board.innerHTML=`<div class="msg">Ingen projekter endnu. Tilføj det første nedenfor.</div>`;return}
+  const vis=items.filter(passes).sort(cmp);
+  if(!vis.length){board.innerHTML=`<div class="msg">Ingen projekter matcher filtrene.</div>`;return}
+  const groups=ui.sort==="prio"||ui.sort==="status"
+    ? KAT.map(k=>[k,vis.filter(i=>i.kategori===k)]).filter(g=>g[1].length)
+    : [["Alle efter frist",vis]];
+  board.innerHTML=`<div class="wrap" style="gap:26px">${groups.map(([k,arr])=>`<section class="group"><div class="group-h"><h2>${esc(k)}</h2><span class="c">${arr.length}</span></div><div class="list">${arr.map(rowHTML).join("")}</div></section>`).join("")}</div>`;
+}
+function save(id,patch){
+  const it=items.find(i=>i.id===id); if(!it)return;
+  Object.assign(it,patch);
+  if(patch.kategori&&MUSEUM.has(patch.kategori)&&!it.plan)it.plan="Ikke besluttet";
+  persist(); render();
+}
+document.addEventListener("change",e=>{
+  const el=e.target, row=el.closest(".row"), f=el.dataset.f;
+  if(row&&f){const v=f==="titel"?el.value.trim():el.value; if(f==="titel"&&!v)return; save(row.dataset.id,{[f]:v});return}
+  if(el.id==="hideDone"){ui.hideDone=el.checked;render()}
+  if(el.id==="sort"){ui.sort=el.value;render()}
+});
+document.addEventListener("focusout",()=>{setTimeout(()=>{if(pendingRender)render()},0)});
+document.addEventListener("input",e=>{if(e.target.id==="q"){ui.q=e.target.value.trim().toLowerCase();render()}});
+document.addEventListener("click",e=>{
+  const st=e.target.closest("[data-stat]"); if(st){ui.stat=ui.stat===st.dataset.stat?null:st.dataset.stat;render();return}
+  const k=e.target.closest("[data-kat]"); if(k){ui.kat=k.dataset.kat||null;render();return}
+  const b=e.target.closest("[data-act]"); if(!b)return;
+  const id=b.closest(".row").dataset.id;
+  if(b.dataset.act==="toggle"){open.has(id)?open.delete(id):open.add(id);armed.delete(id);document.activeElement?.blur?.();render();return}
+  if(b.dataset.act==="del"){
+    if(!armed.has(id)){armed.add(id);render();return}
+    armed.delete(id);open.delete(id);
+    const t=items.find(i=>i.id===id)?.titel;
+    items=items.filter(i=>i.id!==id);persist();render();toast(`Slettet: ${t}`);
+  }
+});
+$("#newKat").innerHTML=KAT.map(k=>`<option>${esc(k)}</option>`).join("");
+$("#addForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const titel=$("#newTitle").value.trim(); if(!titel)return;
+  const kategori=$("#newKat").value;
+  const slug=titel.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"projekt";
+  const id=slug+"-"+Math.random().toString(36).slice(2,6);
+  items.push({id,titel,kategori,status:"Idé",prioritet:"Mellem",frist:"",naeste:"",...(MUSEUM.has(kategori)?{plan:"Ikke besluttet"}:{})});
+  persist(); $("#newTitle").value=""; open.add(id); render(); toast(`Tilføjet: ${titel}`);
+});
+
+/* ---------- Start ---------- */
+(async()=>{
+  items=loadLocal()||SEED.projekter.map(x=>({...x}));
+  render(); setStatus();
+  if(!loadLocal())persist();
+  if(fsOk()){
+    try{
+      const h=await idb("readonly",s=>s.get("handle"));
+      if(h){
+        fileHandle=h;
+        if(await h.queryPermission({mode:"readwrite"})==="granted"){fileState="ok";await readFromFile();render()}
+        else fileState="needperm";
+        setStatus();
+      }
+    }catch(_){}
+  }
+})();
+</script>
+</body></html>
